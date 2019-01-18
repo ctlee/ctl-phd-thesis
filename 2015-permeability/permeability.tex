@@ -1,0 +1,24 @@
+%    Section: "Calculated permeabilities" (Yi, Nelson, Chris T.)
+%      -the final, BEST logPs from each method at ~1-1.4 us each (Table 1)
+%      -plots showing the comparison
+%      -what are the errors?  (just numerically at this point)
+%      -does increasing simulation time help?  (not really: case of urea)
+
+\subsection*{Computed vs. experimental \perm}
+  \par The computed log\perm~of the three permeants are listed in Table 1, along with the corresponding experimental references obtained from egg phosphatidylcholine bilayers (urea~\cite{Gallucci1971}, codeine~\cite{Orbach1980} and  benzoic acid~\cite{Walter1984}).
+  % Egg lecithin and egg-PC are interchangeable. Both papers purchased egg-PC from avanti inc among other sources.
+  From Table~1, it is clear that the majority of computed \perm~values exceed the corresponding experimental data by 1--2 orders of magnitude. For comparison, we define $\Delta$log\perm = log\permcom - log\permexp, where log\permcom~and log\permexp~are the computed and experimental log\perm, respectively. Negative $\Delta$log\perm~values are only observed for urea, the most hydrophilic of the three permeants.  Results obtained with different methods also show the largest discrepancy for urea: the US and REUS  methods underestimate log\perm~by 0.87 and 0.51, whereas ABF and MW-ABF overestimate it by 0.71 and 1.14, respectively. For benzoic acid and codeine, all the methods overestimate log\perm~by 0.71 to 1.67.
+
+  \input{2015-permeability/table-results}
+
+  Fig.~\ref{fig:deltaP} also reveals that with the possible exception of urea, increasing simulation time does not significantly improve agreement with experiment.  Even for urea, the computed \perm~tends to plateau once the total simulation time exceeds 1\,$\mu$s.  It is unlikely that \perm~has converged, however, but requires much longer time scales (milliseconds) to sample very slow membrane reorganization processes~\cite{Neale2011}.
+
+%  Nonetheless, it is of considerable value to examine why shorter simulations manage to produce similar results as longer ones. As discussed in the following section, the symmetrization and cyclization of the computed free energy profiles likely play a part in this process.
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{2015-permeability/Figures/dlogP-recolor.png}
+    \caption{ $\Delta$log\perm~of urea (red), benzoic acid (blue) and codeine (black) as a function of simulation time. %For each permeant, $\Delta$log\perm = log\permcom - log\permexp, where log\permcom~and log\permexp~are the computed and experimentally measured log\perm~values, respectively.
+    Results obtained with different methods are indicated using the following symbols: US (circle), REUS (star), ABF (square), MW-ABF (triangle). }
+    \label{fig:deltaP}
+  \end{figure}
