@@ -1,101 +1,15 @@
-
-\title{Simulation-Based Approaches for Determining Membrane Permeability of Small Compounds}
-
-\section{abstract}
-\input{2015-permeability/abstract}
-
-%Outline
-%Introduction (Chris L.)
-%  *permeability - what is it good for?
-%  *solubility-diffusion model (also mention alternative approaches like milestoning)
-%  *prior results from other studies
-%  *need for a more systematic comparison
-%  *how we meet that need here
-%
-
- %        \newpage
-      \input{2015-permeability/intro}
-%         \newpage
-
-%Results
-%  *rationale for the choice of permeants (Yi, Nelson, Chris T.)
-%    -range of expected logPs, experimental data for real membranes (not just PAMPA)
-%    -also explores force field reliability (codeine just run through paramchem for example)
-%
-
-%         \newpage
-      \input{2015-permeability/results-intro}
-%         \newpage
-
-
-%    Section: "Calculated permeabilities" (Yi, Nelson, Chris T.)
-%      -the final, BEST logPs from each method at ~1-1.4 us each (Table 1)
-%      -plots showing the comparison
-%      -what are the errors?  (just numerically at this point)
-%      -does increasing simulation time help?  (not really: case of urea)
-%
-
-  %       \newpage
-      \input{2015-permeability/permeability}
-%         \newpage
-
-%Section: "PMFs"  (JC, Conner)
-%      -notable asymmetry across the membrane center (focus on urea)
-%      -effect of making the US PMFs symmetric using g-wham, along with autocorrelation time estimates
-%      -longer equilibration makes US converge more quickly
-%      -comparison using data from z = (0,36) @ 20 ns/window vs. z = (-36,36) @ 10 ns/window
-
- %        \newpage
-      \input{2015-permeability/PMFs}
-%         \newpage
-
-%    Section: "Diffusivities"  (Jeff, Chris C., Chris R.)
-%       -details of two approaches
-%       -notable "fudge factors" in each (timestep in Bayesian approach, integration cutoff in Langevin/Hummer method)
-%       -using US windows for Hummer method vs. separate simulations with higher restraint
-%       -can diffusivity ever really be known?  (hints at breakdown of solubility-diffusion model)
-%
-
-%         \newpage
-      \input{2015-permeability/diffuse}
-  %       \newpage
-
-%    Section: "Comparison of the methods"  (JC)
-%       -rate of convergence of PMFs
-%       -each method's Dz with same PMF
-%       -each method's PMF with same Dz
-%       -does any method stand out?
-%
-%    Section: Error tolerance and robustness (Conner)
-%       -modeling PMFs / D(z) using simple functions and limited data (e.g., just a couple of points along the curve)
-%       -range of logPs obtained depending on uncertainty
-%
-
-  %       \newpage
-      \input{2015-permeability/compare}
-  %       \newpage
-
-%Conclusions  (JC?)
-%  *difficulties that arise in the calculations - slow membrane reorganization, solute reorientation, etc.  (here and/or maybe intro?)
-%  *what method to use, when, how to prepare?
-%  *where best to invest limited computational time?
-%  *how much sampling is really needed to get within a certain error?  (e.g., +/- 1 log unit)
-%  *take home message: can MD ever be used to reliably predict permeabilities?
-%    -is there a way to streamline the process for high throughput calculations?
-
-   %      \newpage
-      \input{2015-permeability/conclusions}
-  %       \newpage
-
- %        \newpage
-      \input{2015-permeability/methods}
- %        \newpage
+\input{./abstract}
+\input{./intro}
+\input{./results-intro}
+\input{./permeability}
+\input{./PMFs}
+\input{./diffuse}
+\input{./compare}
+\input{./conclusions}
+\input{./methods}
 
 \section*{Supporting Information}
 Theoretical details of application of the Bayesian scheme to MD, analysis of membrane structure from MD simulations. This information is available free of charge via the Internet at http://pubs.acs.org/.
 
 \section*{Acknowledgements}
-CTL acknowledges support from the NIH Molecular Biophysics Training Program (T32-GM008326).  JC was supported by Kansas Bioscience Authority funds to the Institute of Computational Comparative Medicine (ICCM) at Kansas State University and to the Nanotechnology Innovation Center of Kansas State University (NICKS).  JCG acknowledges a CAREER award from the National Science Foundation (MCB-1452464), a Burroughs Wellcome Fund Collaborative Research Travel Grant and supercomputing resources provided by the National Institute for Computational Sciences at Oak Ridge National Lab through the Extreme Science and Engineering Discovery Environment (XSEDE), supported by NSF grant number OCI-1053575.  CNR thanks NSERC of Canada for funding through the Discovery Grant program (Application 418505-2012) and Compute Canada (RAPI: djk-615-ab) for supercomputing resources.  YW acknowledges Project 21403183 supported by National Natural Science Foundation of China.  REA acknowledges a NIH Director’s New Innovator Award DP2 OD007237, the National Biomedical Computation Resource (NBCR) NIH P41 GM103426, and supercomputing resources provided by XSEDE (NSF TG-CHE060073).  REA is a co-founder of Actavalon, Inc.
-
-\bibliography{journals_short,minimalU}
-\end{document}
+CTL acknowledges support from the NIH Molecular Biophysics Training Program (T32-GM008326).  JC was supported by Kansas Bioscience Authority funds to the Institute of Computational Comparative Medicine (ICCM) at Kansas State University and to the Nanotechnology Innovation Center of Kansas State University (NICKS).  JCG acknowledges a CAREER award from the National Science Foundation (MCB-1452464), a Burroughs Wellcome Fund Collaborative Research Travel Grant and supercomputing resources provided by the National Institute for Computational Sciences at Oak Ridge National Lab through the Extreme Science and Engineering Discovery Environment (XSEDE), supported by NSF grant number OCI-1053575.  CNR thanks NSERC of Canada for funding through the Discovery Grant program (Application 418505-2012) and Compute Canada (RAPI: djk-615-ab) for supercomputing resources.  YW acknowledges Project 21403183 supported by National Natural Science Foundation of China.  REA acknowledges a NIH Director's New Innovator Award DP2 OD007237, the National Biomedical Computation Resource (NBCR) NIH P41 GM103426, and supercomputing resources provided by XSEDE (NSF TG-CHE060073).  REA is a co-founder of Actavalon, Inc.

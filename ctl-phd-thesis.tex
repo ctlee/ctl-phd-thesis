@@ -1,3 +1,5 @@
+%!TEX program = pdflatex
+
 % Setup the documentclass
 % default options: 12pt, oneside, final
 %
@@ -17,7 +19,6 @@
 \documentclass[12pt, chapterheads, final]{ucsd}
 
 
-
 % Include all packages you need here.
 % Some standard options are suggested below.
 %
@@ -30,13 +31,17 @@
 
 %% AMS PACKAGES - Chances are you will want some or all
 %    of these if writing a dissertation that includes equations.
+\usepackage{mathtools}
 %  \usepackage{amsmath, amscd, amssymb, amsthm}
+
 
 %% GRAPHICX - This is the standard package for
 %    including graphics for latex/pdflatex.
 \usepackage{scrextend}
 \usepackage{pslatex}
 \usepackage{graphicx}
+\usepackage{subfiles}
+% \graphicspath{{images/}{../images/}}
 
 %% CAPTION
 % This overrides some of the ugliness in ucsd.cls and
@@ -100,7 +105,6 @@
 % and fixes up citations madness
 \usepackage{microtype}  % avoids citations that hang into the margin
 
-
 %% FOOTNOTE-MAGIC
 % Enables footnotes in tables, re-referencing the same footnote multiple times.
 \usepackage{footnote}
@@ -113,18 +117,38 @@
 \usepackage{rotating}  % Enables the sideways environment (NCPW)
 \usepackage{array}  % Enables "m" tabular environment http://ctan.org/pkg/array
 \usepackage{booktabs}  % Enables \toprule  http://ctan.org/pkg/array
+\usepackage{import}
 
-\usepackage[backend=biber,citecounter,natbib,labelnumber]{biblatex}
+\usepackage[style=chem-acs,
+backend=biber,defernumbers=true,sorting=none,
+citecounter,labelnumber]{biblatex}
+\usepackage{xcolor}
+\usepackage{xspace}
+\newcommand{\Red}[1]{{\color{red} #1}}
+\newcommand{\ctl}[1]{{\xspace\color{purple} CTL: #1}}
 
 \newcommand{\perm}{$P_m$}
 \newcommand{\permcom}{$P_m^{\rm com}$}
 \newcommand{\permexp}{$P_m^{\rm exp}$}
+\newcommand{\eg}{\textit{e.g., }}
+\newcommand{\ie}{\textit{i.e., }}
+\newcommand{\mfpt}{$\langle t\rangle$ }
+\newcommand{\mfptm}{\langle t\rangle}
+\newcommand{\parfrac}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\parfracc}[3]{\left(\frac{\partial #1}{\partial #2}\right)_{#3}}
+\newcommand{\degrees}[0]{$^{\circ}$}
+\newcommand{\degree}[0]{$^{\circ}$}
+\newcommand{\surf}[1]{$#1$-surface}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+
 
 \DeclareCiteCommand{\citenum}
   {}
   {\printfield{labelnumber}}
   {}
   {}
+
+\bibliography{journals_short,permeability,mileperm}
 
 \begin{document}
 
@@ -135,44 +159,44 @@
 %  Modify the file template_frontmatter.tex to change these pages.
 \include{frontmatter}
 
-
-
-
-
+\begin{refsection}
+\chapter{Introduction}
+% \printbibliography[segment=\therefsegment]{}
+\end{refsection}
 %% DISSERTATION
 
-% A common strategy here is to include files for each of the chapters. I.e.,
-% Place the chapters is separate files:
-%   chapter1.tex, chapter2.tex
-% Then use the commands:
-%   \include{chapter1}
-%   \include{chapter2}
-%
-% Of course, if you prefer, you can just start with
-%   \chapter{My First Chapter Name}
-% and start typing away.
-\chapter{Just a Test}
-\input{2015-permeability/perm2015}
+\newpage
+\begin{refsection}
+\chapter{Permeability}
+\subimport{2015-permeability/}{perm2015}
+\subimport{2015-permeability/}{perm2015supp}
+\printbibliography[segment=\therefsegment]{}
+\end{refsection}
 
+\newpage
+\begin{refsection}
+\chapter{Milestoning Permeability}
+\subimport{2016-milestone_perm/}{mileperm}
+% \subimport{2016-milestone_perm/}{mileperm2016supp}
+\printbibliography[segment=\therefsegment]{}
+\end{refsection}
 
 
 %% APPENDIX
 \appendix
 \chapter{Final notes}
-What to do about things \cite{Martin_1983}.  What did he say \cite{Rilling_Insel_1999}.
-  Remove me in case of abdominal pain.
-
+FOO STUFF
 
 
 %% END MATTER
 % \printindex %% Uncomment to display the index
 %               but haven't cited in the braces.
-\bibliographystyle{alpha}  %% This is just my personal favorite style.
+% \bibliographystyle{alpha}  %% This is just my personal favorite style.
 %                              There are many others.
 %\setlength{\bibleftmargin}{0.25in}  % indent each item
 %\setlength{\bibindent}{-\bibleftmargin}  % unindent the first line
 %\def\baselinestretch{1.0}  % force single spacing
 %\setlength{\bibitemsep}{0.16in}  % add extra space between items
-\bibliography{template}
+% \bibliography{template}
 \end{document}
 

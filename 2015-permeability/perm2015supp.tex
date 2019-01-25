@@ -1,92 +1,3 @@
-\documentclass[usetitle=true,journal=jcisd8,manuscript=suppinfo,biochem=true]{achemso}
-\setkeys{acs}{usetitle=true}
-\usepackage[version=3]{mhchem}
-\usepackage{color}
-%\documentclass[11pt, titlepage]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
-\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
-%\geometry{landscape}                		% Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{setspace}
-\usepackage{graphicx}
-%\usepackage{citesort}
-%\usepackage{boldbib,notboldbib}
-%\usepackage{citebf}
-
-%\pdfminorversion=4
-
-\title{Simulation-Based Approaches for Determining Membrane Permeability of Small Compounds}
-
-% author list
-% Conner Herndon (GT)
-% James C. Gumbart (GT)
-% Anna Pavlova (GT)
-% Yi Wang (CUHK)
-% Nelson Leung (CUHK)
-% Chris Tung (CUHK)
-% Rommie Amaro (UCSD)
-% Rob Swift (UCSD)
-% Chris Lee (UCSD)
-% Christophe Chipot (UIUC)
-% Jeffrey Comer (Kansas)
-% Chris Rowley (Memorial)
-
-\author{Christopher T. Lee} 
-\affiliation[Dept. of Chemistry and Biochemistry, University of California, San Diego]{Department of Chemistry and Biochemistry, University of California, San Diego, 9500 Gilman Drive, La Jolla, California 92093-0340, United States}
-
-\author{Jeffrey Comer} 
-\affiliation[Dept. of Anatomy and Physiology, Kansas State University]{ Nanotechnology Innovation Center of Kansas State, Institute of Computational Comparative Medicine, Department of Anatomy and Physiology, Kansas State University, P-213 Mosier Hall, Manhattan, Kansas 66506, United States}
-\email{jeffcomer@ksu.edu}
-
-\author{Conner Herndon} 
-\affiliation[School of Physics, Georgia Institute of Technology]{School of Physics, Georgia Institute of Technology, 837 State Street, Atlanta, Georgia 30332, United States}
-
-\author{Nelson Leung} 
-\affiliation{Department of Physics, The Chinese University of Hong Kong, Shatin, Hong Kong SAR, China}
-
-\author{Anna Pavlova}
-\affiliation[School of Physics, Georgia Institute of Technology]{School of Physics, Georgia Institute of Technology, 837 State Street, Atlanta, Georgia 30332, United States}
-
-\author{Robert V. Swift} 
-\affiliation[Dept. of Chemistry and Biochemistry, University of California, San Diego]{Department of Chemistry and Biochemistry, University of California, San Diego, 9500 Gilman Drive, La Jolla, California 92093-0340, United States}
-
-\author{Chris Tung} 
-\affiliation{Department of Physics, The Chinese University of Hong Kong, Shatin, Hong Kong SAR, China}
-
-\author{Christopher N. Rowley} 
-\affiliation[Dept. of Chemistry, Memorial University of Newfoundland]{Department of Chemistry, Memorial University of Newfoundland, St. John's, NL A1B 3X7 Canada}
-
-\author{Rommie E. Amaro} 
-\affiliation[Dept. of Chemistry and Biochemistry, University of California, San Diego]{Department of Chemistry and Biochemistry, University of California, San Diego, 9500 Gilman Drive, La Jolla, California 92093-0340, United States}
-\email{ramaro@ucsd.edu}
-
-\author{Christophe Chipot} 
-\affiliation[University of Illinois at Urbana-Champaign]{Laboratoire International Associ\'e Centre National de la Recherche Scientifique and University of Illinois at Urbana-Champaign, UMR n$^\circ$7565, Universit{\'e} de Lorraine, B.P. 70239, 54506 Vand{\oe}uvre-l{\`e}s-Nancy, France} 
-\alsoaffiliation[Dept. of Physics, University of Illinois at Urbana-Champaign]{Beckman Institute for Advanced Science and Technology and Department of Physics, University of Illinois at Urbana-Champaign, 405 North Mathews, Urbana, Illinois 61801, United States}
-\email{chipot@ks.uiuc.edu}
-
-\author{Yi Wang}
-\affiliation{Department of Physics, The Chinese University of Hong Kong, Shatin, Hong Kong SAR, China}
-\alsoaffiliation{Shenzhen Research Institute, The Chinese University of Hong Kong, Shatin, Hong Kong SAR, China}
-\email{yiwang@phy.cuhk.edu.hk}
-
-\author{James C. Gumbart}
-\affiliation[School of Physics, Georgia Institute of Technology]{School of Physics, Georgia Institute of Technology, 837 State Street, Atlanta, Georgia 30332, United States}
-\alsoaffiliation[School of Chemistry, Georgia Institute of Technology]{School of Chemistry, Georgia Institute of Technology, 837 State Street, Atlanta, Georgia 30332, United States}
-\email{gumbart@physics.gatech.edu}
-
-
-
-\begin{document}
-%\maketitle
-%\begin{doublespacing}
-
-\setcounter{page}{1}
-
 \section*{Supplementary Methods}
 \subsection*{Application of the Bayesian scheme to MD}
   \par To infer from the trajectory the intrinsic system force and the diffusivity, the latter are represented by cubic interpolants, which admit a continuous first derivative. These interpolants are evaluated at equally spaced values, $z_i$, of the transition coordinate. Under these premises, the position-dependent diffusivity writes,
@@ -95,7 +6,7 @@
 D(z) = a_i^{(0)} + a_i^{(1)} \left(\frac{z-z_i}{h}\right) + a_i^{(2)} \left(\frac{z-z_i}{h}\right)^2 + a_i^{(3)} \left(\frac{z-z_i}{h}\right)^3
 \end{equation}
 %
-  where $a_i^{(0)}$, $a_i^{(1)}$, $a_i^{(2)}$ and $a_i^{(3)}$ are functions of $a_{i-1}$, $a_i$, $a_{i+1}$ and $a_{i+2}$, that is a set of parameters $\{ a_i \}$. The intrinsic system force, which depends on $z$, can be expressed in a similar fashion, as a function of a set of parameters $\{ b_i \}$. The probability $P[(z_{k+1}, t_{k+1} | z_k, t_k) | F(z,t), D(z)]$ can be interpreted as the likelihood of observing the transition from $z_k$ at time $t_k$ to $z_{k+1}$ at time $t_{k+1}$ under the action of a time-dependent bias, $F_{{\rm bias}, k}$, given the sets of parameters $\{ a_i \}$ and $\{ b_i \}$. $z_k$ and $F_{{\rm bias}, k}$ are data readily available from the trajectory. By virtue of Bayes' theorem, the posterior probability of the parameters $\{ a_i \}$ and $\{ b_i \}$, given $z_k$ and $F_{{\rm bias}, k}$, can be expressed as, 
+  where $a_i^{(0)}$, $a_i^{(1)}$, $a_i^{(2)}$ and $a_i^{(3)}$ are functions of $a_{i-1}$, $a_i$, $a_{i+1}$ and $a_{i+2}$, that is a set of parameters $\{ a_i \}$. The intrinsic system force, which depends on $z$, can be expressed in a similar fashion, as a function of a set of parameters $\{ b_i \}$. The probability $P[(z_{k+1}, t_{k+1} | z_k, t_k) | F(z,t), D(z)]$ can be interpreted as the likelihood of observing the transition from $z_k$ at time $t_k$ to $z_{k+1}$ at time $t_{k+1}$ under the action of a time-dependent bias, $F_{{\rm bias}, k}$, given the sets of parameters $\{ a_i \}$ and $\{ b_i \}$. $z_k$ and $F_{{\rm bias}, k}$ are data readily available from the trajectory. By virtue of Bayes' theorem, the posterior probability of the parameters $\{ a_i \}$ and $\{ b_i \}$, given $z_k$ and $F_{{\rm bias}, k}$, can be expressed as,
 %
 \begin{equation}
 \label{Bayes}
@@ -123,7 +34,7 @@ P(z_k, F_{{\rm bias}, k} | \{ a_i \}, \{ b_i \}) \times P_{\rm prior}(\{ a_i \},
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{Figures/cod_bowedmembrane}
-	\caption{A VMD rendered snapshot from the US of codeine constrained at $z=-20$. 
+	\caption{A VMD rendered snapshot from the US of codeine constrained at $z=-20$.
 	%YW: This more looks like z=20?
 	%CTL: The snapshot is indeed from z=-20. It seems that when constrained slightly away from the bilayer (~z=18). The hydrophobic rings of codeine preferentially sit in the apolar lipids causing bowing of the leaflet. This can be visualized by the total probability density plots of codeine/benzoic acid available upon request.
 	The lipids in center have been hidden, and lateral periodic images shown. Phosphates are shown as yellow spheres illustrating the bowing of the top leaflet to solubilize the hydrophobic rings. Water molecules within 5~\AA\ of codeine are shown as licorice, while all other waters are lines.}
@@ -141,7 +52,7 @@ P(z_k, F_{{\rm bias}, k} | \{ a_i \}, \{ b_i \}) \times P_{\rm prior}(\{ a_i \},
 
 \begin{figure}[htbp]
 \begin{center}
-	\includegraphics[width=\textwidth]{Figures/distributions1}
+	\includegraphics[width=0.9\textwidth]{Figures/distributions1}
 	\caption{The normalized probability density of phosphates and water molecules within $5$~\AA\, in the $x$ and $y$ dimensions of urea are shown as a heatmap. The window reflects the $z$-value reference of the US harmonic constraint. A dotted line is placed at window $z=0$ for visual reference. Residual non-equilibrium effects can be seen as deviations of the membrane divot from $z=0$. It appears that both phosphate and water distributions approach the middle after ~30 ns of sampling. The vertical black lines highlight the DMPC average phosphate position at equilibrium without permeant. Note the diagonal observed from the upper left to bottom right of the water distribution is not an artifact. The constrained permeant occupies this position and displaces some waters.}
 	\label{fig:distributions}
 \end{center}
@@ -255,7 +166,7 @@ void subtract_average(double *y, int nSamples)
 
   for(int i=0;i<nSamples;++i)
     avg+=y[i];
- 
+
   avg/=nSamples;
 
   for(int i=0;i<nSamples;++i)
@@ -300,7 +211,7 @@ vector<double> readSeries(char *fname, int &numSamples, int field)
   istringstream iss;
   int begin;
 
- 
+
   if(field==1)
     begin=15;
   else if(field==2)
@@ -413,7 +324,7 @@ LenD = (length(xx3D)-length(xx2D))/2;
 %difference between bound and membrane
 xxD = [(min(xx2D)-LenD):(min(xx2D)-1) xx2D (max(xx2D)+1):(max(xx2D)+LenD)];
 %make location field from a to b
-D = [(zeros(1,LenD)+D(1)) D (zeros(1,LenD)+D(1))]; 
+D = [(zeros(1,LenD)+D(1)) D (zeros(1,LenD)+D(1))];
 %outer membrane region has W=0
 D = D * 10^-6;%(cm^2/s)
 D = D * 10^16;%(A^2/s)
@@ -444,7 +355,7 @@ W = [zeros(1,Len) W zeros(1,Len)]; %outer membrane region has W=0
         integrand(j) = exp(W(j)./beta)./D(j);%(s/A^2)
     end
 
-%% Getting Resistance    
+%% Getting Resistance
 integrand = integrand .* 10.^16;%(s/cm^2)
 integral = trapz(xx.*10.^-8,integrand);%(s/cm)
 integral = integral(end);%resistance (s/cm)
@@ -496,8 +407,3 @@ cA{1,2} = 1./integral(1);
 cA{2,2} = log10(1./integral(1));
 end
 \end{verbatim}
-
-\clearpage
-
-\bibliography{journals_short,minimalU}
-\end{document}  
