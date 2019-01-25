@@ -1,3 +1,4 @@
+\section{Abstract}
 \par Prediction of passive permeation rates of solutes across lipid bilayers is important to drug design, toxicology and other biological processes such as signaling. The inhomogeneous solubility-diffusion (ISD) equation is traditionally used to relate the position-dependent potential of mean force and diffusivity to the permeability coefficient. The ISD equation is derived via the Smoluchowski equation and assumes over-damped system dynamics. It has been suggested that the complex membrane environment may exhibit more complicated damping conditions. Here we derive a variant of the inhomogeneous solubility diffusion equation as a function of the mean first passage time (MFPT) and show how milestoning, a method that can estimate kinetic quantities of interest, can be used to estimate the MFPT of membrane crossing and, by extension, the permeability coefficient. We further describe a second scheme, agnostic to the damping condition, to estimate the permeability coefficient from milestoning results or other methods that compute a probability of membrane crossing. The derived relationships are tested using a 1-D Langevin dynamics toy system and confirmed that the presented theoretical methods can be used to estimate permeabilities given simulation and milestoning results.
 
     \section{Introduction}
@@ -19,9 +20,8 @@
     \par The theory of milestoning is a promising new approach to study molecular processes by employing many unbiased short independent simulations in subregions of phase space to predict thermodynamic and kinetic properties of interest. Salient descriptions of milestoning theory can be found in Refs.~\citenum{Faradjian2004,Majek2010,Kirmizialtin2011}. Previously, milestoning has been applied to the permeability problem by Cardenas et al., studying the permeation of block tryptophan across a membrane\cite{Cardenas2012}. Cardenas et al. later studied the permeation of small peptide NATA across a DOPC bilayer using milestoning. In their later work, they proposed a scheme to estimate the permeability coefficient\cite{Cardenas2013,Cardenas2014}. This scheme is comprised of three steps involving: 1) estimating the diffusivity of the small molecule in bulk, 2) the measurement of the steady state flux from bulk into the membrane, 3) estimation of permeant crossing probability. We will show that the additional calculations in step 2 are not necessary and the permeability can be computed directly from the milestoning results and bulk diffusivity.
 
     \par In this work we derive two methods for obtaining permeability coefficients based on milestoning results. The first derivation is a new formulation of the ISD relating the MFPT to the permeability coefficient $P$ assuming over-damped dynamics. The second derivation makes no assumptions about system damping, and relates $P$ to the transition probability of crossing a membrane over diffusing to a previous position in bulk solvent. We evaluate the compatibility of using either approach depending on damping dynamics using a 1-D Langevin dynamics system across various $W(z)$ and $D(z)$ profiles, showing that the new relations yield solutions in good accord with previous results.
-\clearpage{}
 
-    \clearpage{}\section{Theory}
+\section{Theory}
     \subsection{Relating permeability to mean first passage time via the Smoluchowski equation}
         \begin{figure}[htbp]
         \begin{center}
@@ -194,9 +194,9 @@
             \label{eq:permrho}
         \end{equation}
         For subsequent discussion we refer to Eq.~\ref{eq:permmfpt} as the MFPT in ISD relation (MFPT-ISD), and Eq.~\ref{eq:permrho} as the permeability based on crossing probability (PBCP).
-\clearpage{}
 
-    \clearpage{}\section*{Methods}
+
+\section{Methods}
     \paragraph{Langevin Dynamics Model} To demonstrate the validity of the above relations we have developed a 1-D Langevin dynamics model to generate sample trajectories over a user specified PMF and viscosity profile. All code used has been made available through GitHub at \url{https://github.com/ctlee/langevin-milestoning}. The profiles are represented using interpolated cubic Hermite polynomials shown in Fig~\ref{fig:profiles}. Four different systems are considered, flat, small-barrier, urea-like barrier and codeine-like. The flat system emulated diffusion in bulk with viscosity chosen to match water. For the small-barrier system, an arbitrary barrier height was chosen such that brute force computation could yield successful crossings. Meanwhile the urea- and codeine-like systems are interpolated from profiles from Ref.~\citenum{Lee2016}. To facilitate convergence of calculations, the viscosity of the membrane environment is set to $0.005$~$kg m^{-1}s^{-1}$. Each of the membrane simulations employ the same viscosity profiles. The hydrodynamic radius and mass of the particle were arbitarily chosen for the flat and small-barrier cases while the urea and codeine cases use molecular weight and a radius as predicted by software \texttt{HydroPro}\cite{Ortega2011}. The parameters used in each case are shown in Table~\ref{table:SimulationParameters}. The diffusivity along the profile, $D$, can be calculated from the Stokes-Einstein relation
     \begin{equation}
         D = \frac{k_BT}{6\pi\eta R_{hyd}} = \frac{k_BT}{c},
@@ -349,7 +349,7 @@
 \clearpage{}
 
     \clearpage{}\section*{Results and Discussion}
-    \par Below we report the computed permeability coefficients and MFPTs according to the six methods: 1) the ISD, 2) ISD from MFPT, 3) ISD with brute forced MFPT, 4) milestoning estimated \mfpt in ISD, 5) brute force with no assumptions, and 6) milestoning with no assumptions in Table~\ref{table:results}. Note again that the brute forced MFPT is performed with a reflecting boundary condition at the starting position while no such condition is applied for the brute force crossing probabilities. This explains the reported brute force MFPT without any crossings observed for the urea system.
+    \par Below we report the computed permeability coefficients and MFPTs according to the six methods: 1) the ISD, 2) ISD from MFPT, 3) ISD with brute forced MFPT, 4) milestoning estimated \mfpt in ISD, 5) brute force with no assumptions, and 6) milestoning with no assumptions in Table~\ref{table:milepermresults}. Note again that the brute forced MFPT is performed with a reflecting boundary condition at the starting position while no such condition is applied for the brute force crossing probabilities. This explains the reported brute force MFPT without any crossings observed for the urea system.
 
 
 \begin{table}[htbp]
@@ -386,7 +386,7 @@
     \end{tabular}
 \end{sideways}
 \caption{The computed MFPT and permeability coefficients according to each method. Reported error bars for the MFPT corresponds to the RMSE while the error for the crossing probability is from bootstrapping. Error in the brute force log permeability is estimated by the mean log($P$) difference of the high and low confidence intervals. $^{\dagger}$ We observed no brute force crossing transitions for the urea system. The values in parentheses represent the number of forward-phase trajectories sampled in each case.}
-\label{table:results}
+\label{table:milepermresults}
 \end{table}
 
     \par The distribution of the mean first passage times is shown in Fig.~\ref{fig:mfpts}. Due to the highly tailed nature of the MFPT, it is difficult to estimate it from brute force simulations. Milestoning greatly aids in the computation of the first passage times by reducing the total distance between points of interest. Using clever statistics, milestoning theory is capable of reconstructing the MFPT from many short simulations. For all cases, we obtain MFPTs in good agreement with the theoretical results. Deviations in both the brute force and milestoning cases are likely caused by insufficient sampling. Sampling convergence for the milestoning can be visualized by deviations in the milestoning-derived PMF from the actual PMF.
