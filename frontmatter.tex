@@ -1,6 +1,9 @@
+%!TEX root=./ctl-phd-thesis.tex
+
+
 % No symbols, formulas, superscripts, or Greek letters are allowed
 % in your title.
-\title{The Title Of The Dissertation}
+\title{Investigating Molecular Transport Properties Using Computational Modeling}
 
 \author{Christopher Ting-Kuang Lee}
 \degreeyear{2019}
@@ -53,27 +56,21 @@ Professor Francesco Paesani\\
 %    3. If you don't want a dedication, it's not required.
 %
 %
-\begin{dedication}
-  To two, the loneliest number since the number one.
-\end{dedication}
+% \begin{dedication}
+
+% \end{dedication}
 
 
-% \begin{mydedication} % You are responsible for formatting here.
-%   \vspace{1in}
-%   \begin{flushleft}
-% 	To me.
-%   \end{flushleft}
-%
-%   \vspace{2in}
-%   \begin{center}
-% 	And you.
-%   \end{center}
-%
-%   \vspace{2in}
-%   \begin{flushright}
-% 	Which equals us.
-%   \end{flushright}
-% \end{mydedication}
+\begin{mydedication} % You are responsible for formatting here.
+  \begin{flushleft}
+  \vspace{1cm}
+  \textbf{To my parents Serena, and Tsengdar:} for the endless support and encouragement.\\
+  \textbf{To my sister Gloria:} for challenging me to be my best.\\[1cm]
+  \textbf{To Jim, and Tanya:} for sharing their home and welcoming me.\\[1cm]
+  \textbf{To Linda, and Cam:} without your influence I am not sure I would be the scientist I am today.\\[3cm]
+  \textbf{To Bryn:} for the courage to pursue my dreams in spite of my doubts. As a wise man once wrote, ``for keeping me human as I become a scientist.''\\[3cm]
+  \end{flushleft}
+\end{mydedication}
 
 
 
@@ -81,11 +78,11 @@ Professor Francesco Paesani\\
 %
 %  The same choices that applied to the dedication apply here.
 %
-\begin{epigraph} % The style file will position the text for you.
-  \emph{A careful quotation\\
-  conveys brilliance.}\\
-  ---Smarty Pants
-\end{epigraph}
+% \begin{epigraph} % The style file will position the text for you.
+%   \emph{A careful quotation\\
+%   conveys brilliance.}\\
+%   ---Smarty Pants
+% \end{epigraph}
 
 % \begin{myepigraph} % You position the text yourself.
 %   \vfil
@@ -114,10 +111,22 @@ Professor Francesco Paesani\\
 %  the OGS Formatting Manual for more information.
 %
 \begin{acknowledgements}
- Thanks to whoever deserves credit for Blacks Beach, Porters Pub, and
- every coffee shop in San Diego.
+\par Rommie, Andy, Rob Swift, Jesper Sorensen
+\par Ben Jagger
+\par Jeff Wagner cynicism, Jamie Schiffer compassion, Alisha Caliman
+\par Bryn
 
- Thanks also to hottubs.
+\par Cam, Linda, Michael Shirts
+
+\par Steffen Lindert, Dan Mermelstein, Giulia Palermo, Clarisse Ricci, John Che, John Moody, Yinglong Miao, Robert Malmstrom, Olivia \& Levi Pierce, Lorenzo Casalino,
+
+\par Emilia, Christian, Sophia, Siti, Pek, Sasha, Vicki Feher, Garrett Chan, They Thien Nguyen, Tavina Offutt, Adam Van Wart, Prasantha Vemu, Celia Wong, Lane Votapka,
+
+\par \cref{chap:permeability} is a modified reprint of the material as it appears in ``Lee, C. T.; Comer, J.; Herndon, C.; Leung, N.; Pavlova, A.; Swift, R. V.; Tung, C.; Rowley, C. N.; Amaro, R. E.; Chipot, C.; et al. Simulation-Based Approaches for Determining Membrane Permeability of Small Compounds. J. Chem. Inf. Model. 2016, 56 (4), 721–733. https://doi.org/10.1021/acs.jcim.6b00022.''
+The dissertation author was the primary investigator and author of this paper.
+
+\par \cref{chap:mileperm} is a modified reprint of the material as it appears in ``Votapka, L. W.; Lee, C. T.; Amaro, R. E. Two Relations to Estimate Membrane Permeability Using Milestoning. J. Phys. Chem. B 2016, 120 (33), 8606–8616. https://doi.org/10.1021/acs.jpcb.6b02814.''
+        The dissertation author was the co-primary investigator and author of this paper.
 \end{acknowledgements}
 
 
@@ -128,16 +137,29 @@ Professor Francesco Paesani\\
 %
 \begin{vitapage}
 \begin{vita}
-  \item[2002] B.~S. in Mathematics \emph{cum laude}, University of Southern North Dakota, Hoople
-  \item[2002-2007] Graduate Teaching Assistant, University of California, San Diego
-  \item[2007] Ph.~D. in Mathematics, University of California, San Diego
+  \item[2010-2011] Undergraduate Research Fellow\\ Shirts Lab, Department of Chemical Engineering, University of Virginia
+  \item[2011] Bachelor of Science in Chemistry\\University of Virginia
+  \item[2011] Bachelors of Arts in Computer Science\\
+  University of Virginia
+  \item[2011] Graduate Research Fellow\\
+  Columbus and Mura Labs, Department of Chemistry, University of Virginia
+  \item[2013] Master of Chemistry With a Specialization in Biochemistry\\ University of Virginia
+  \item[2013-2019] Graduate Research Fellow\\ Amaro and McCammon Labs, University of California, San Diego
+  \item[2019] Doctor of Philosophy in Chemistry\\ University of California, San Diego
 \end{vita}
 \begin{publications}
-  \item Your Name, ``A Simple Proof Of The Riemann Hypothesis'', \emph{Annals of Math}, 314, 2007.
-  \item Your Name, Euclid, ``There Are Lots Of Prime Numbers'', \emph{Journal of Primes}, 1, 300 B.C.
+  \item Malmstrom, R. D.; \textbf{Lee, C. T.}; Van Wart, A. T.; Amaro, R. E. Application of Molecular-Dynamics Based Markov State Models to Functional Proteins. J. Chem. Theory Comput. 2014, 10 (7), 2648–2657. https://doi.org/10.1021/ct5002363.
+  \item Gray, C.; Price, C. W.; \textbf{Lee, C. T.}; Dewald, A. H.; Cline, M. A.; McAnany, C. E.; Columbus, L.; Mura, C. Known Structure, Unknown Function: An Inquiry-Based Undergraduate Biochemistry Laboratory Course. Biochem. Mol. Biol. Educ. 2015, 43 (4), 245–262. https://doi.org/10.1002/bmb.20873.
+  \item Wagner, J. R.$^{\dagger}$; \textbf{Lee, C. T.$^{\dagger}$}; Durrant, J. D.; Malmstrom, R. D.; Feher, V. A.; Amaro, R. E. Emerging Computational Methods for the Rational Discovery of Allosteric Drugs. Chem. Rev. 2016, 116 (11), 6370–6390. https://doi.org/10.1021/acs.chemrev.5b00631.
+  \item Votapka, L. W.$^{\dagger}$; \textbf{Lee, C. T.$^{\dagger}$}; Amaro, R. E. Two Relations to Estimate Membrane Permeability Using Milestoning. J. Phys. Chem. B 2016, 120 (33), 8606–8616. https://doi.org/10.1021/acs.jpcb.6b02814.
+  \item \textbf{Lee, C. T.}; Comer, J.; Herndon, C.; Leung, N.; Pavlova, A.; Swift, R. V.; Tung, C.; Rowley, C. N.; Amaro, R. E.; Chipot, C.; et al. Simulation-Based Approaches for Determining Membrane Permeability of Small Compounds. J. Chem. Inf. Model. 2016, 56 (4), 721–733. https://doi.org/10.1021/acs.jcim.6b00022.
+  \item \textbf{Lee, C. T.}; Amaro, R. E. Exascale Computing: A New Dawn for Computational Biology. Comput. Sci. Eng. 2018, 20 (5), 18–25. https://doi.org/10.1109/MCSE.2018.05329812.
+  \item Jagger, B. R.; \textbf{Lee, C. T.}; Amaro, R. E. Quantitative Ranking of Ligand Binding Kinetics with a Multiscale Milestoning Simulation Approach. J. Phys. Chem. Lett. 2018, 9 (17), 4941–4948. https://doi.org/10.1021/acs.jpclett.8b02047.
+  \item Taylor, B. C.; \textbf{Lee, C. T.}; Amaro, R. E. Structural Basis for Ligand Modulation of the CCR2 Conformational Landscape. bioRxiv 2018, 392068. https://doi.org/10.1101/392068. \textit{Submitted}
+  \item \textbf{Lee, C. T.$^{\dagger}$}; Moody, J. B.$^{\dagger}$; Amaro, R. E.; McCammon, J. A.; Holst, M. The Implementation of the Colored Abstract Simplicial Complex and Its Application to Mesh Generation. 2018. \textit{Submitted}
+  \item \textbf{Lee, C. T.$^{\dagger}$}; Laughlin, J. G.$^{\dagger}$, Angliviel de La Beaumelle, N.; Amaro, R. E.; McCammon, J. A.; Ramamoorthi, R.; Holst, M. J.; Rangamani, P. GAMer 2: A System for 3D Mesh Processing of Cellular Electron Micrographs. bioRxiv 2019. \textit{In Preparation}
 \end{publications}
 \end{vitapage}
-
 
 %% ABSTRACT
 %
@@ -147,6 +169,5 @@ Professor Francesco Paesani\\
 \begin{abstract}
   This dissertation will be abstract.
 \end{abstract}
-
 
 \end{frontmatter}

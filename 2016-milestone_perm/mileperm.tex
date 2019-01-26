@@ -1,7 +1,9 @@
+%!TEX root=../ctl-phd-thesis.tex
+
 \section{Abstract}
 \par Prediction of passive permeation rates of solutes across lipid bilayers is important to drug design, toxicology and other biological processes such as signaling. The inhomogeneous solubility-diffusion (ISD) equation is traditionally used to relate the position-dependent potential of mean force and diffusivity to the permeability coefficient. The ISD equation is derived via the Smoluchowski equation and assumes over-damped system dynamics. It has been suggested that the complex membrane environment may exhibit more complicated damping conditions. Here we derive a variant of the inhomogeneous solubility diffusion equation as a function of the mean first passage time (MFPT) and show how milestoning, a method that can estimate kinetic quantities of interest, can be used to estimate the MFPT of membrane crossing and, by extension, the permeability coefficient. We further describe a second scheme, agnostic to the damping condition, to estimate the permeability coefficient from milestoning results or other methods that compute a probability of membrane crossing. The derived relationships are tested using a 1-D Langevin dynamics toy system and confirmed that the presented theoretical methods can be used to estimate permeabilities given simulation and milestoning results.
 
-    \section{Introduction}
+\section{Introduction}
     \par Passive transport of solutes across membranes is of key importance for processes such as the uptake and excretion of drug compounds. Poor permeability can cause unfavorable pharmacokinetics or bioavailability leading to drug attrition\cite{Kola2004}. From this perspective of drug design, methods which provide molecular level insight into the permeation process are of high interest. As such, many physical models of permeability have been developed; these methods are recently reviewed\cite{Swift2013}.
 
     \par Mathematically, the permeability coefficient $P$ of a solute is described by relating the flux per unit area, $J$, across a bilayer and the concentration gradient, $\Delta u$, as
@@ -26,7 +28,7 @@
         \begin{figure}[htbp]
         \begin{center}
             \includegraphics[width=0.8\textwidth]{Figures/ISD}
-            \caption{Schematic of membrane permeability showing the concentration of permeant with respect to position. We define that the concentration at $z=b$ is $u_0$ and $z=a$ is $0$. Assuming over-damped dynamics along with these boundary conditions, we get the inhomogeneous solubility-diffusion equation and its relation to passage time.}
+            \caption[Schematic of boundary conditions for the inhomogenous solubility-diffusion equation]{Schematic of membrane permeability showing the concentration of permeant with respect to position. We define that the concentration at $z=b$ is $u_0$ and $z=a$ is $0$. Assuming over-damped dynamics along with these boundary conditions, we get the inhomogeneous solubility-diffusion equation and its relation to passage time.}
             \label{fig:ISD}
         \end{center}
         \end{figure}
@@ -127,7 +129,7 @@
         \begin{figure}[htbp]
         \begin{center}
             \includegraphics[width=0.8\textwidth]{Figures/probplot}
-            \caption{Shown here is the milestoning system setup. The stationary concentrations in the bulk $u_1$ and $u_2$ are subject to boundary conditions at $z=0$ and $z=b$. A permeant that hits the \surf{b} has a probability of $\rho$ to cross the membrane and a probability $1-\rho$ to return to the \surf{q}. These boundaries and domains are not necessarily drawn to scale.}
+            \caption[Boundary conditions for computing permeability using milestoning]{Shown here is the milestoning system setup. The stationary concentrations in the bulk $u_1$ and $u_2$ are subject to boundary conditions at $z=0$ and $z=b$. A permeant that hits the \surf{b} has a probability of $\rho$ to cross the membrane and a probability $1-\rho$ to return to the \surf{q}. These boundaries and domains are not necessarily drawn to scale.}
             \label{fig:prob}
         \end{center}
         \end{figure}
@@ -207,7 +209,7 @@
     \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=0.8\textwidth]{Figures/profiles.png}
-        \caption{The PMF and diffusivity profiles used for each system. Each profile is represented using a piecewise cubic Hermite polynomial interpolated from a set of user specified values.}
+        \caption[PMF and diffusivity profiles assigned for toy systems]{The PMF and diffusivity profiles used for each system. Each profile is represented using a piecewise cubic Hermite polynomial interpolated from a set of user specified values.}
         \label{fig:profiles}
     \end{center}
     \end{figure}
@@ -230,8 +232,9 @@
     \end{equation}
     where $F_d$ is the frictional force. For additional information regarding the implementation details of the Langevin dynamics engine please refer to the SI.
 
-    \begin{table}[h]
+    \begin{table}[ht]
     \centering
+    \caption{Parameter inputs to the Langevin dynamics simulations for each case.}
     {
     \begin{tabular}{|c|c|c|c|c|}
         \hline
@@ -243,7 +246,6 @@
         Milestone dt (s)    & 1\e{-15} & 1\e{-15}      & 1\e{-15} & 1\e{-15} \\\hline
         \end{tabular}
     }
-    \caption{Parameter inputs to the Langevin dynamics simulations for each case.}
     \label{table:SimulationParameters}
     \end{table}
 
@@ -346,15 +348,15 @@
         \end{equation}
 
         \par The error is sampled according to the scheme found in Ref.~\citenum{Votapka2015}. For all milestoning values, we resample 1000 times and report the standard deviation of each measurable.
-\clearpage{}
 
-    \clearpage{}\section*{Results and Discussion}
+\section{Results and Discussion}
     \par Below we report the computed permeability coefficients and MFPTs according to the six methods: 1) the ISD, 2) ISD from MFPT, 3) ISD with brute forced MFPT, 4) milestoning estimated \mfpt in ISD, 5) brute force with no assumptions, and 6) milestoning with no assumptions in Table~\ref{table:milepermresults}. Note again that the brute forced MFPT is performed with a reflecting boundary condition at the starting position while no such condition is applied for the brute force crossing probabilities. This explains the reported brute force MFPT without any crossings observed for the urea system.
 
 
 \begin{table}[htbp]
-\tiny
+\small
 \centering
+\caption{The computed MFPT and permeability coefficients according to each method. Reported error bars for the MFPT corresponds to the RMSE while the error for the crossing probability is from bootstrapping. Error in the brute force log permeability is estimated by the mean log($P$) difference of the high and low confidence intervals. $^{\dagger}$ We observed no brute force crossing transitions for the urea system. The values in parentheses represent the number of forward-phase trajectories sampled in each case.}
 \begin{sideways}
 \begin{tabular}{|c|p{2.25cm}|p{2.25cm}|p{2.25cm}|p{2.25cm}|}
     \hline
@@ -385,7 +387,6 @@
     6) Milestoning PBCP     & 1.37 $\pm$ 0.03 & 1.13 $\pm$ 0.02  & -4.13 $\pm$ 0.06 & 1.54 $\pm$ 0.04\\\hline
     \end{tabular}
 \end{sideways}
-\caption{The computed MFPT and permeability coefficients according to each method. Reported error bars for the MFPT corresponds to the RMSE while the error for the crossing probability is from bootstrapping. Error in the brute force log permeability is estimated by the mean log($P$) difference of the high and low confidence intervals. $^{\dagger}$ We observed no brute force crossing transitions for the urea system. The values in parentheses represent the number of forward-phase trajectories sampled in each case.}
 \label{table:milepermresults}
 \end{table}
 
@@ -394,7 +395,7 @@
     \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=0.8\textwidth]{Figures/mfptdist}
-        \caption{Shown here are the distributions of the brute force MFPTs for systems (a) flat, (b) small-barrier, (c) urea, and (d) codeine. Due the presence of large barriers in the urea and codeine cases, the sampling is limited. The red points and error bars indicate the mean and boostrapped 95\% confidence intervals of the MFPT.}
+        \caption[Distributions of brute force MFPTS for systems (a) flat, (b) small-barrier, (c) urea, and (d) codeine]{Shown here are the distributions of the brute force MFPTs for systems (a) flat, (b) small-barrier, (c) urea, and (d) codeine. Due the presence of large barriers in the urea and codeine cases, the sampling is limited. The red points and error bars indicate the mean and boostrapped 95\% confidence intervals of the MFPT.}
         \label{fig:mfpts}
     \end{center}
     \end{figure}
@@ -404,7 +405,7 @@
     \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=0.8\textwidth]{Figures/calcpmf}
-        \caption{PMF profiles of each system: (a) flat, (b) small-barrier, (c) urea, and (d) codeine as estimated by milestoning, dotted red. The actual PMF is shown in black.}
+        \caption[PMF profiles of each system (a) flat, (b) small-barrier, (c) urea, and (d) codeine]{PMF profiles of each system: (a) flat, (b) small-barrier, (c) urea, and (d) codeine as estimated by milestoning, dotted red. The actual PMF is shown in black.}
         \label{fig:calcpmf}
     \end{center}
     \end{figure}
@@ -419,21 +420,12 @@
 	We anticipate that additional investigations of various permeabilities using all-atom molecular dynamics with milestoning may yield helpful insight about the structural characteristics of the bilayer by comparing the permeabilities estimated using Eqs. 21, 30.
 
 	\par The two drug-like molecules that we simulated, urea and codeine, provide insight about the potential usefulness of using milestoning to approach practical permeability problems. We obtain quantitatively accurate results for both urea and codeine. Unfortunately, no crossing events for urea were observed by brute force despite substantial efforts. The effect of increased sampling on transition probabilities is explored using bootstrapping in Fig.~S3. Due to the presence of large transition barriers, the brute force calculation of permeability is intractable, excepting potentially the use of hyperspecialized hardware such as Anton\cite{Shaw2008}. Milestoning theory provides a framework for the estimation of membrane permeability using the MFPT in combination with transition probabilities via either the MFPT-ISD or the PBCP.
-\clearpage{}
 
-    \clearpage{}\section*{Conclusions}
+\section{Conclusions}
     \par We have derived two useful new relations for the calculation of permeability: first, a relation of the ISD to the MFPT assuming over-damped dynamics; second, we derive the PBCP which is agnostic to the underlying diffusional dynamics. Using simulations of our toy systems, we have demonstrated the utility and validity of each method. By comparing results obtained by the two methods, one can gain insight into the deviations of the permeability coefficient when the over-damped assumption is not valid. We anticipate that both approaches will be useful to the computational biophysical community when estimating permeability coefficients across membranes, particularly in the case when milestoning is being used in combination with molecular simulation to determine permeabilities.
-\clearpage{}
 
-    \section*{Supporting Information}
-        \par Implementation details of the Langevin dynamics engine, statistical convergence properties of transition sampling, and transition counts for all of the milestones can be found in the SI. All code used for this project has been made available at \url{https://github.com/ctlee/langevin-milestoning}
+    \section{Acknowledgements}
+        \par \cref{chap:mileperm} is a modified reprint of the material as it appears in ``Votapka, L. W.; Lee, C. T.; Amaro, R. E. Two Relations to Estimate Membrane Permeability Using Milestoning. J. Phys. Chem. B 2016, 120 (33), 8606–8616. https://doi.org/10.1021/acs.jpcb.6b02814.''
+        The dissertation author was the co-primary investigator and author of this paper.
 
-    \section*{Acknowledgements}
-        \par LWV acknowledges support from the National Science Foundation Graduate Research Fellowship Program (DGE-1144086). CTL acknowledges support from the NIH Molecular Biophysics Training Program (T32-GM008326). REA acknowledges a NIH Directors New Innovator Award DP2 OD007237, the National Biomedical Computation Resource (NBCR) NIH P41 GM103426, and supercomputing resources provided by XSEDE (NSF TG-CHE060073).  REA is a co-founder of Actavalon, Inc. We also thank Gary Huber for the correction in the permeability of Eq.~\ref{eq:permrho} due to the resistivity of the bulk water. We would like to thank Rob Swift for insightful discussions on statistics and permeation physics. We also thank Professor Andy McCammon for his tireless mentorship, his impeccable theoretical and computational contributions, and for his unsurpassed vision in leading the field for all these years.
-
-        \newpage
-    \begin{figure}[htbp]
-        \begin{center}
-            \includegraphics[width=8.5cm,height=4.75cm,keepaspectratio]{Figures/probplot}
-           \end{center}
-      \end{figure}
+        \par LWV acknowledges support from the National Science Foundation Graduate Research Fellowship Program (DGE-1144086). CTL acknowledges support from the NIH Molecular Biophysics Training Program (T32-GM008326). REA acknowledges a NIH Directors New Innovator Award DP2 OD007237, the National Biomedical Computation Resource (NBCR) NIH P41 GM103426, and supercomputing resources provided by XSEDE (NSF TG-CHE060073). REA is a co-founder of Actavalon, Inc. We also thank Gary Huber for the correction in the permeability of Eq.~\ref{eq:permrho} due to the resistivity of the bulk water. We would like to thank Rob Swift for insightful discussions on statistics and permeation physics. We also thank Professor Andy McCammon for his tireless mentorship, his impeccable theoretical and computational contributions, and for his unsurpassed vision in leading the field for all these years.

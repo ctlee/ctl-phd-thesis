@@ -13,35 +13,24 @@
 % chapterheads            -- Include this if you want your chapters to read:
 %                              Chapter 1
 %                              Title of Chapter
-%
 %                            instead of
 %                              1 Title of Chapter
 \documentclass[12pt, chapterheads, final]{ucsd}
 
-
-% Include all packages you need here.
-% Some standard options are suggested below.
-%
-% See the project wiki for information on how to use
-% these packages. Other useful packages are also listed there.
-%
-%   http://code.google.com/p/ucsd-thesis/wiki/GettingStarted
-
-
-
-%% AMS PACKAGES - Chances are you will want some or all
-%    of these if writing a dissertation that includes equations.
 \usepackage{mathtools}
-%  \usepackage{amsmath, amscd, amssymb, amsthm}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}[theorem]{Lemma}
 
 
-%% GRAPHICX - This is the standard package for
-%    including graphics for latex/pdflatex.
 \usepackage{scrextend}
 \usepackage{pslatex}
 \usepackage{graphicx}
 \usepackage{subfiles}
-% \graphicspath{{images/}{../images/}}
 
 %% CAPTION
 % This overrides some of the ugliness in ucsd.cls and
@@ -56,27 +45,129 @@
 \doublespace
 \usepackage[font=small, width=0.9\textwidth]{caption}
 
-%% SUBFIG - Use this to place multiple images in a
-%    single figure.  Subfig will handle placement and
-%    proper captioning (e.g. Figure 1.2(a))
-% \usepackage{subfig}
-
 %% TIMES FONT - replacements for Computer Modern
 %%   This package will replace the default font with a
 %%   Times-Roman font with math support.
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
 
-%% INDEX
-%   Uncomment the following two lines to create an index:
-% \usepackage{makeidx}
-% \makeindex
-%   You will need to uncomment the \printindex line near the
-%   bibliography to display the index.  Use the command
-% \index{keyword}
-%   within the text to create an entry in the index for keyword.
-%   To compile a LaTeX document with an index the 'makeindex'
-%   command will need to be run.  See the wiki for more details.
+%% CITATIONS
+% Sets citation format
+% and fixes up citations madness
+\usepackage{microtype}  % avoids citations that hang into the margin
+
+%% FOOTNOTE-MAGIC
+% Enables footnotes in tables, re-referencing the same footnote multiple times.
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+
+%% TABLE FORMATTING MADNESS
+% Enable all sorts of fun table tricks
+\usepackage{rotating}  % Enables the sideways environment (NCPW)
+\usepackage{array}  % Enables "m" tabular environment http://ctan.org/pkg/array
+\usepackage{booktabs}  % Enables \toprule  http://ctan.org/pkg/array
+\usepackage{multirow}
+
+
+
+\usepackage[style=chem-acs,
+backend=biber,defernumbers=true,sorting=none,
+citecounter,labelnumber]{biblatex}
+\usepackage{import}
+\usepackage{xcolor}
+\usepackage{xspace}
+
+\usepackage{subcaption}
+\usepackage{listings}
+
+\lstset{language=C++,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\ttfamily,
+  stringstyle=\ttfamily,
+  commentstyle=\ttfamily,
+  morecomment=[l][]{\#}
+}
+
+\newcommand\mycommfont[1]{\footnotesize\ttfamily{#1}}
+
+\newtheorem{prop}{Proposition}
+
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\supp}{supp}
+%\DeclareMathOperator{\null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\sgn}{sgn}
+%\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\Link}{Lk}
+\DeclareMathOperator{\Star}{St}
+\DeclareMathOperator{\Closure}{Cl}
+\DeclareMathOperator{\Orient}{Orient}
+\DeclareMathOperator{\Level}{Lvl}
+\DeclareMathOperator{\Crown}{Crown}
+\DeclareMathOperator{\Halo}{Halo}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\extd}{d}
+\DeclareMathOperator{\Tangent}{Tangent}
+\newcommand{\todo}[1]{\vspace{5 mm}\par \noindent
+  \marginpar{\textbf{TODO}} \framebox{\begin{minipage}[c]{0.95
+  \textwidth} \flushleft \tt #1 \end{minipage}}\vspace{5 mm}\par}
+\newcommand{\note}[1]{\vspace{5 mm}\par \noindent
+  \marginpar{\textbf{NOTE}} \framebox{\begin{minipage}[c]{0.95
+  \textwidth} \flushleft \tt #1 \end{minipage}}\vspace{5 mm}\par}
+
+\newcommand{\st}{\ \big| \ }
+\newcommand{\mc}[1]{\mathcal{#1}}
+
+\newcommand{\abs}[1]{ {\lvert {#1} \lvert} }
+
+\newcommand{\largewedge}{\mbox{\Large $\wedge$}}
+
+\newcommand{\asc}{CASC\xspace}
+\newcommand{\gamer}{\texttt{GAMer}\xspace}
+\newcommand{\simplex}[1]{$#1$-simplex}
+\newcommand{\simplices}[1]{$#1$-simplices}
+
+
+\usepackage[ruled]{algorithm2e} % For algorithms
+\renewcommand{\algorithmcfname}{ALGORITHM}
+\SetAlFnt{\small}
+\SetAlCapFnt{\small}
+\SetAlCapNameFnt{\small}
+\SetAlCapHSkip{0pt}
+\IncMargin{-\parindent}
+
+
+
+\renewcommand{\arraystretch}{1.2} % Make tables easier to read
+
+\newcommand{\Red}[1]{{\color{red} #1}}
+\newcommand{\ctl}[1]{{\xspace\color{purple} CTL: #1}}
+
+%%%%%%%%% Helpful text macros %%%%%%%%%
+\newcommand{\perm}{$P_m$\xspace}
+\newcommand{\permcom}{$P_m^{\rm com}$\xspace}
+\newcommand{\permexp}{$P_m^{\rm exp}$\xspace}
+\newcommand{\eg}{e.g.,\xspace}
+\newcommand{\ie}{i.e.,\xspace}
+\newcommand{\mfpt}{$\langle t\rangle$}
+\newcommand{\mfptm}{\langle t\rangle}
+\newcommand{\parfrac}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\parfracc}[3]{\left(\frac{\partial #1}{\partial #2}\right)_{#3}}
+\newcommand{\degrees}[0]{$^{\circ}$}
+\newcommand{\degree}[0]{$^{\circ}$}
+\newcommand{\surf}[1]{$#1$-surface\xspace}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareCiteCommand{\citenum}
+  {}
+  {\printfield{labelnumber}}
+  {}
+  {}
+
+\bibliography{journals_short,permeability,mileperm,asc}
+
 
 %% HYPERLINKS
 %   To create a PDF with hyperlinks, you need to include the hyperref package.
@@ -98,57 +189,7 @@
 %              pdfproducer = {pdfLaTeX} }
 % \urlstyle{same}
 % \usepackage{bookmark}
-
-
-%% CITATIONS
-% Sets citation format
-% and fixes up citations madness
-\usepackage{microtype}  % avoids citations that hang into the margin
-
-%% FOOTNOTE-MAGIC
-% Enables footnotes in tables, re-referencing the same footnote multiple times.
-\usepackage{footnote}
-\makesavenoteenv{tabular}
-\makesavenoteenv{table}
-
-
-%% TABLE FORMATTING MADNESS
-% Enable all sorts of fun table tricks
-\usepackage{rotating}  % Enables the sideways environment (NCPW)
-\usepackage{array}  % Enables "m" tabular environment http://ctan.org/pkg/array
-\usepackage{booktabs}  % Enables \toprule  http://ctan.org/pkg/array
-\usepackage{import}
-
-\usepackage[style=chem-acs,
-backend=biber,defernumbers=true,sorting=none,
-citecounter,labelnumber]{biblatex}
-\usepackage{xcolor}
-\usepackage{xspace}
-\newcommand{\Red}[1]{{\color{red} #1}}
-\newcommand{\ctl}[1]{{\xspace\color{purple} CTL: #1}}
-
-\newcommand{\perm}{$P_m$}
-\newcommand{\permcom}{$P_m^{\rm com}$}
-\newcommand{\permexp}{$P_m^{\rm exp}$}
-\newcommand{\eg}{\textit{e.g., }}
-\newcommand{\ie}{\textit{i.e., }}
-\newcommand{\mfpt}{$\langle t\rangle$ }
-\newcommand{\mfptm}{\langle t\rangle}
-\newcommand{\parfrac}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\parfracc}[3]{\left(\frac{\partial #1}{\partial #2}\right)_{#3}}
-\newcommand{\degrees}[0]{$^{\circ}$}
-\newcommand{\degree}[0]{$^{\circ}$}
-\newcommand{\surf}[1]{$#1$-surface}
-\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
-
-
-\DeclareCiteCommand{\citenum}
-  {}
-  {\printfield{labelnumber}}
-  {}
-  {}
-
-\bibliography{journals_short,permeability,mileperm}
+\usepackage[capitalise]{cleveref}
 
 \begin{document}
 
@@ -161,32 +202,37 @@ citecounter,labelnumber]{biblatex}
 
 \begin{refsection}
 \chapter{Introduction}
-% \printbibliography[segment=\therefsegment]{}
+\subimport{intro/}{intro}
+\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
-%% DISSERTATION
 
 \newpage
 \begin{refsection}
-\chapter{Permeability}
+\chapter{Simulation-Based Approaches for Determining Membrane Permeability of Small Compounds}\label{chap:permeability}
 \subimport{2015-permeability/}{perm2015}
 \subimport{2015-permeability/}{perm2015supp}
-\printbibliography[segment=\therefsegment]{}
+\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
 
 \newpage
 \begin{refsection}
-\chapter{Milestoning Permeability}
+\chapter{Milestoning Permeability}\label{chap:mileperm}
 \subimport{2016-milestone_perm/}{mileperm}
-% \subimport{2016-milestone_perm/}{mileperm2016supp}
-\printbibliography[segment=\therefsegment]{}
+\subimport{2016-milestone_perm/}{mileperm2016supp}
+\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
 
+\newpage
+\begin{refsection}
+\chapter{The Implementation of the Colored Abstract Simplicial Complex and its Application to Mesh Generation}\label{chap:asc}
+\subimport{2018-ASC/}{ASC2018}
+\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\end{refsection}
 
 %% APPENDIX
 \appendix
 \chapter{Final notes}
 FOO STUFF
-
 
 %% END MATTER
 % \printindex %% Uncomment to display the index

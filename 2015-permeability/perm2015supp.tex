@@ -1,5 +1,7 @@
-\section*{Supplementary Methods}
-\subsection*{Application of the Bayesian scheme to MD}
+%!TEX root=../ctl-phd-thesis.tex
+
+\section{Supplementary Information}
+\subsection{Application of the Bayesian scheme to MD}
   \par To infer from the trajectory the intrinsic system force and the diffusivity, the latter are represented by cubic interpolants, which admit a continuous first derivative. These interpolants are evaluated at equally spaced values, $z_i$, of the transition coordinate. Under these premises, the position-dependent diffusivity writes,
 %
 \begin{equation}
@@ -18,14 +20,14 @@ P(z_k, F_{{\rm bias}, k} | \{ a_i \}, \{ b_i \}) \times P_{\rm prior}(\{ a_i \},
 
   \par The diffusivity and the intrinsic system force --- or the potential of mean force, are subsequently determined by means of a Metropolis-Hastings algorithm, which generates a Markovian chain of states characterized by consecutive values of the parameters $\{ a_i \}$ and $\{ b_i \}$. We refer the reader to reference \citenum{Comer2013} for the computational details of the algorithm.
 
-\subsection*{Qualitative Analysis}
+\subsection{Qualitative Analysis}
 
 \par In some of the MD trajectory snapshots, we observed conditions in accord with that of others. Shown in Fig \ref{fig:cod_bowed}, is the distortion of the bilayer when codeine is constrained at some distance away from the bilayer. Similarly, in Fig \ref{fig:waterfinger}, is shown water molecules traversing the bilayer to solubilize the charged urea, a result previously also described by Cardenas et al\cite{Cardenas2012}. In an attempt to quantify the prevalence of membrane deformation and water finger patterns, an MDAnalysis script\cite{Michaud-Agrawal2011} was used to bin the positions of phosphates and waters (\textit{i.e.,} those within 5~\AA\, in the $x$ and $y$ directions). The probability distributions for several time blocks from US urea are shown in Fig.~\ref{fig:distributions}. The choice of phosphate atoms as the reference defining bilayer normal is not optimal due to the substantial rearrangement of phospholipids. Due to the small membrane size, the asymmetry induced by the crossing permeant on headgroup locations will lead to a moving center of membrane reference influencing results.
 
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[width=1.0\textwidth]{Figures/asym-codbenz}
-	\caption{Unsymmetrized PMFs for (A) codeine and (B) benzoic acid from REUS.
+	\caption[Unsymmetrized PMFs for codeine and benzoic acid from REUS]{Unsymmetrized PMFs for (A) codeine and (B) benzoic acid from REUS.
 	}
 	\label{fig:asym-others}
 \end{center}
@@ -34,9 +36,7 @@ P(z_k, F_{{\rm bias}, k} | \{ a_i \}, \{ b_i \}) \times P_{\rm prior}(\{ a_i \},
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{Figures/cod_bowedmembrane}
-	\caption{A VMD rendered snapshot from the US of codeine constrained at $z=-20$.
-	%YW: This more looks like z=20?
-	%CTL: The snapshot is indeed from z=-20. It seems that when constrained slightly away from the bilayer (~z=18). The hydrophobic rings of codeine preferentially sit in the apolar lipids causing bowing of the leaflet. This can be visualized by the total probability density plots of codeine/benzoic acid available upon request.
+	\caption[Illustration of harmonically constrained codeine bowing the membrane to interact with hydrophobic lipid tails]{A VMD rendered snapshot from the US of codeine constrained at $z=-20$.
 	The lipids in center have been hidden, and lateral periodic images shown. Phosphates are shown as yellow spheres illustrating the bowing of the top leaflet to solubilize the hydrophobic rings. Water molecules within 5~\AA\ of codeine are shown as licorice, while all other waters are lines.}
 	\label{fig:cod_bowed}
 \end{center}
@@ -45,7 +45,7 @@ P(z_k, F_{{\rm bias}, k} | \{ a_i \}, \{ b_i \}) \times P_{\rm prior}(\{ a_i \},
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{Figures/urea_waterfinger}
-	\caption{A VMD rendered snapshot from the US of urea constrained at $z=0$. The lipids in center have been hidden, and lateral periodic images shown. Phosphates are shown as yellow spheres. Water molecules within~5\AA\ of urea are shown as licorice.}
+	\caption[Illustration of harmonically constrained urea forming water fingers across the bilayer]{A VMD rendered snapshot from the US of urea constrained at $z=0$. The lipids in center have been hidden, and lateral periodic images shown. Phosphates are shown as yellow spheres. Water molecules within~5\AA\ of urea are shown as licorice.}
 	\label{fig:waterfinger}
 \end{center}
 \end{figure}
@@ -53,7 +53,7 @@ P(z_k, F_{{\rm bias}, k} | \{ a_i \}, \{ b_i \}) \times P_{\rm prior}(\{ a_i \},
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[width=0.9\textwidth]{Figures/distributions1}
-	\caption{The normalized probability density of phosphates and water molecules within $5$~\AA\, in the $x$ and $y$ dimensions of urea are shown as a heatmap. The window reflects the $z$-value reference of the US harmonic constraint. A dotted line is placed at window $z=0$ for visual reference. Residual non-equilibrium effects can be seen as deviations of the membrane divot from $z=0$. It appears that both phosphate and water distributions approach the middle after ~30 ns of sampling. The vertical black lines highlight the DMPC average phosphate position at equilibrium without permeant. Note the diagonal observed from the upper left to bottom right of the water distribution is not an artifact. The constrained permeant occupies this position and displaces some waters.}
+	\caption[Probability distributions of phosphate headgroups and water molecules from umbrella sampling calculations]{The normalized probability density of phosphates and water molecules within $5$~\AA\, in the $x$ and $y$ dimensions of urea are shown as a heatmap. The window reflects the $z$-value reference of the US harmonic constraint. A dotted line is placed at window $z=0$ for visual reference. Residual non-equilibrium effects can be seen as deviations of the membrane divot from $z=0$. It appears that both phosphate and water distributions approach the middle after ~30 ns of sampling. The vertical black lines highlight the DMPC average phosphate position at equilibrium without permeant. Note the diagonal observed from the upper left to bottom right of the water distribution is not an artifact. The constrained permeant occupies this position and displaces some waters.}
 	\label{fig:distributions}
 \end{center}
 \end{figure}
@@ -61,7 +61,7 @@ P(z_k, F_{{\rm bias}, k} | \{ a_i \}, \{ b_i \}) \times P_{\rm prior}(\{ a_i \},
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{Figures/compare-half}
-	\caption{PMFs for urea calculated using REUS.  The PMFs are shown for only the range $z$=(0,36).  The term ``full'' represents that the REUS calculation was performed for 72 windows spanning the entire bilayer, whereas ``half'' means only 36 windows spanning the range from the bulk to the membrane center were used. ``sym.'' or ``unsym.'' refers to whether or not the PMFs for the full range were symmetrized.}
+	\caption[Comparison of PMFs calculated using REUS using symmetrized half bilayer or full bilayer]{PMFs for urea calculated using REUS.  The PMFs are shown for only the range $z$=(0,36).  The term ``full'' represents that the REUS calculation was performed for 72 windows spanning the entire bilayer, whereas ``half'' means only 36 windows spanning the range from the bulk to the membrane center were used. ``sym.'' or ``unsym.'' refers to whether or not the PMFs for the full range were symmetrized.}
 	\label{fig:comparehalf}
 \end{center}
 \end{figure}
@@ -70,7 +70,7 @@ P(z_k, F_{{\rm bias}, k} | \{ a_i \}, \{ b_i \}) \times P_{\rm prior}(\{ a_i \},
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{Figures/D-k10-k1-5.png}
-	\caption{Diffusivity profiles for urea calculated using the Generalized Langevin method with different force constants.  The black line is for $k=1.5$~kcal/mol$\cdot$\AA$^2$, calculated from 1-\AA-spaced windows run for 10-ns each, i.e., those also used for the PMF calculation.  The red line was computed from 2-ns simulations in each window with a force constant $k=10$~kcal/mol$\cdot$\AA$^2$.}
+	\caption[Diffusivity profiles for urea calculated using the Generalized Langevin method with different force constants]{Diffusivity profiles for urea calculated using the Generalized Langevin method with different force constants.  The black line is for $k=1.5$~kcal/mol$\cdot$\AA$^2$, calculated from 1-\AA-spaced windows run for 10-ns each, i.e., those also used for the PMF calculation.  The red line was computed from 2-ns simulations in each window with a force constant $k=10$~kcal/mol$\cdot$\AA$^2$.}
 	\label{fig:compareK}
 \end{center}
 \end{figure}
@@ -78,7 +78,7 @@ P(z_k, F_{{\rm bias}, k} | \{ a_i \}, \{ b_i \}) \times P_{\rm prior}(\{ a_i \},
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{Figures/SFig-W1}
-	\caption{LogP$_m$ as a function of modeled input. The input PMF and $D$($z$) are shown on top and the dependence of logP$_m$ on bottom.  The height and width of the two peaks in the PMF at the membrane-water interfaces are varied while $D$($z$) is held constant. }
+	\caption[LogP$_m$ as a function of modeled input]{LogP$_m$ as a function of modeled input. The input PMF and $D$($z$) are shown on top and the dependence of logP$_m$ on bottom.  The height and width of the two peaks in the PMF at the membrane-water interfaces are varied while $D$($z$) is held constant. }
 	\label{fig:models2}
 \end{center}
 \end{figure}
@@ -86,7 +86,7 @@ P(z_k, F_{{\rm bias}, k} | \{ a_i \}, \{ b_i \}) \times P_{\rm prior}(\{ a_i \},
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[width=0.4\textwidth]{Figures/PMFs-fake-real}
-	\caption{PMFs modeled from 3-5 data points at extrema (black) compared to those computed from REUS (red).  (A) codeine. (B) benzoic acid.  (C) urea.}
+	\caption[PMFs modeled from 3-5 data points at extrema compared to REUS estimates]{PMFs modeled from 3-5 data points at extrema (black) compared to those computed from REUS (red).  (A) codeine. (B) benzoic acid.  (C) urea.}
 	\label{fig:fakereal}
 \end{center}
 \end{figure}
@@ -95,7 +95,7 @@ P(z_k, F_{{\rm bias}, k} | \{ a_i \}, \{ b_i \}) \times P_{\rm prior}(\{ a_i \},
 
 \singlespacing
 
-\subsection*{Code for calculating autocorrelation functions and diffusivity from NAMD traj files}
+\subsection{Code for calculating autocorrelation functions and diffusivity from NAMD traj files}
 \begin{verbatim}
 usage is ./correlation trajfile fieldnumber
 
@@ -280,7 +280,7 @@ int main(int argc, char *argv[])
 }
 \end{verbatim}
 
-\subsection*{Matlab code for generation of modeled PMF and $D$($z$) profiles}
+\subsection{Matlab code for generation of modeled PMF and $D$($z$) profiles}
 \begin{verbatim}
 function cA = permeability4(bound,zz,W1,W2,W3,a,b,D1,D2,D3,D4,aD,bD,cD)
 
