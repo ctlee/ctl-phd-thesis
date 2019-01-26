@@ -15,22 +15,17 @@
 %                              Title of Chapter
 %                            instead of
 %                              1 Title of Chapter
-\documentclass[12pt, chapterheads, final]{ucsd}
+\documentclass[11pt, chapterheads, draft]{ucsd}
 
 \usepackage{mathtools}
 \usepackage{amsthm}
 \usepackage{amssymb}
-
-\newtheorem{theorem}{Theorem}[section]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-
-
 \usepackage{scrextend}
 \usepackage{pslatex}
 \usepackage{graphicx}
-\usepackage{subfiles}
+\usepackage{import}
+\usepackage{xcolor}
+\usepackage{xspace}
 
 %% CAPTION
 % This overrides some of the ugliness in ucsd.cls and
@@ -67,16 +62,12 @@
 \usepackage{rotating}  % Enables the sideways environment (NCPW)
 \usepackage{array}  % Enables "m" tabular environment http://ctan.org/pkg/array
 \usepackage{booktabs}  % Enables \toprule  http://ctan.org/pkg/array
+\renewcommand{\arraystretch}{1.2} % Make tables easier to read
 \usepackage{multirow}
-
-
 
 \usepackage[style=chem-acs,
 backend=biber,defernumbers=true,sorting=none,
 citecounter,labelnumber]{biblatex}
-\usepackage{import}
-\usepackage{xcolor}
-\usepackage{xspace}
 
 \usepackage{subcaption}
 \usepackage{listings}
@@ -91,44 +82,14 @@ citecounter,labelnumber]{biblatex}
 
 \newcommand\mycommfont[1]{\footnotesize\ttfamily{#1}}
 
-\newtheorem{prop}{Proposition}
-
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\supp}{supp}
-%\DeclareMathOperator{\null}{null}
-\DeclareMathOperator{\range}{range}
-\DeclareMathOperator{\sgn}{sgn}
-%\DeclareMathOperator{\im}{Im}
-\DeclareMathOperator{\Link}{Lk}
-\DeclareMathOperator{\Star}{St}
-\DeclareMathOperator{\Closure}{Cl}
-\DeclareMathOperator{\Orient}{Orient}
-\DeclareMathOperator{\Level}{Lvl}
-\DeclareMathOperator{\Crown}{Crown}
-\DeclareMathOperator{\Halo}{Halo}
-\DeclareMathOperator{\vol}{vol}
-\DeclareMathOperator{\extd}{d}
-\DeclareMathOperator{\Tangent}{Tangent}
-\newcommand{\todo}[1]{\vspace{5 mm}\par \noindent
-  \marginpar{\textbf{TODO}} \framebox{\begin{minipage}[c]{0.95
-  \textwidth} \flushleft \tt #1 \end{minipage}}\vspace{5 mm}\par}
-\newcommand{\note}[1]{\vspace{5 mm}\par \noindent
-  \marginpar{\textbf{NOTE}} \framebox{\begin{minipage}[c]{0.95
-  \textwidth} \flushleft \tt #1 \end{minipage}}\vspace{5 mm}\par}
-
-\newcommand{\st}{\ \big| \ }
-\newcommand{\mc}[1]{\mathcal{#1}}
-
-\newcommand{\abs}[1]{ {\lvert {#1} \lvert} }
-
-\newcommand{\largewedge}{\mbox{\Large $\wedge$}}
-
-\newcommand{\asc}{CASC\xspace}
-\newcommand{\gamer}{\texttt{GAMer}\xspace}
-\newcommand{\simplex}[1]{$#1$-simplex}
-\newcommand{\simplices}[1]{$#1$-simplices}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{prop}{Proposition}
 
 
+% ALGORITHMS
 \usepackage[ruled]{algorithm2e} % For algorithms
 \renewcommand{\algorithmcfname}{ALGORITHM}
 \SetAlFnt{\small}
@@ -138,9 +99,7 @@ citecounter,labelnumber]{biblatex}
 \IncMargin{-\parindent}
 
 
-
-\renewcommand{\arraystretch}{1.2} % Make tables easier to read
-
+%% NOTE TAKING PURPOSES ONLY %%
 \newcommand{\Red}[1]{{\color{red} #1}}
 \newcommand{\ctl}[1]{{\xspace\color{purple} CTL: #1}}
 
@@ -158,6 +117,20 @@ citecounter,labelnumber]{biblatex}
 \newcommand{\degree}[0]{$^{\circ}$}
 \newcommand{\surf}[1]{$#1$-surface\xspace}
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\DeclareMathOperator{\Link}{Lk}
+\DeclareMathOperator{\Star}{St}
+\DeclareMathOperator{\Closure}{Cl}
+\DeclareMathOperator{\Orient}{Orient}
+\DeclareMathOperator{\Level}{Lvl}
+\DeclareMathOperator{\Tangent}{Tangent}
+\newcommand{\st}{\ \big| \ }
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\abs}[1]{ {\lvert {#1} \lvert} }
+\newcommand{\largewedge}{\mbox{\Large $\wedge$}}
+\newcommand{\asc}{CASC\xspace}
+\newcommand{\gamer}{\texttt{GAMer}\xspace}
+\newcommand{\simplex}[1]{$#1$-simplex}
+\newcommand{\simplices}[1]{$#1$-simplices}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \DeclareCiteCommand{\citenum}
