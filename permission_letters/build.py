@@ -5,7 +5,7 @@ import pandas as pd
 from subprocess import call
 
 def main():
-    with open('template.tex') as f:
+    with open('template') as f:
         template = f.read()
     env = Template(template)
 
@@ -28,12 +28,13 @@ def main():
                              ' with this author.'%
                              (row.first_name, row.last_name))
 
-        filename = row.email.replace('@', 'AT')
+        filename = "%s_%s-permission"%(row.first_name, row.last_name)
         with open(filename + '.tex', 'w') as f:
             data = env.render(first_name=row.first_name,
                               last_name=row.last_name, papers=co_authored)
             f.write(data)
-        call(["pdflatex", filename])
+        call(["latexmk","-pdf",filename])
+        call(["latexmk","-c",filename])
 
 if __name__ == '__main__':
     main()
