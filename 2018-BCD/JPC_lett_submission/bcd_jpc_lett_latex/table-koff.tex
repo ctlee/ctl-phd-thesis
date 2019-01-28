@@ -1,0 +1,64 @@
+%!TEX root = BCD.tex
+
+%%\documentclass[11pt,letterpaper]{article}
+
+%%\usepackage{color}
+
+%%\setlength{\textwidth}{17cm}
+%%\setlength{\textheight}{20.5cm}
+%%\setlength{\oddsidemargin}{-.1cm}
+%%\setlength{\topmargin}{-2 cm}
+
+%%\renewcommand{\baselinestretch}{1.0}
+
+%%\newcommand{\hl}[1]{\textcolor{red}{#1}}
+%\newcommand{\hl}[1]{\textbf{#1}}
+%\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+
+%%\begin{document}
+
+\begin{table}
+
+\centering
+%\resizebox{\textwidth}{!}
+{
+%\resizebox{\textwidth}{!}{\begin{tabular}{l S@{\pm} S l S @{\,\( \pm \)\,} S l S @{\,\( \pm \)\,} S l S@{\,\( \pm \)\,} S}
+\resizebox{\textwidth}{!}{\begin{tabular}{
+l S[table-format = 4.2(3)e2, separate-uncertainty] |
+l  S[table-format = 4.2(4)e2, separate-uncertainty] |
+l S[table-format = 4.2(4)e2, separate-uncertainty]  |
+l  S[table-format = 2.3(1)e2, separate-uncertainty] } 
+
+%\multicolumn{8}{c}{\kon rates}
+\hline
+ \multicolumn{2}{c}{\textbf{Experiment}} & \multicolumn{2}{c}{\textbf{SEEKR}} & \multicolumn{2}{c}{\textbf{Brute Force MD (GAFF)}} & \multicolumn{2}{c}{\textbf{Brute Force MD (Q4MD)}} \\ 
+ \hline \hline
+
+ \multirow{2}{*}{\textbf{ligand}} & \koff  & \multirow{2}{*}{\textbf{ligand}}	& \koff  & \multirow{2}{*}{\textbf{ligand}}	& \koff   & \multirow{2}{*}{\textbf{ligand}}	& \koff   \\
+ & {(\si{\per\second})} & & {(\si{\per\second})} & & {(\si{\per\second})} & & {(\si{\per\second})} \\
+
+
+
+ \hline
+
+2-naphthylethanol &	1.8(7)e6 &	\color{red}{1-naphthylethanol} & 	0.87(34)e6 &	 \color{red}{1-naphthylethanol}	& 1.50(190)e6 & 	2-naphthylethanol	& 0.5  \\
+ 1-naphthylethanol & 0.48(18)e6 & 	\color{red}{2-naphthylethanol} &	3.43(72)e6	& \color{red}{2-naphthylethanol}	& 5.20(90)e6	 & 1-naphthylethanol& 	1.4(5)e6 \\
+aspirin & 	1.31(3)e6 &	aspirin & 	49.31(710)e6 & 	aspirin &	24.00(300)e6 & 	aspirin & 	3.1(9)e6 \\
+\textit{tert}-butanol	& 8.50(10)e6 &	\color{red}{methyl butyrate} &	158.35(1550)e6 &	\color{red}{methyl butyrate} &	80.00(600)e6	& \textit{tert}-butanol &	7.2(10)e6 \\
+methyl butyrate &	12.80(30)e6 & 	\color{red}{\textit{tert}-butanol} &	258.74(2793)e6 &	\color{red}{\textit{tert}-butanol} &	85.00(1200)e6 &	methyl butyrate &	11(1)e6 \\
+1-butanol &	38.00(600)e6 &	1-butanol &	512.16(3745)e6 &	1-butanol &	110.00(2000)e6 &	1-butanol &	33(7)e6 \\
+1-propanol &	121.00(700)e6 &	1-propanol &	1495.42(7686)e6 &	1-propanol &	390.00(3000)e6 &	1-propanol&	120(2)e6 \\
+\hline
+
+&&\si{\tau} & 0.81(5) & \si{\tau} & 0.81(9) & \si{\tau} & 1.00(4) \\
+
+\hline
+
+\end{tabular}}
+}
+\caption{ Comparison of \koff values from experiment, SEEKR calculations, and brute force MD simulations with two different forcefields\cite{Tang2017}.
+For each method, guest molecules are ranked in order of increasing rates. Ligands that are ordered incorrectly with respect to experiment are colored red. Kendall rank correlation coefficients (\si{\tau}) are also reported for each method.}
+\label{table:koff-results}
+\end{table}
+
+%%\end{document}

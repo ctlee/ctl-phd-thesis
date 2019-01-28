@@ -8,7 +8,7 @@
 
         \par The Gr\o nbach-Jensen--Farago integrator is implemented in both Python and C. To generate Gaussian random number in C, we employ the use of the PCG random number generator (RNG)~\cite{ONeill} to sample random integers. These random integers are converted to random uniform floating point numbers by using a bit stream algorithm by Taylor R. Campbell. Uniform floats are then transformed using the Box-Muller algorithm to yield a gaussian random number. The qualities of our C random number generator are compared to that of python library \texttt{numpy} in fig.~\ref{fig:testRNG}. The numpy and C RNGs are seeded off entropy from \texttt{/dev/urandom}. The C integrator is wrapped using the Python/C API allowing it to be called from Python which handles the system setup, configuration, and analysis.
 
-        \begin{figure}[htbp]
+        \begin{figure}[!htbp]
         \begin{center}
             \includegraphics[width=0.8\textwidth]{Figures/testRNG}
             \caption{The binned probability distribution of both C and \texttt{numpy} generated gaussian random numbers are shown in comparison with an ideal Gaussian with zero mean and unit variance. On the right, a greyscale plot of the sequence of random numbers indicates, by visual inspection, that they are not correlated and there are no repeat sequences.}
@@ -19,7 +19,7 @@
     \subsection{Milestoning Sampling and Efficiency}
         \par The total number of statistics aggregated during milestoning for each system is shown in fig.~\ref{fig:transitions}. Notably, the statistics consist of only the trajectories which were members of the first hitting point distribution (FHPD). To quantify the efficiency of identifying FHPD members we ran a quick test of the accept rate of the milestone at $z=0$ with adjacent milestones at $z=-1,1$ for 10000 random members with a timestep of $1\times 10^{-15}$~s. We find that the typical rejection rate is upwards of $\approx$90\% (9000) during the reverse phase. While most rejections come about from self-crossing events occurring in the first several timesteps, and thus contribute little to the total computer time, the number of trajectories required to generate a well-explored FHPD is very large, making the compute time of rejections non-trivial. None of the reported statistics account for the number of rejected trajectories.
 
-        \begin{figure}[htbp]
+        \begin{figure}[!htbp]
         \begin{center}
             \includegraphics[width=0.8\textwidth]{Figures/transitions}
             \caption{Shown here are the total number of forward and reverse trajectories collected for systems (a) flat, (b) small-barrier, (c) urea, and (d) codeine.}
@@ -33,7 +33,7 @@
             CI(95) = 2\rho/\sqrt{N-1}.
         \end{equation}
 
-        \begin{figure}[htbp]
+        \begin{figure}[!htbp]
         \begin{center}
             \includegraphics[width=0.8\textwidth]{Figures/bootRho}
             \caption{The 95\% confidence intervals of a 50-50 crossing probability with respect to the total number of observations.}

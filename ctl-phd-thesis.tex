@@ -15,17 +15,22 @@
 %                              Title of Chapter
 %                            instead of
 %                              1 Title of Chapter
-\documentclass[11pt, chapterheads, draft]{ucsd}
+\documentclass[11pt, chapterheads, final]{ucsd}
 
-\usepackage{mathtools}
-\usepackage{amsthm}
-\usepackage{amssymb}
+\setlength{\emergencystretch}{3em}
+
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}      % amsmath++
+\usepackage{amsthm}         % Theorem support
+\usepackage{amssymb}        % Additional symbols
 \usepackage{scrextend}
 \usepackage{pslatex}
-\usepackage{graphicx}
-\usepackage{import}
-\usepackage{xcolor}
-\usepackage{xspace}
+\usepackage{graphicx}       % Figures
+\usepackage{import}         % Import subfiles
+\usepackage{xcolor}         % Colors
+\usepackage{xspace}         % Space detection
+\usepackage{fancyvrb}
+\usepackage[version=4]{mhchem}
 
 %% CAPTION
 % This overrides some of the ugliness in ucsd.cls and
@@ -39,6 +44,7 @@
 \usepackage{setspace}
 \doublespace
 \usepackage[font=small, width=0.9\textwidth]{caption}
+\usepackage{subcaption}
 
 %% TIMES FONT - replacements for Computer Modern
 %%   This package will replace the default font with a
@@ -60,8 +66,8 @@
 %% TABLE FORMATTING MADNESS
 % Enable all sorts of fun table tricks
 \usepackage{rotating}  % Enables the sideways environment (NCPW)
-\usepackage{array}  % Enables "m" tabular environment http://ctan.org/pkg/array
-\usepackage{booktabs}  % Enables \toprule  http://ctan.org/pkg/array
+\usepackage{array}  % Enables "m" tabular environment
+\usepackage{booktabs}  % Enables \toprule
 \renewcommand{\arraystretch}{1.2} % Make tables easier to read
 \usepackage{multirow}
 
@@ -69,9 +75,9 @@
 backend=biber,defernumbers=true,sorting=none,
 citecounter,labelnumber]{biblatex}
 
-\usepackage{subcaption}
-\usepackage{listings}
 
+%% LISTINGS
+\usepackage{listings}
 \lstset{language=C++,
   basicstyle=\ttfamily\footnotesize,
   keywordstyle=\ttfamily,
@@ -79,14 +85,11 @@ citecounter,labelnumber]{biblatex}
   commentstyle=\ttfamily,
   morecomment=[l][]{\#}
 }
-
 \newcommand\mycommfont[1]{\footnotesize\ttfamily{#1}}
-
 \newtheorem{theorem}{Theorem}[section]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{lemma}[theorem]{Lemma}
-% \newtheorem{prop}{Proposition}
 
 
 % ALGORITHMS
@@ -98,6 +101,31 @@ citecounter,labelnumber]{biblatex}
 \SetAlCapHSkip{0pt}
 \IncMargin{-\parindent}
 
+
+%% HYPERLINKS
+%   To create a PDF with hyperlinks, you need to include the hyperref package.
+%   THIS HAS TO BE THE LAST PACKAGE INCLUDED!
+%   Note that the options plainpages=false and pdfpagelabels exist
+%   to fix indexing associated with having both (ii) and (2) as pages.
+%   Also, all links must be black according to OGS.
+%   See: http://www.tex.ac.uk/cgi-bin/texfaq2html?label=hyperdupdest
+%   Note: This may not work correctly with all DVI viewers (i.e. Yap breaks).
+%   NOTE: hyperref will NOT work in draft mode, as noted above.
+\usepackage[colorlinks=true, pdfstartview=FitV,
+            linkcolor=black, citecolor=black,
+            urlcolor=black, plainpages=false,
+            pdfpagelabels]{hyperref}
+\hypersetup{ pdfauthor = {Your Name Here},
+             pdftitle = {The Title of The Dissertation},
+             pdfkeywords = {Keywords for Searching},
+             pdfcreator = {pdfLaTeX with hyperref package},
+             pdfproducer = {pdfLaTeX} }
+\urlstyle{same}
+\usepackage{bookmark}
+\usepackage[capitalise]{cleveref}
+
+\DeclareCiteCommand{\citenum}{}{\printfield{labelnumber}}{}{}
+\setcounter{tocdepth}{1}
 
 %% NOTE TAKING PURPOSES ONLY %%
 \newcommand{\Red}[1]{{\color{red} #1}}
@@ -116,6 +144,9 @@ citecounter,labelnumber]{biblatex}
 \newcommand{\degrees}[0]{$^{\circ}$}
 \newcommand{\degree}[0]{$^{\circ}$}
 \newcommand{\surf}[1]{$#1$-surface\xspace}
+
+\newcommand{\turnme}[1]{\begin{turn}{-90}#1\end{turn}}
+
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 \DeclareMathOperator{\Link}{Lk}
 \DeclareMathOperator{\Star}{St}
@@ -133,37 +164,8 @@ citecounter,labelnumber]{biblatex}
 \newcommand{\simplices}[1]{$#1$-simplices}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\DeclareCiteCommand{\citenum}
-  {}
-  {\printfield{labelnumber}}
-  {}
-  {}
 
-\bibliography{journals_short,permeability,mileperm,asc}
-
-
-%% HYPERLINKS
-%   To create a PDF with hyperlinks, you need to include the hyperref package.
-%   THIS HAS TO BE THE LAST PACKAGE INCLUDED!
-%   Note that the options plainpages=false and pdfpagelabels exist
-%   to fix indexing associated with having both (ii) and (2) as pages.
-%   Also, all links must be black according to OGS.
-%   See: http://www.tex.ac.uk/cgi-bin/texfaq2html?label=hyperdupdest
-%   Note: This may not work correctly with all DVI viewers (i.e. Yap breaks).
-%   NOTE: hyperref will NOT work in draft mode, as noted above.
-% \usepackage[colorlinks=true, pdfstartview=FitV,
-%             linkcolor=black, citecolor=black,
-%             urlcolor=black, plainpages=false,
-%             pdfpagelabels]{hyperref}
-% \hypersetup{ pdfauthor = {Your Name Here},
-%              pdftitle = {The Title of The Dissertation},
-%              pdfkeywords = {Keywords for Searching},
-%              pdfcreator = {pdfLaTeX with hyperref package},
-%              pdfproducer = {pdfLaTeX} }
-% \urlstyle{same}
-% \usepackage{bookmark}
-\usepackage[capitalise]{cleveref}
-
+\bibliography{journals_short,permeability,mileperm,asc,allostery}
 \begin{document}
 
 %% FRONT MATTER
@@ -192,6 +194,13 @@ citecounter,labelnumber]{biblatex}
 \chapter{Milestoning Permeability}\label{chap:mileperm}
 \subimport{2016-milestone_perm/}{mileperm}
 \subimport{2016-milestone_perm/}{mileperm2016supp}
+\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\end{refsection}
+
+\newpage
+\begin{refsection}
+\chapter{ALLOSTERY}\label{chap:allostery}
+\subimport{2015-allostery/}{allostery.tex}
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
 

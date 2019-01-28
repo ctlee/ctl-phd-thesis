@@ -1,0 +1,35 @@
+%!TEX root = BCD.tex
+
+%\section*{Conclusions}
+
+\par We present the first successful ranking of a set of seven guest molecules 
+with the $\beta$-cyclodextrin host using the SEEKR hybrid MD/BD/Milestoning approach.
+SEEKR effectively reproduces both the magnitudes and rankings of the 
+experimental off rates\cite{Fukahori2004,Fukahori2006,Nishikawa2002,Nishikawa2006,Rekharsky1998,Barros1998} and binding free energies, two quantities of interest in 
+typical drug discovery campaigns\cite{Lu2010a,Schuetz2017,Copeland2006b,Copeland2016}.
+%need more refs for free energy part
+SEEKR also successfully differentiates the known longer residence time and 
+tighter binding compounds from the weaker binding compounds. Our results are also in good agreement 
+with previously conducted long timescale MD simulations for the same set of 
+ligands\cite{Tang2017}. In particular SEEKR and long timescale MD simulations 
+using the same forcefield (GAFF or Q4MD) exhibited similar deviations from the 
+experimental values, with GAFF producing consistently faster off rates than 
+experiment and Q4MD producing consistently faster on rates. In general both 
+methods and both forcefields struggled to reproduce the experimental on rate 
+ranking, as all ligands had very similar \kon's.
+The SEEKR method requires less simulation time (3.8 ${\mu}s$ per ligand) 
+than the long timescale MD approach (4.5 - 11 ${\mu}s$ per ligand). Furthermore, 
+convergence analysis of the SEEKR calculations suggests that comparable results 
+could be achieved with as little as 2 ${\mu}s$ per ligand. In addition, SEEKR's 
+milestoning approach makes these calculations highly parallel, as the 
+simulations on each milestone are completely independent from all other milestones.
+%SEEKR also eliminates the need for an empirically determined definition of the 
+%bound state for a system, as it is simply the innermost milestone.
+We also provide an analysis of the sensitivity of the SEEKR 
+calculations to various factors such as sampling, milestone spacing, and the 
+construction of the milestoning model with the intention of putting forth 
+``best practices'' for the use of SEEKR. SEEKR's effectiveness at ranking 
+compounds for this small model system suggest that it is well suited for ranking 
+compounds of more complex protein-ligand and protein-drug systems, where the 
+efficiency and enhanced sampling advantages of our multiscale MD/BD/milestoning 
+approach will be more apparent.
