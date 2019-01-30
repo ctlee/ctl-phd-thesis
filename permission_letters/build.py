@@ -35,6 +35,7 @@ def main():
             f.write(data)
         call(["latexmk","-pdf",filename])
         call(["latexmk","-c",filename])
+        call(["rm",filename+".tex"])
 
 if __name__ == '__main__':
     main()

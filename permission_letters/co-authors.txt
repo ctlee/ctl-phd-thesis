@@ -1,9 +1,10 @@
 first_name,last_name
+"John","Moody"
+"Jeffrey","Wagner"
 "Rommie","Amaro"
 "Benjamin","Jagger"
 "Bryn","Taylor"
 "Jeffrey","Comer"
-"Conner","Herndon"
 "Nelson","Leung"
 "Anna","Pavlova"
 "Robert","Swift"
@@ -11,13 +12,14 @@ first_name,last_name
 "Christopher","Rowley"
 "Christophe","Chipot"
 "Yi","Wang"
-"James","Gumbart"
 "Lane","Votapka"
 "Jacob","Durrant"
 "Robert","Malmstrom"
 "Victoria","Feher"
-"Justin","Laughlin"
-"Nils","Angliviel de La Beaumelle"
-"Ravi","Ramamoorthi"
 "Michael","Holst"
-"Padmini","Rangamani"
+
+
+
+"Conner","Herndon"
+"James","Gumbart"
+"J. Andrew","McCammon"
