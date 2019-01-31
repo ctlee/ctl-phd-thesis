@@ -1,0 +1,20 @@
+%!TEX root = BCD.tex
+
+\section*{Computational Methods}
+
+\par GAFF\cite{Wang2004,Wang2006} forcefield parameters for the seven guest molecule
+along with both GAFF and Q4MD-CD\cite{Cezard2011} parameterizations of $\beta$-cyclodextrin 
+were obtained from Tang and Chang\cite{Tang2017}. For comparison we use identical structures and
+parameterizations as those used in their study. These initial structures were 
+used by the SEEKR software for preparation of the milestoning simulations. 
+The preparation procedure was the same for each of the seven guest molecules and 
+followed standard SEEKR protocols\cite{Votapka2017}. All systems were solvated 
+with TIP3P waters\cite{Jorgensen1983a}. All BD simulations were performed using the BrownDye software package\cite{Huber2010}. 
+Electrostatic potentials of the host and guest molecules used as inputs for the 
+BD simulation were calculated with APBS version 1.4\cite{Baker2001}. 
+A modified version of NAMD 2.12 was used for all MD simulations\cite{Phillips2005}.
+For all 13 milestones in the MD region, the standard SEEKR procedure for 
+minimization, equilibration and simulation was followed. In total, 2.6~${\mu}s$ of equilibrium sampling (160~ns for 16 milestones) were 
+used and approximately 570~ns of FHPD sampling for a total of 3.2~${\mu}s$ of 
+simulation used in the milestoning model. The total cost per ligand (including 
+simulation discarded for equilibration) was therefore $\sim$3.8 ${\mu}s$. 

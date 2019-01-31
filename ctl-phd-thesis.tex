@@ -162,10 +162,22 @@ citecounter,labelnumber]{biblatex}
 \newcommand{\gamer}{\texttt{GAMer}\xspace}
 \newcommand{\simplex}[1]{$#1$-simplex}
 \newcommand{\simplices}[1]{$#1$-simplices}
+
+\usepackage{siunitx}
+\DeclareSIUnit{\molar}{M}
+\DeclareSIUnit[number-unit-product = {\,}]
+\cal{cal}
+\DeclareSIUnit\kcal{\kilo\cal}
+
+\newcommand{\kon}{$k_{\textrm{on}}$\xspace}
+\newcommand{\koff}{$k_{\textrm{off}}$\xspace}
+\let\oldAA\AA
+\renewcommand{\AA}{\oldAA\xspace}
+\newcommand{\bcd}{$\beta$-cyclodextrin\xspace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\bibliography{journals_short,permeability,mileperm,asc,allostery}
+\bibliography{journals_short,permeability,mileperm,asc,allostery,bcd,exascale}
 \begin{document}
 
 %% FRONT MATTER
@@ -178,6 +190,13 @@ citecounter,labelnumber]{biblatex}
 \begin{refsection}
 \chapter{Introduction}
 \subimport{intro/}{intro}
+\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\end{refsection}
+
+\newpage
+\begin{refsection}
+\chapter{Exascale Computing: A New Dawn for Computational Biology}\label{chap:exascale}
+\subimport{2018-exascale/}{2018-exascale}
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
 
@@ -197,12 +216,23 @@ citecounter,labelnumber]{biblatex}
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
 
+
 \newpage
 \begin{refsection}
-\chapter{ALLOSTERY}\label{chap:allostery}
+\chapter{Quantitative Ranking of Ligand Binding Kinetics with a Multiscale Milestoning Simulation Approach}\label{chap:bcd}
+\subimport{2018-BCD/}{2018-BCD}
+\subimport{2018-BCD/}{2018-BCD_SI}
+\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\end{refsection}
+
+
+\newpage
+\begin{refsection}
+\chapter{Emerging Computational Methods for the Rational Discovery of Allosteric Drugs}\label{chap:allostery}
 \subimport{2015-allostery/}{allostery.tex}
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
+
 
 \newpage
 \begin{refsection}

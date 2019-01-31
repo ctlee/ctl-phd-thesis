@@ -1,62 +1,9 @@
-% \documentclass[usetitle=true, journal=jpclcd, manuscript=letter]{achemso}
+%!TEX ROOT = ../ctl-phd-thesis.tex
 
-% \usepackage[version=4]{mhchem}
-% \usepackage{color}
-% \usepackage{geometry}
-% \geometry{letterpaper}                     % ... or a4paper or a5paper or ...
-% %\geometry{landscape}                		   % Activate for for rotated page geometry
-% %\usepackage[parfill]{parskip}    		     % Activate to begin paragraphs with an empty line rather than an indent
-% \usepackage{graphicx}
-% \usepackage{subcaption}
-% \usepackage{amssymb}
-% \usepackage{amsmath}
-% \usepackage{setspace}
-% \usepackage[T1]{fontenc}
-% \usepackage{siunitx} %BRJ added. is this OK??
-% \usepackage{chemmacros}
-% %\usepackage{multirow} %BRJ added
-% \usepackage{xspace}
+\section{Supplemental Information}
 
-% \DeclareSIUnit{\molar}{M}
-% \DeclareSIUnit[number-unit-product = {\,}]
-% \cal{cal}
-% \DeclareSIUnit\kcal{\kilo\cal}
-
-
-% \newcommand{\kon}{$k_{\textrm{on}}$\xspace}
-% \newcommand{\koff}{$k_{\textrm{off}}$\xspace}
-% \let\oldAA\AA
-% \renewcommand{\AA}{\oldAA\xspace}
-% \newcommand{\bcd}{$\beta$-cyclodextrin\xspace}
-
-
-% \title{Supporting Information: Quantitative Ranking of Ligand Binding Kinetics with a Multiscale Milestoning Simulation Approach}
-
-% % author list
-% \author{Benjamin R. Jagger}
-% \affiliation[Dept. of Chemistry and Biochemistry, University of California, San Diego]
-% {Department of Chemistry and Biochemistry, University of California, San Diego,
-% 9500 Gilman Drive, La Jolla, California 92093-0340, United States}
-
-% \author{Christopher T. Lee}
-% \affiliation[Dept. of Chemistry and Biochemistry, University of California, San Diego]
-% {Department of Chemistry and Biochemistry, University of California, San Diego,
-% 9500 Gilman Drive, La Jolla, California 92093-0340, United States}
-
-% \author{Rommie E. Amaro}
-% \affiliation[Dept. of Chemistry and Biochemistry, University of California, San Diego]
-% {Department of Chemistry and Biochemistry, University of California, San Diego,
-% 9500 Gilman Drive, La Jolla, California 92093-0340, United States}
-% \email{ramaro@ucsd.edu}
-
-% \begin{document}
-
-% \newpage
-
-%!TEX root = bcd_SI.tex
-
-\section*{Methods}
-\subsection*{System Preparation}
+\subsection{Methods}
+\subsubsection{System Preparation}
 \par GAFF\cite{Wang2004,Wang2006} forcefield parameters for the seven guest molecule
 along with both GAFF and Q4MD-CD\cite{Cezard2011} parameterizations of $\beta$-cyclodextrin
 were obtained from Tang and Chang\cite{Tang2017}. For comparison we use identical structure and
@@ -66,7 +13,7 @@ The preparation procedure was the same for each of the seven guest molecules and
 followed standard SEEKR protocols\cite{Votapka2017}. All systems were solvated
 with TIP3P waters\cite{Jorgensen1983a}.
 
-\subsubsection*{Preparation of milestoning simulations with SEEKR}
+\paragraph{Preparation of milestoning simulations with SEEKR}
 \par The bound state of the host-guest complex was defined as the center of mass (COM)
 of the \bcd. The guest molecule was considered to be bound when
 its COM was within 1.5~\AA of the bound state coordinates. From this bound state,
@@ -97,8 +44,8 @@ distribution for the BD milestone was constructed by first running a conventiona
 BD simulation where trajectories terminated at the appropriate distance for the
 milestone surface (13.5~\AA).
 
-\subsection*{Simulation}
-\subsubsection*{MD Simulations}
+\subsubsection{Simulation}
+\paragraph{MD Simulations}
 \par A modified version of NAMD 2.12 was used for all MD simulations\cite{Phillips2005}.
 For all 13 milestones in the MD region, the standard SEEKR procedure for
 minimization, equilibration and simulation was followed. First, 5000 steps of
@@ -140,8 +87,8 @@ simulation used in the milestoning model. The total cost per ligand (including
 simulation discarded for equilibration) was therefore $\sim$3.8 ${\mu}s$.
  %This is roughly half of the simulation time needed by Tang and Chang.
 
-\subsubsection*{BD Simulations}
-\par All BD simulations were performed using the BrownDye software package\cite{Huber2010}.
+\paragraph{BD Simulations}
+All BD simulations were performed using the BrownDye software package\cite{Huber2010}.
 Electrostatic potentials of the host and guest molecules used as inputs for the
 BD simulation were calculated with APBS version 1.4\cite{Baker2001}. To match
 experimental conditions, APBS calculations and BD simulations were carried out
@@ -157,7 +104,7 @@ were initiated from the FHPD and propagated until contacting the second-outermos
 milestone (12.0~\AA) or escaping to the q-surface. This procedure is automated by
 SEEKR.
 
-\subsection*{Milestoning Calculations}
+\subsubsection{Milestoning Calculations}
 \par Statistics from all milestones in the MD and BD regions were extracted
 using SEEKR and combined to construct a transition kernel as well as an incubation
 time vector. These are the two key quantities for the calculation of kinetic
@@ -167,114 +114,100 @@ between the two faces of the \bcd ring for milestones of radius 7.5~\AA
 or less. The analysis portion of SEEKR was then used to compute the desired
 kinetic quantities, \kon and \koff, as well as the free energy of binding $\Delta G_{bind}$.
 
-%!TEX root = bcd_SI.tex
-
-%!TEX root = bcd_SI.tex
-
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/gaff_convergence_images/1-butanol_gaff_complete.png}
     \caption{1-butanol GAFF per milestone convergence plot}
     \label{fig:1-butanol_gaff_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/gaff_convergence_images/1-propanol_gaff_complete.png}
     \caption{1-propanol GAFF per milestone convergence plot}
     \label{fig:1-propanol_gaff_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/gaff_convergence_images/methyl_butyrate_gaff_complete.png}
     \caption{methyl butyrate GAFF per milestone convergence plot}
     \label{fig:methyl_butyrate_gaff_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/gaff_convergence_images/tertbutanol_conv_complete.png}
     \caption{tert butanol GAFF per milestone convergence plot}
     \label{fig:tert_butanol_gaff_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/gaff_convergence_images/1-naphthylethanol_gaff_complete.png}
     \caption{1-naphthyl ethanol GAFF per milestone convergence plot}
     \label{fig:1-naphthylethanol_gaff_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/gaff_convergence_images/2-naphthylethanol_gaff_complete.png}
     \caption{2-naphthyl ethanol GAFF per milestone convergence plot}
     \label{fig:2-naphthylethanol_gaff_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/gaff_convergence_images/aspirin_gaff_complete.png}
     \caption{aspirin GAFF per milestone convergence plot}
     \label{fig:aspirin_conv}
 \end{figure}
 
-
-
-
-
-
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/q4md_convergence_images/1-butanol_q4md_complete.png}
     \caption{1-butanol Q4MD per milestone convergence plot}
     \label{fig:1-butanol_q4md_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/q4md_convergence_images/1-propanol_q4md_complete.png}
     \caption{1-propanol Q4MD per milestone convergence plot}
     \label{fig:1-propanol_q4md_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/q4md_convergence_images/methyl_butyrate_q4md_complete.png}
     \caption{methyl butyrate Q4MD per milestone convergence plot}
     \label{fig:methyl_butyrate_q4md_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/q4md_convergence_images/tertbutanol_q4md_complete.png}
     \caption{tert butanol Q4MD per milestone convergence plot}
     \label{fig:tert_butanol_q4md_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/q4md_convergence_images/1-naphthylethanol_q4md_complete.png}
     \caption{1-naphthyl ethanol Q4MD per milestone convergence plot}
     \label{fig:1-naphthylethanol_q4md_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/q4md_convergence_images/2-naphthylethanol_q4md_complete.png}
     \caption{2-naphthyl ethanol Q4MD per milestone convergence plot}
     \label{fig:2-naphthylethanol_q4md_conv}
 \end{figure}
 
-\begin{figure}
-    %\centering
+\begin{figure}[htbp]
+    \centering
     \includegraphics{./images/q4md_convergence_images/aspirin_q4md_complete.png}
     \caption{aspirin Q4MD per milestone convergence plot}
     \label{fig:aspirin_q4md_conv}
 \end{figure}
-
-% \bibliography{../library.bib}
-
-% \end{document}
-
