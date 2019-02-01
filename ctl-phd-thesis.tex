@@ -144,6 +144,7 @@ citecounter,labelnumber]{biblatex}
 \newcommand{\degrees}[0]{$^{\circ}$}
 \newcommand{\degree}[0]{$^{\circ}$}
 \newcommand{\surf}[1]{$#1$-surface\xspace}
+\newcommand{\bwn}[2]{#1\textsuperscript{#2}}
 
 \newcommand{\turnme}[1]{\begin{turn}{-90}#1\end{turn}}
 
@@ -177,7 +178,7 @@ citecounter,labelnumber]{biblatex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\bibliography{journals_short,permeability,mileperm,asc,allostery,bcd,exascale}
+\bibliography{journals_short,permeability,mileperm,asc,allostery,bcd,exascale,ccr2}
 \begin{document}
 
 %% FRONT MATTER
@@ -233,6 +234,13 @@ citecounter,labelnumber]{biblatex}
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
 
+\newpage
+\begin{refsection}
+\chapter{Structural Basis for Ligand Modulation of the CCR2 Conformational Landscape}\label{chap:ccr2}
+\subimport{2018-ccr2/}{CCR2-MSM-Main_pnas}
+\subimport{2018-ccr2/}{CCR2-MSM-SI_pnas}
+\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\end{refsection}
 
 \newpage
 \begin{refsection}
@@ -242,9 +250,9 @@ citecounter,labelnumber]{biblatex}
 \end{refsection}
 
 %% APPENDIX
-\appendix
-\chapter{Final notes}
-FOO STUFF
+% \appendix
+% \chapter{Final notes}
+% FOO STUFF
 
 %% END MATTER
 % \printindex %% Uncomment to display the index
