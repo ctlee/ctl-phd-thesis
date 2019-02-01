@@ -60,7 +60,7 @@ Further methodological details are provided in Methods and in the SI Appendix.
 
 We compare representative states from the apo and holo conformational ensemble with other class A GPCRs to establish similarities within the class.
 We find that the states of apo CCR2 have conformational signatures found in the active or intermediately-active states of GPCRs, suggesting that these states are on a pathway toward activation.
-Holo CCR2 diverges from the crystal structure to form distinct states that expose putative drug binding pockets and reveal the effect of antagonists on receptor dynamics. The most populated holo macrostate, J, is not representative of the crystal structure as it deviates 10.8$\AA$ from the crystal structure conformation (Fig. \ref{fig:apo_holo_hmm}C).
+Holo CCR2 diverges from the crystal structure to form distinct states that expose putative drug binding pockets and reveal the effect of antagonists on receptor dynamics. The most populated holo macrostate, J, is not representative of the crystal structure as it deviates 10.8 \AA from the crystal structure conformation (Fig. \ref{fig:apo_holo_hmm}C).
 
 We evaluate the metastable states by comparing helical conformational signatures and conserved groups of structurally neighboring amino acids called 'microswitches'.
 These include NPxxY (\bwn{Tyr 305}{7.53}), DRY (\bwn{Arg 138}{3.50}), \bwn{Tyr 222}{5.58}, sets of residues in the orthesteric and allosteric binding sites, and the chemokine and G-protein binding pockets to the inactive crystal structure of CCR2 that we used in this study (PDB ID: 5T1A), to an intermediately-active crystal structure of a class A GPCR, A\textsubscript{2A}AR(PDB ID: 2YDO\cite{Lebon2011}; 25\% sequence identity to CCR2), the active crystal structure of a class A GPCR, US28 (PDB ID: 4XT3\cite{Burg2015}; 30\% sequence identity to CCR2), and three other chemokine receptors: CCR5 (PDB ID: 4MBS\cite{Tan2013}, CCR9 (PDB ID: 5LWE\cite{Oswald2016}), and CXCR4 (PDB ID: 4RWS\cite{Qin2015}).
@@ -142,51 +142,51 @@ In holo CCR2, sodium does not interact with binding site residues, preventing th
 Comparisons of the apo and holo MSMs elucidate the effects of antagonists on CCR2 dynamics.
 Notably, apo relaxation timescales are an order of magnitude less than holo relaxation timescales (\cref{table:relaxation_timescales}), indicating that the antagonists greatly perturb CCR2 dynamics.
 The motions described by apo and holo TIC 0 represent the most striking difference between the two systems' dynamics.
-In the apo MSM, the inter-residue distances most closely correlated with apo TIC 0 are all a part of the allosteric (G-protein) binding pocket, whereas in the holo MSM, the inter-residue distances most closely correlated with holo TIC 0 are all a part of the orthosteric (chemokine) binding pocket (SI Appendix, Fig. S5).
+In the apo MSM, the inter-residue distances most closely correlated with apo TIC 0 are all a part of the allosteric (G-protein) binding pocket, whereas in the holo MSM, the inter-residue distances most closely correlated with holo TIC 0 are all a part of the orthosteric (chemokine) binding pocket (\cref{fig:tic0_contributions}).
 
-Apo TIC 1 represents the flipping of Trp 98\textsuperscript{2.60} into the orthosteric drug binding site (SI Appendix, Fig. S7A,B, S5C).
+Apo TIC 1 represents the flipping of Trp 98\textsuperscript{2.60} into the orthosteric drug binding site (Fig.~\ref{fig:tic1}A,B, \ref{fig:tic0_contributions}C).
 In the crystal structure Trp 98\textsuperscript{2.60} packs with the tri-substituted cyclohexane of the orthosteric antagonist, BMS-681\cite{Zheng2016}.
 Without the presence of this ligand, Trp 98\textsuperscript{2.60} assumes three distinct positions.
-The Trp 98\textsuperscript{2.60} conformation in the cluster at the neutral TIC (boxed in yellow, SI Appendix Fig. S7A,B) most closely resembles the conformation of Trp 98\textsuperscript{2.60} in the active GPCR US28, which is shifted slightly up and in towards the helical core in comparison to the CCR2 crystal structure.
+The Trp 98\textsuperscript{2.60} conformation in the cluster at the neutral TIC (boxed in yellow, Fig.~\ref{fig:tic1}A,B) most closely resembles the conformation of Trp 98\textsuperscript{2.60} in the active GPCR US28, which is shifted slightly up and in towards the helical core in comparison to the CCR2 crystal structure.
 The two other conformations are found at the extreme ends of apo TIC 1 in densely populated free energy wells.
-Of these two conformations, state F assumes the most dramatic conformation and protrudes into the chemokine binding site (SI Appendix, Fig. S6).
+Of these two conformations, state F assumes the most dramatic conformation and protrudes into the chemokine binding site (\cref{fig:apoF_ccr2_orthopocketSI}).
 In the holo macrostates there is markedly less intrusion into the binding pocket due to the presence of the ligand.
 
-Holo TIC 1 represents the concerted movement of 5 pairs of residues in the orthosteric ligand binding site during orthosteric ligand dissociation (SI Appendix, Fig. S7C,D, Fig. S5D).
-The separation projected in the first two TICs (SI Appendix, Fig. S7D) is divided into clusters of frames that occur before (white clusters), during (grey), and after (black) dissociation.
-The residue pairs identified by TICA that contribute to holo TIC 1 and this ligand dissociation (SI Appendix, Fig. S5D) were confirmed by analyzing the original simulation data.
+Holo TIC 1 represents the concerted movement of 5 pairs of residues in the orthosteric ligand binding site during orthosteric ligand dissociation (Fig.~\ref{fig:tic1}C,D, Fig.~\ref{fig:tic0_contributions}D).
+The separation projected in the first two TICs (Fig.~\ref{fig:tic1}D) is divided into clusters of frames that occur before (white clusters), during (grey), and after (black) dissociation.
+The residue pairs identified by TICA that contribute to holo TIC 1 and this ligand dissociation (Fig.~\ref{fig:tic0_contributions}D) were confirmed by analyzing the original simulation data.
 The key changes are the change in distance between Tyr 49\textsuperscript{1.39} - Thr 292\textsuperscript{7.40}, Trp 98\textsuperscript{2.60} - Tyr 120\textsuperscript{3.32}, Ser 50\textsuperscript{1.40} - Tyr 259\textsuperscript{6.51}, and the chi angle of Glu 291\textsuperscript{7.39}.
 Notably, four of these residues (Tyr 49\textsuperscript{1.39}, Trp 98\textsuperscript{2.60}, Tyr 120\textsuperscript{3.32}, and Thr 292\textsuperscript{7.40}) are not only involved in binding to the co-crystallized orthosteric antagonist BMS-681 and/or CCL2 binding, but are also critical for GPCR activation \cite{Berkhout2003, Hall2009}.
 
-The positioning of the orthosteric ligand and the conformation of Trp 98\textsuperscript{2.60} are closely linked (SI Appendix, Fig. S7C, Fig. S8).
+The positioning of the orthosteric ligand and the conformation of Trp 98\textsuperscript{2.60} are closely linked (Fig.~\ref{fig:tic1}C, Fig.~\ref{fig:trp98_allcentroidsSI}).
 After ligand dissociation, in holo states K and L (purple and white, respectively), Trp 98\textsuperscript{2.60} turns towards helix III, bending slightly inward toward the chemokine binding site.
 Prior to ligand dissociation, Trp 98\textsuperscript{2.60} has two distinct conformations.
 In the first conformation (states I and G, yellow and black), the ligand positions itself between helices I and VII, in the same conformation as the crystal structure.
 Trp 98\textsuperscript{2.60} is constrained in a downward position, pointing intracellularly, also resembling the CCR2 crystal structure conformation and the crystal structure of chemokine receptor CCR5.
 In the second conformation (States H and J, cyan and grey), Trp 98\textsuperscript{2.60} flips up and out of the binding pocket, pointing extracellularly, and the ligand moves between helices I and II.
-This conformation of Trp 98\textsuperscript{2.60} more closely resembles CCR9 (SI Appendix, Fig. S9).
+This conformation of Trp 98\textsuperscript{2.60} more closely resembles CCR9 (Fig.~\ref{fig:trp98_ccr9}).
 The third conformation of Trp 98\textsuperscript{2.60} is found in State M (red), and is the most prominent position of the residue as it extends deeper into the chemokine binding site toward helix III.
 In this case, the ligand interacts with helices II, IV, and V, and there are no transitions from this state to a dissociated state.
 
 As in the apo MSM, the absence of the orthosteric ligand causes a shift in the position of Trp 98\textsuperscript{2.60}.
-In the holo simulations shown in SI Appendix, Fig. S10, the dissociation event is preceded by a doubling of the distance between Trp 98\textsuperscript{2.60} and Tyr 120\textsuperscript{3.32}, and 3 $\mu$s after dissociation the distance returns to its previous 0.4 nm.
+In the holo simulations shown in Fig.~\ref{fig:state35_98-120}, the dissociation event is preceded by a doubling of the distance between Trp 98\textsuperscript{2.60} and Tyr 120\textsuperscript{3.32}, and 3 $\mu$s after dissociation the distance returns to its previous 0.4 nm.
 This increase in distance may be required for the ligand to begin the process of dissociating.
-Another drastic change during the dissociation event is the switch of Glu 291\textsuperscript{7.39} from a constrained chi angle of -50 to -100 degrees to an unconstrained chi angle (SI Appendix, Fig. S11).
+Another drastic change during the dissociation event is the switch of Glu 291\textsuperscript{7.39} from a constrained chi angle of -50 to -100 degrees to an unconstrained chi angle (Fig.\ref{fig:state35_glu291}).
 After dissociation, this angle more closely resembles the conformation in all apo simulations.
 Glu 291\textsuperscript{7.39} is a key mediator of many CCR2 antagonists\cite{Cherney2008}, but there is no direct interaction between Glu 291\textsuperscript{7.39} and the orthosteric antagonist in the CCR2 crystal structure\cite{Qin2015}.
 That the conformation of Glu 291\textsuperscript{7.39} switches after dissociation suggests that Glu 291\textsuperscript{7.39} is involved in ligand stabilization despite not directly interacting with the ligand.
 
 In the CCR2 crystal structure, there is a hydrogen bond between Tyr 49\textsuperscript{1.39} and Thr 292\textsuperscript{7.40}.
 The gamma-lactam secondary exocyclic amine of the orthosteric ligand forms a hydrogen bond with the hydroxyl of Thr 292\textsuperscript{7.40}, and the carbonyl oxygen of the gamma-lactam forms a hydrogen bond with Tyr 49\textsuperscript{1.39}.
-During simulation, the distance between Tyr 49\textsuperscript{1.39} and Thr 292\textsuperscript{7.40} remains stable until 3 $\mu$s after the ligand dissociates, when it begins fluctuating (SI Appendix, Fig. S12).
+During simulation, the distance between Tyr 49\textsuperscript{1.39} and Thr 292\textsuperscript{7.40} remains stable until 3 $\mu$s after the ligand dissociates, when it begins fluctuating (Fig.~\ref{fig:state35_49-292_50-259}).
 This suggests that the orthosteric ligand dissociation breaks the hydrogen bond between these key ligand binding residues.
-This motion is captured in the holo MSM: the separation of the two residues is exemplified between States H (pre-dissociation) and L (post-dissociation) in SI Appendix, Fig. S12.
+This motion is captured in the holo MSM: the separation of the two residues is exemplified between States H (pre-dissociation) and L (post-dissociation) in Fig.~\ref{fig:state35_49-292_50-259}}.
 
 Finally, the faster dominant motions (TICs 2, 3, 4) in the holo MSM consist of rearrangements in the allosteric ligand binding site, suggesting that an allosteric rearrangement must first happen in order for the orthosteric ligand to dissociate.
 Further evidence for this is the observed correlated motion of the downward flip of the conserved residue Tyr 305\textsuperscript{7.53} in the G-protein binding site with the dissociation of the orthosteric ligand from the chemokine binding site.
 
 Overall, holo macrostates show more helical tilting and binding site expansion, which increases the solvent-accessible surface area (SASA) when compared to the crystal structure and the apo macrostates.
-However, the apo simulations overall have greater residue fluctuation, suggesting that the antagonist ligands dampen CCR2 dynamics (SI Appendix, Fig. S13).
+However, the apo simulations overall have greater residue fluctuation, suggesting that the antagonist ligands dampen CCR2 dynamics (Fig.~\ref{fig:rmsf_sasa}).
 
 \begin{figure}[ht]
 \centering
@@ -226,8 +226,8 @@ MD trajectories and MSM construction scripts will be available for download.
 Two systems were simulated for a total of 260 $\mu$s: CCR2 holo, with both co-crystallized antagonist ligands bound, and CCR2 apo, without ligands bound. CCR2-RA-[R] and BMS 681\cite{Zheng2016} were removed to build the apo system. Each all-atom system is embedded in a POPC bilayer, explicitly solvated with TIP3P, and simulated with 150mM NaCl, at pH 7.4, at 310K and 1 bar. The initial coordinates were taken from the experimental crystal structure\cite{Zheng2016}.
 
 \subsection{\textbf{Building the Markov State Models}}
-The MSMs were built with PyEMMA version 2.5.4 \cite{Scherer2015} and selected based on implied timescale plots (SI Appendix, Fig. S14) and Chapman-Kolmogorov tests (SI Appendix, Figs. S15,S16) and coarse-grained with hidden Markov models (HMMs).
-Representative structures were selected from each macrostate by taking the centroid of the most populated microstate (SI Appendix, Figs. S17-S19)
+The MSMs were built with PyEMMA version 2.5.4 \cite{Scherer2015} and selected based on implied timescale plots (Fig.~\ref{fig:its}) and Chapman-Kolmogorov tests (\cref{fig:apo_its_ck,fig:holo_its_ck}) and coarse-grained with hidden Markov models (HMMs).
+Representative structures were selected from each macrostate by taking the centroid of the most populated microstate (\cref{fig:centroid-helixVII,fig:apo-centroids,fig:holo-centroids})
 
 
 \section{Acknowledgements}

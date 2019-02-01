@@ -17,7 +17,7 @@
 %                              1 Title of Chapter
 \documentclass[11pt, chapterheads, final]{ucsd}
 
-\setlength{\emergencystretch}{3em}
+\setlength{\emergencystretch}{3em} % Help for bad boxes!
 
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}      % amsmath++
@@ -29,8 +29,10 @@
 \usepackage{import}         % Import subfiles
 \usepackage{xcolor}         % Colors
 \usepackage{xspace}         % Space detection
-\usepackage{fancyvrb}
-\usepackage[version=4]{mhchem}
+\usepackage{fancyvrb}       % Fancy verbatim environment
+\usepackage[version=4]{mhchem}  % Chemistry related macros
+\usepackage[shortcuts]{extdash} % Allow breaking of hyphenated words
+\usepackage{siunitx}
 
 %% CAPTION
 % This overrides some of the ugliness in ucsd.cls and
@@ -44,7 +46,7 @@
 \usepackage{setspace}
 \doublespace
 \usepackage[font=small, width=0.9\textwidth]{caption}
-\usepackage{subcaption}
+\usepackage{subcaption} % Allow subfigures
 
 %% TIMES FONT - replacements for Computer Modern
 %%   This package will replace the default font with a
@@ -71,11 +73,6 @@
 \renewcommand{\arraystretch}{1.2} % Make tables easier to read
 \usepackage{multirow}
 
-\usepackage[style=chem-acs,
-backend=biber,defernumbers=true,sorting=none,
-citecounter,labelnumber]{biblatex}
-
-
 %% LISTINGS
 \usepackage{listings}
 \lstset{language=C++,
@@ -91,7 +88,6 @@ citecounter,labelnumber]{biblatex}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 
-
 % ALGORITHMS
 \usepackage[ruled]{algorithm2e} % For algorithms
 \renewcommand{\algorithmcfname}{ALGORITHM}
@@ -101,6 +97,7 @@ citecounter,labelnumber]{biblatex}
 \SetAlCapHSkip{0pt}
 \IncMargin{-\parindent}
 
+\usepackage[style=chem-acs,backend=biber,defernumbers=true,sorting=none,citecounter,labelnumber]{biblatex}
 
 %% HYPERLINKS
 %   To create a PDF with hyperlinks, you need to include the hyperref package.
@@ -127,11 +124,15 @@ citecounter,labelnumber]{biblatex}
 \DeclareCiteCommand{\citenum}{}{\printfield{labelnumber}}{}{}
 \setcounter{tocdepth}{1}
 
-%% NOTE TAKING PURPOSES ONLY %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NOTE TAKING PURPOSES ONLY           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Red}[1]{{\color{red} #1}}
 \newcommand{\ctl}[1]{{\xspace\color{purple} CTL: #1}}
 
-%%%%%%%%% Helpful text macros %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HELPFUL TEXT MACROS                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\perm}{$P_m$\xspace}
 \newcommand{\permcom}{$P_m^{\rm com}$\xspace}
 \newcommand{\permexp}{$P_m^{\rm exp}$\xspace}
@@ -164,7 +165,6 @@ citecounter,labelnumber]{biblatex}
 \newcommand{\simplex}[1]{$#1$-simplex}
 \newcommand{\simplices}[1]{$#1$-simplices}
 
-\usepackage{siunitx}
 \DeclareSIUnit{\molar}{M}
 \DeclareSIUnit[number-unit-product = {\,}]
 \cal{cal}
@@ -177,8 +177,11 @@ citecounter,labelnumber]{biblatex}
 \newcommand{\bcd}{$\beta$-cyclodextrin\xspace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \bibliography{journals_short,permeability,mileperm,asc,allostery,bcd,exascale,ccr2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN DOCUMENT                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 %% FRONT MATTER
@@ -206,6 +209,7 @@ citecounter,labelnumber]{biblatex}
 \chapter{Simulation-Based Approaches for Determining Membrane Permeability of Small Compounds}\label{chap:permeability}
 \subimport{2015-permeability/}{perm2015}
 \subimport{2015-permeability/}{perm2015supp}
+\clearpage
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
 
@@ -214,23 +218,24 @@ citecounter,labelnumber]{biblatex}
 \chapter{Milestoning Permeability}\label{chap:mileperm}
 \subimport{2016-milestone_perm/}{mileperm}
 \subimport{2016-milestone_perm/}{mileperm2016supp}
+\clearpage
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
-
 
 \newpage
 \begin{refsection}
 \chapter{Quantitative Ranking of Ligand Binding Kinetics with a Multiscale Milestoning Simulation Approach}\label{chap:bcd}
 \subimport{2018-BCD/}{2018-BCD}
 \subimport{2018-BCD/}{2018-BCD_SI}
+\clearpage
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
-
 
 \newpage
 \begin{refsection}
 \chapter{Emerging Computational Methods for the Rational Discovery of Allosteric Drugs}\label{chap:allostery}
 \subimport{2015-allostery/}{allostery.tex}
+\clearpage
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
 
@@ -239,6 +244,7 @@ citecounter,labelnumber]{biblatex}
 \chapter{Structural Basis for Ligand Modulation of the CCR2 Conformational Landscape}\label{chap:ccr2}
 \subimport{2018-ccr2/}{CCR2-MSM-Main_pnas}
 \subimport{2018-ccr2/}{CCR2-MSM-SI_pnas}
+\clearpage
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
 
@@ -246,6 +252,7 @@ citecounter,labelnumber]{biblatex}
 \begin{refsection}
 \chapter{The Implementation of the Colored Abstract Simplicial Complex and its Application to Mesh Generation}\label{chap:asc}
 \subimport{2018-simplicialcomplex/}{ASC2018}
+\clearpage
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
 
