@@ -76,7 +76,7 @@ dD Triangulations, for example, assumes that a simplicial complex is pure and th
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=\textwidth]{Figures/hasse/hasse}
-	\caption{Hasse diagrams of several Abstract Simplicial Complexes and a geometric realization from left to right: the empty set, a vertex, an edge, a triangle, a tetrahedron.}
+	\caption[Hasse diagram representation of Abstract Simplicial Complexes]{Hasse diagrams of several Abstract Simplicial Complexes and a geometric realization from left to right: the empty set, a vertex, an edge, a triangle, a tetrahedron.}
 	\label{fig:hasse}
 \end{figure}
 
@@ -128,7 +128,7 @@ Furthermore, simplices of greater dimension are drawn above lesser simplices.
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=\textwidth]{Figures/datastructure/ds}
-	\caption{Data structure diagram of the resulting \asc for a triangle. Each simplex is represented as a node containing a dictionary up and/or down which maps the vertex index to a pointer to the next simplex. Data can be stored at each node with type determined at compile time. Effectively each level can contain different meta-data as defined by the user, separating the interactions of user data from the representation of topology.}
+	\caption[\asc data structure diagram]{Data structure diagram of the resulting \asc for a triangle. Each simplex is represented as a node containing a dictionary up and/or down which maps the vertex index to a pointer to the next simplex. Data can be stored at each node with type determined at compile time. Effectively each level can contain different meta-data as defined by the user, separating the interactions of user data from the representation of topology.}
 	\label{fig:datastruct}
 \end{figure}
 
@@ -165,8 +165,8 @@ Furthermore, the associate algorithms and innovations using variable typing are 
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=\textwidth]{Figures/unpacking/unpacking}
-	\caption{
-		Template arguments for ASC are unpacked and assigned to nodes accordingly. The first argument ``\texttt{int}'' is the key type for labeling vertices while the following arguments define node data types. Notably, \texttt{Node<2>} does not allocate memory for data as the corresponding template argument was ``\texttt{void}''. By passing in additional types, simplicial complexes of higher dimensions are instantiated.
+	\caption[Unpacking of template arguments for \asc]{
+		Template arguments for \asc are unpacked and assigned to nodes accordingly. The first argument ``\texttt{int}'' is the key type for labeling vertices while the following arguments define node data types. Notably, \texttt{Node<2>} does not allocate memory for data as the corresponding template argument was ``\texttt{void}''. By passing in additional types, simplicial complexes of higher dimensions are instantiated.
 	}
 	\label{fig:unpacking}
 \end{figure}
@@ -272,7 +272,7 @@ $rootSimplex$: The simplex to insert relative to (most commonly $root$)}
 		\begin{figure}[ht!]
 			\centering
 			\includegraphics[width=0.7\textwidth]{Figures/insertion/insertion}
-			\caption{Recursive insertion of tetrahedral simplex \{1,2,3,4\}. The order of node insertions is represented by the numbered red arrows. When each node is created, the black arrows to parent simplices are created by backfilling.}
+			\caption[\asc recursive insertion algorithm]{Recursive insertion of tetrahedral simplex \{1,2,3,4\}. The order of node insertions is represented by the numbered red arrows. When each node is created, the black arrows to parent simplices are created by backfilling.}
 			\label{fig:insert}
 		\end{figure}
 
@@ -477,7 +477,7 @@ void main(){
 				}
 				\label{fig:decdetail}
 			\end{subfigure}
-			\caption{The example decimation of edge $s = \{3,4\}$ in a constructed example.}
+			\caption[Example decimation of an edge in \asc]{The example decimation of edge $s = \{3,4\}$ in a constructed example.}
 			\label{fig:decimation}
 		\end{figure}
 
@@ -840,9 +840,9 @@ A copy of \asc along with online documentation can found on GitHub \url{https://
 
 % Acknowledgments
 \section{Acknowledgements}
-\par \cref{chap:asc}, in full, has been submitted for publication as it may appear in
-``Lee, C. T.; Moody, J. B.; Amaro, R. E.; McCammon, J. A.; Holst, M. \emph{The Implementation of the Colored Abstract Simplicial Complex and Its Application to Mesh Generation.} 2018.''
-The dissertation author was the primary co-investigator and author of this paper.
+\par \cref{chap:asc}, in full, has been submitted for publication and appears as it may appear in
+``Lee, C. T.$^{\dagger}$; Moody, J. B.$^{\dagger}$; Amaro, R. E.; McCammon, J. A.; Holst, M. \emph{The Implementation of the Colored Abstract Simplicial Complex and Its Application to Mesh Generation.} Trans. on Math. Soft.''
+The dissertation author was a primary coinvestigator and author of this work.
 
 \par This work is supported by the National Institutes of Health under grant numbers P41-GM103426 and RO1-GM31749.
 CTL also acknowledges support from the NIH Molecular Biophysics Training Grant T32-GM008326.
@@ -961,7 +961,7 @@ $\mc{F}$: simplicial complex}
 \begin{figure}[hp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Figures/insertion/insertorder}
-	\caption{
+	\caption[Step-by-step simplex insertion Hasse diagrams]{
 		The Hasse diagrams for the step-by-step insertion of tetrahedron \{1,2,3,4\} by Algorithm~\ref{alg:insertion}. Red lines represent the order of creation for each simplex. The skinny black lines represent where connections to parent simplices are backfilled.
 	}
 	\label{fig:insertorder}
