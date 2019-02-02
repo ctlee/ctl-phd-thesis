@@ -3,7 +3,7 @@
 
 % No symbols, formulas, superscripts, or Greek letters are allowed
 % in your title.
-\title{Investigating Molecular Transport Properties Using Computational Modeling}
+\title{Enabling Multiscale Modeling}
 
 \author{Christopher Ting-Kuang Lee}
 \degreeyear{2019}
@@ -78,11 +78,10 @@ Professor Francesco Paesani
 %
 %  The same choices that applied to the dedication apply here.
 %
-% \begin{epigraph} % The style file will position the text for you.
-%   \emph{A careful quotation\\
-%   conveys brilliance.}\\
-%   ---Smarty Pants
-% \end{epigraph}
+\begin{epigraph} % The style file will position the text for you.
+  \emph{So long and thanks for all the fish}\\
+  ---Douglas Adams
+\end{epigraph}
 
 % \begin{myepigraph} % You position the text yourself.
 %   \vfil
@@ -101,7 +100,6 @@ Professor Francesco Paesani
 \listoftables   % Comment if you don't have any tables
 
 
-
 %% ACKNOWLEDGEMENTS
 %
 %  While technically optional, you probably have someone to thank.
@@ -111,16 +109,27 @@ Professor Francesco Paesani
 %  the OGS Formatting Manual for more information.
 %
 \begin{acknowledgements}
-\par Rommie, Andy, Rob Swift, Jesper Sorensen
-\par Ben Jagger
-\par Jeff Wagner cynicism, Jamie Schiffer compassion, Alisha Caliman
-\par Bryn
+\par A PhD is an important recognition from the scientific community and institution signifying the success and qualifications of an individual to pursue creative and original research.
+This success is not spontaneous but typically builds upon many years of academic and other preparation.
+I thank all of the innumerable mentors who have influenced me throughout the years.
 
-\par Cam, Linda, Michael Shirts
+\par I would like to acknowledge my advisors Rommie Amaro and Andy McCammon.
+They have created a stimulating and rich yet flexible research environment which has afforded me the ability to explore my personal research interests with their full support.
+Through the highs and lows of our work, they have guided me and pushed me to grow in all aspects of my life.
+Their constant encouragement has allowed me to flourish in ways I never thought possible.
+During my graduate tenure, perhaps most importantly, they have entrusted me with the role of mentoring many students across all levels of academic preparation.
+They have enabled my passion for sharing the pursuit of science with others.
+I will treasure this gift, thank you.
 
-\par Steffen Lindert, Dan Mermelstein, Giulia Palermo, Clarisse Ricci, John Che, John Moody, Yinglong Miao, Robert Malmstrom, Olivia \& Levi Pierce, Lorenzo Casalino,
+\par Rob Swift was a close mentor during the first two years of my degree.
+He helped lay the foundations for my graduate success.
+Rob, I have enjoyed watching your family grow.
+Thanks for sharing your humor, scientific rigor, and skepticism which have forged me into the scientist I am today.
+I also thank my committee members Katja Lindenberg, Mike Holst, Francesco Paesani, and Mike Gilson.
+You were tough but fair, thanks for always pushing me to think critically.
 
-\par Emilia, Christian, Sophia, Siti, Pek, Sasha, Vicki Feher, Garrett Chan, They Thien Nguyen, Tavina Offutt, Adam Van Wart, Prasantha Vemu, Celia Wong, Lane Votapka,
+\par Special thanks to all of the other current and former members of the Amaro and McCammon groups.
+I have realized that listing all of your many contributions to my life and work could take me an additional 5 years.
 
 \par \cref{chap:exascale}, in full, is a modified reprint of the material as it appears in ``Lee, C. T.; Amaro, R. E. \emph{Exascale Computing: A New Dawn for Computational Biology.} Comput. Sci. Eng. 2018, 20 (5), 18–25.''.
 The dissertation author was the primary investigator and author of this work.
@@ -137,11 +146,11 @@ The dissertation author was an investigator, supervisor, and coauthor of this wo
 \par \cref{chap:allostery}, in full, is a modified reprint of the material as it appears in ``Wagner, J. R.$^{\dagger}$; Lee, C. T.$^{\dagger}$; Durrant, J. D.; Malmstrom, R. D.; Feher, V. A.; Amaro, R. E. \emph{Emerging Computational Methods for the Rational Discovery of Allosteric Drugs.} Chem. Rev. 2016, 116 (11), 6370–6390.''.
 The dissertation author was a primary coinvestigator and author of this work.
 
-\par \cref{chap:ccr2}, in full, has been submitted for publication as it may appear in ``Taylor, B. C.; Lee, C. T.; Amaro, R. E. \emph{Structural Basis for Ligand Modulation of the CCR2 Conformational Landscape.} PNAS.''
+\par \cref{chap:ccr2}, in full, has been submitted for publication and is presented as it may appear in ``Taylor, B. C.; Lee, C. T.; Amaro, R. E. \emph{Structural Basis for Ligand Modulation of the CCR2 Conformational Landscape.} PNAS.''
 The dissertation author was an investigator, supervisor, and coauthor of this work.
 
-\par \cref{chap:asc}, in full, has been submitted for publication and appears as it may appear in
-``Lee, C. T.$^{\dagger}$; Moody, J. B.$^{\dagger}$; Amaro, R. E.; McCammon, J. A.; Holst, M. \emph{The Implementation of the Colored Abstract Simplicial Complex and Its Application to Mesh Generation.} Trans. on Math. Soft.''
+\par \cref{chap:asc}, in full, has been submitted for publication and is presented as it may appear in
+``Lee, C. T.$^{\dagger}$; Moody, J. B.$^{\dagger}$; Amaro, R. E.; McCammon, J. A.; Holst, M. \emph{The Implementation of the Colored Abstract Simplicial Complex and Its Application to Mesh Generation.} Trans. Math. Soft.''
 The dissertation author was a primary coinvestigator and author of this work.
 \end{acknowledgements}
 
@@ -173,7 +182,7 @@ The dissertation author was a primary coinvestigator and author of this work.
   \item Jagger, B. R.; \textbf{Lee, C. T.}; Amaro, R. E. \emph{Quantitative Ranking of Ligand Binding Kinetics with a Multiscale Milestoning Simulation Approach.} J. Phys. Chem. Lett. 2018, 9 (17), 4941–4948.
   \item Taylor, B. C.; \textbf{Lee, C. T.}; Amaro, R. E. \emph{Structural Basis for Ligand Modulation of the CCR2 Conformational Landscape.} bioRxiv 2018, 392068. \textit{Submitted}
   \item \textbf{Lee, C. T.$^{\dagger}$}; Moody, J. B.$^{\dagger}$; Amaro, R. E.; McCammon, J. A.; Holst, M. \emph{The Implementation of the Colored Abstract Simplicial Complex and Its Application to Mesh Generation.} 2018. arXiv: 1807.01417. \textit{Submitted}
-  \item \textbf{Lee, C. T.$^{\dagger}$}; Laughlin, J. G.$^{\dagger}$, Angliviel de La Beaumelle, N.; Amaro, R. E.; McCammon, J. A.; Ramamoorthi, R.; Holst, M. J.; Rangamani, P. \emph{GAMer 2: A System for 3D Mesh Processing of Cellular Electron Micrographs.} bioRxiv 2019. \textit{In Preparation}
+  \item \textbf{Lee, C. T.$^{\dagger}$}; Laughlin, J. G.$^{\dagger}$, Angliviel de La Beaumelle, N.; Amaro, R. E.; McCammon, J. A.; Ramamoorthi, R.; Holst, M. J.; Rangamani, P. \emph{GAMer 2: A System for 3D Mesh Processing of Cellular Electron Micrographs.} bioRxiv 2019. \textit{Submitted}
 \end{publications}
 \end{vitapage}
 
@@ -183,6 +192,8 @@ The dissertation author was a primary coinvestigator and author of this work.
 %   The abstract may continue to a second page if necessary.
 %
 \begin{abstract}
-  This dissertation will be abstract.
+
+
+Proteins dance; the atoms of a protein move through time in our cellular aqueous environment, and each atom is important in this process. The dance of a protein is unique to that protein, and alone controls how that protein functions. In this way, our cells are a world unto their own, and as the proteins of a cell dance along, they orchestrate life. In this thesis, I discuss the dance, or dynamics, of five different proteins: the ankyrin repeat and SOCS box protein 9 (ASB9), creatine kinase (CK), the L99A mutant of T4 lysozyme, the Inhibitor of κB kinase 2 (IKK2), and the NFκB essential modulator (NEMO). Each of these proteins have unique sizes, shapes, dynamics, and roles in the cell. To study these proteins, I chose to use the computational microscope, performing molecular dynamics simulations at the atomic level. Through the solving of theoretical models of the bonds between atoms, iterated over and over again through time, a dance unfolded for each of these proteins, illuminating how these proteins perform their duties in our cells and in our test tubes. I demonstrate that ASB9 and CK interact through a highly disordered interface, uncover the dynamics which guide both excited state transitioning and benzene release in the L99A mutant of T4 lysozyme, and present a hypothesis for how NEMO appends itself to the IKK2 hexamer.
 \end{abstract}
 \end{frontmatter}
