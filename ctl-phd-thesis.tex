@@ -17,7 +17,7 @@
 %                              1 Title of Chapter
 \documentclass[11pt, chapterheads, final]{ucsd}
 
-\setlength{\emergencystretch}{3em} % Help for bad boxes!
+% \setlength{\emergencystretch}{3em} % Help for bad boxes!
 
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}      % amsmath++
@@ -31,7 +31,7 @@
 \usepackage{xspace}         % Space detection
 \usepackage{fancyvrb}       % Fancy verbatim environment
 \usepackage[version=4]{mhchem}  % Chemistry related macros
-\usepackage[shortcuts]{extdash} % Allow breaking of hyphenated words
+% \usepackage[shortcuts]{extdash} % Allow breaking of hyphenated words
 \usepackage{siunitx}
 
 %% CAPTION
@@ -177,7 +177,7 @@
 \newcommand{\bcd}{$\beta$-cyclodextrin\xspace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bibliography{journals_short,permeability,mileperm,asc,allostery,bcd,exascale,ccr2}
+\bibliography{minimal}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BEGIN DOCUMENT                      %
@@ -192,7 +192,7 @@
 \include{frontmatter}
 
 \begin{refsection}
-\chapter{Introduction}
+\chapter{Introduction: Why Model Biology?}
 \subimport{intro/}{intro}
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
@@ -255,6 +255,12 @@
 \clearpage
 \printbibliography[segment=\therefsegment,heading=subbibintoc]{}
 \end{refsection}
+
+\newpage
+\vspace*{3in}\hfill\begin{center}
+\emph{So long and thanks for all the fish.}\\
+---Douglas Adams
+\end{center}
 
 %% APPENDIX
 % \appendix
