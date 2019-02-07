@@ -1,0 +1,44 @@
+\documentclass[10pt]{letter}
+\usepackage{hyperref}
+\usepackage[top=1.5in, bottom=0.625in, left=0.625in, right=0.625in]{geometry}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{wallpaper}
+\usepackage{graphicx}
+\usepackage{lipsum}
+
+\setlength{\longindentation}{0.1\textwidth} % default is 0.5\textwidth
+\setlength{\indentedwidth}{\textwidth}
+\addtolength{\indentedwidth}{-\longindentation}
+\pagenumbering{gobble}
+
+\begin{document}
+\ThisULCornerWallPaper{1}{../Figures/ucsd_letterhead.pdf}
+\begin{letter}{Paul Yu, Interim Dean\\
+Grad Division\\
+UC San Diego}
+\opening{Dear Dean Yu:}
+
+We request permission for Christopher T. Lee to use the following published, submitted, or in preparation material in his doctoral dissertation.
+Mr. Lee is an investigator and author on each work.
+
+\begin{itemize}
+  {% for paper in papers %}
+    \item {{ paper }}
+  {% endfor %}
+\end{itemize}
+
+\closing{Best regards,\\[5mm]
+\begin{minipage}{.5\textwidth}
+  \fromsig{\includegraphics[scale=0.8]{../Figures/REAsignature.pdf}}\\
+  \fromname{Rommie E. Amaro, Co-Chair}\\[3mm]
+  \fromsig{\includegraphics{../Figures/JAMsignature.pdf}}\\
+  \fromname{J. Andrew McCammon, Co-Chair}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \fromsig{\includegraphics[scale=0.6]{../Figures/CTL_sig.pdf}}\\
+  \fromname{Christopher T. Lee, Student}
+\end{minipage}
+}
+\end{letter}
+\end{document}

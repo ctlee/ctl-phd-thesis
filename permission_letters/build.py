@@ -3,16 +3,30 @@
 from jinja2 import Template
 import pandas as pd
 from subprocess import call
+import os
 
 def main():
-    with open('template') as f:
+    with open('template.tex') as f:
         template = f.read()
     env = Template(template)
+
+    with open('deanLetter.tex') as f:
+        template = f.read()
+    dean = Template(template)
 
     with open('papers.txt') as f:
         papers = f.read().split('\n')
 
     df = pd.read_csv('co-authors.txt', sep=',', header=0)
+
+    os.chdir('docs')
+    filename = 'deanLetter'
+    with open(filename + '.tex', 'w') as f:
+        data = dean.render(papers=papers)
+        f.write(data)
+    call(["latexmk","-pdf",filename])
+    call(["latexmk","-c",filename])
+    call(["rm",filename+".tex"])
 
     for _, row in df.iterrows():
 

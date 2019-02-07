@@ -2,38 +2,66 @@
 
 \par The goal of biology is to understand life to an extent that one can predict the eventual behaviors of a living system under or in the absence of a stimulus or perturbation.
 Although many debate the utility of quantitative modeling in answering this question, I will abstain from such discussion and focus on the benefits of modeling as I view them.
-The development of a whole cell or organism model, is a hot topic in modern biology.
-Technological advances in experimental methods, have lead to an unprecendented and detailed view into various components of biology.
-Biochemists can design and execute experiments driven by classical hypothesis, i.e., by varying one parameter at a time and observing and characterizing the results to form conclusions.
-However, biology is complex and non-linear.
-Simple experimental models, while elegant, often test isolated model behaviors in simplified systems which are not representative of other experimental conditions.
-Many expensive experiments can be run to explore the solution spaces at large potential cost.
-% To fully understand biology, one must embrace the complexity present in real biological systems.
+The development of a whole cell or organism model has become a hot topic in modern biology.
+As biologists uncover the mysteries which make life possible, they unveil new complexities\cite{CheckHayden2010}.
+These complex and non-linear behaviors are not amenable to scrutiny via traditional research methods which are driven by classical hypothesis (i.e., by varying one parameter at a time and observing and characterizing the results to form conclusions).
+Simple experimental models, while elegant, test isolated model behaviors in simplified systems which are often not generalizable.
+In order to derive a general conclusion, many expensive experiments must be run to explore the solution space at large potential cost.
 
-\par One strategy to reduce this cost burden is to turn to relatively inexpensive modeling.
+\par One strategy to reduce the experimental cost burden is to shift towards inexpensive mathematical modeling.
 Mathematical models in biology are increasing in popularity, and come in a wide variety of flavors\cite{Gunawardena2014}.
 For example, there are information and data driven models as well as models based on the fundamentals of physical principles.
 In this dissertation, I will focus on the development of methods in support of the latter.
 By codifying our knowledge into a physical model, we can gain many benefits.
-Physical models can serve as a glue to reconcile the results of individual experiments at isolated conditions.
-Given sufficient validation, these models can be used to generate prospective predictions to inspire new experiments.
-When a physical model fails to reproduce experimental results, this is a litmus test for the limitations of our current understanding.
+First, physical models can serve as a glue to reconcile the results of individual experiments at isolated conditions.
+When cleverly designed, many mathematical models are also amenable to computed solutions using numerical methods.
+Combining knowledge and computation, inexpensive parameter sweeps to eliminate physical impossibilities and guide experimental efforts can serve to reduce the experimental cost burden of biology.
 
+\par Physical models can also produce other benefits for science.
+During the design and validation phase of model construction, when a physical model fails to reproduce experimental results, this is a litmus test for the limitations of our current understanding.
+By studying the assumptions of the model and querying the differences between prediction and experiment, scientists can pinpoint possible knowledge gaps.
+Once a physical model is sufficiently validated, they can also be used to generate prospective predictions.
+For example, in an inspiring study, Hodgkin and Huxley created a famous model describing the propagation of an action potential along a giant squid axon\cite{HUXLEY1952}.
+Although the model was based on empirical fitting of electrophysiology data, many speculated upon the physical implications of the mathematics.
+One term in particular, predicting the presence of four voltage-sensitive gates in the sodium ion channel, was later experimentally confirmed by crystallographic structure which resolved the tetrameric channel structure\cite{Sigg2014a}.
 
-Models can also be used to explore the unknown.
-Owing to the reduced cost, parameter sweeps in model space can be performed to eliminate physical impossibilities to guide future experimental efforts.
-
-
-We are at an exciting time, where there is a convergence of structural data, experimental parameters and computation.
-
-\par Mathematical modeling Hodgkin-Huxley model predicting sodium ion channel\cite{Sigg2014a}
-
-
-There are many kinds of models ranging from physical to
-
-\par
+\par We live in an exciting time, where there is a convergence of emerging structural data, legacy experimental parameters, and computational power.
+In order to understand life, we must embrace the complexity of biology.
+The work described in this dissertation seeks to address several challenges which hinder the routine application of large systems biology models.
 
 \section{Overview of Chapter Contents}
 
-\par \cref{chap:exascale} discusses the potential applications and gains afforded by future exascale supercomputers.
+\par \cref{chap:exascale} discusses the potential applications and gains afforded by future exascale supercomputers to biology.
+This chapter provides some perspective on the role that computers can play to solve various biological problems.
+I speculate upon, not only contributions of computation to basic science, but also to translational fields such as personalized medicine.
+In this chapter, I address and frame some of the challenges to future modeling efforts, with solutions described in the subsequent chapters.
+
+\par Parameters in biological models often take the form of rates such as diffusion, permeability, or binding and unbinding of a drug.
+Where experimental protocols for measuring diffusivity and other rates is complicated, molecular simulations such as molecular dynamics can be employed to generate estimates.
+In \cref{chap:permeability}, I describe the comparison of the efficiency of four enhanced sampling strategies to compute drug permeability.
+We find that there are many orthogonal degrees of freedom which can hinder these calculations and provide some best practices for future work.
+
+\par While I was studying passive membrane permeability, others in the group were thinking about the use of milestoning.
+Milestoning is an enhanced sampling strategy where instead of observing the full transition from start to finish of a process, we instead collect statistics of transitions along a small segment of the full pathway.
+The application of milestoning theory to permeability calculations was not straightforward since the natural currency of milestoning is transition probabilities, while the relations to compute permeability require potentials of mean force.
+Lane derived a new relation to compute permeabilities which we validated using a toy model inspired my prior permeability work.
+This is described in \cref{chap:mileperm}.
+
+
+\par Later working with Ben Jagger we again used milestoning to predict the binding kinetics of a host-guest system.
+This work is presented in \cref{chap:bcd}
+
+\par Also of interest is the dynamics of protein movement
+\cref{chap:allostery} \cref{chap:ccr2}
+
+
+\par Finally, the construction of geometries
+
+\cref{chap:asc}
+
+
+
+
+
+
 
