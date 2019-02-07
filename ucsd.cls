@@ -1146,7 +1146,7 @@ on microfilm and electronically: }}\\
 \setlength{\UCSD@toc@frontmatterLength}{0em}
 % Use the following line to have the front matter title aligned with
 % the chapter titles.  Otherwise they will aligned to the left (as required by OGS.)
-%\setlength{\UCSD@toc@frontmatterLength}{0em}
+% \setlength{\UCSD@toc@frontmatterLength}{0em}
 \def\l@frontmatter{\normalfont\vskip 1em plus 1pt \@dottedtocline{0}{0em}{\UCSD@toc@frontmatterLength}}
 
 
@@ -1156,7 +1156,6 @@ on microfilm and electronically: }}\\
 % the chapter titles.  Otherwise they will aligned to the left (as required by OGS.)
 %\setlength{\UCSD@toc@backmatterLength}{0em}
 \def\l@backmatter{\normalfont\vskip 1em plus 1pt \@dottedtocline{0}{0em}{\UCSD@toc@frontmatterLength}}
-
 
 \def\l@section{\normalfont\@dottedtocline{1}{\@chapterlength}{2.3em}}
 
@@ -1180,6 +1179,7 @@ on microfilm and electronically: }}\\
 \addtolength{\@subparagraphlength}{10.5em}
 \def\l@subparagraph{\normalfont\@dottedtocline{5}{\@subparagraph}{6em}}
 
+
 % LIST OF FIGURES
 %
 % Single-space list of figures, add it to the table of contents.
@@ -1196,17 +1196,19 @@ on microfilm and electronically: }}\\
     \let\ORIG@numberline\numberline%
     \renewcommand*{\numberline}[1]{%
       \ORIG@numberline{\figurename~##1:}}%
-    {\ssp\@starttoc{lof}}%
+    {\ssp\setlength{\parskip}{\baselineskip}\@starttoc{lof}}%
     \if@restonecol\twocolumn\fi%
   \endgroup %
   }
 
 \newlength{\@figurelength}
-\settowidth{\@figurelength}{\figurename }
+\settowidth{\@figurelength}{\figurename}
 % Magic value, but consistent with the standard figure length
 \addtolength{\@figurelength}{2.8em}
 \def\l@figure{\normalfont\@dottedtocline{1}{0em}{\@figurelength}}
 
+
+%
 % LIST OF TABLES
 %
 % Single-space list of tables, add it to the table of contents.
@@ -1222,7 +1224,7 @@ on microfilm and electronically: }}\\
   \begingroup%
     \let\ORIG@numberline\numberline%
     \renewcommand*{\numberline}[1]{\ORIG@numberline{\tablename~##1:}}%
-    {\ssp\@starttoc{lot}}%
+    {\ssp\setlength{\parskip}{\baselineskip}\@starttoc{lot}}%
     \if@restonecol\twocolumn\fi%
   \endgroup %
   }

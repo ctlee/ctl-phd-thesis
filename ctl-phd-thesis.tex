@@ -15,7 +15,7 @@
 %                              Title of Chapter
 %                            instead of
 %                              1 Title of Chapter
-\documentclass[11pt, chapterheads, final]{ucsd}
+\documentclass[11pt, oneside, chapterheads, final]{ucsd}
 
 % \setlength{\emergencystretch}{3em} % Help for bad boxes!
 
@@ -45,7 +45,7 @@
 \makeatother
 \usepackage{setspace}
 \doublespace
-\usepackage[font=small, width=0.9\textwidth]{caption}
+\usepackage[style=base,font=small,width=0.9\textwidth]{caption}
 \usepackage{subcaption} % Allow subfigures
 
 %% TIMES FONT - replacements for Computer Modern
@@ -97,7 +97,9 @@
 \SetAlCapHSkip{0pt}
 \IncMargin{-\parindent}
 
-\usepackage[style=chem-acs,backend=biber,defernumbers=true,sorting=none,citecounter,labelnumber]{biblatex}
+\usepackage[style=chem-acs,backend=biber,defernumbers=true,sorting=none,citecounter,labelnumber,maxbibnames=99]{biblatex}
+
+\renewcommand{\bibitemsep}{\baselineskip}
 
 %% HYPERLINKS
 %   To create a PDF with hyperlinks, you need to include the hyperref package.
@@ -123,6 +125,7 @@
 
 \DeclareCiteCommand{\citenum}{}{\printfield{labelnumber}}{}{}
 \setcounter{tocdepth}{1}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % NOTE TAKING PURPOSES ONLY           %
@@ -177,7 +180,22 @@
 \newcommand{\bcd}{$\beta$-cyclodextrin\xspace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bibliography{minimal}
+\bibliography{minimal,tmp}
+
+% \usepackage{xpatch}
+
+% \makeatletter
+% % \xapptocmd{\caption}{}{}{}
+% \xpatchcmd{\@caption}{\begingroup }{\addtocontents{\csname ext@#1\endcsname}{\protect\addvspace{10\p@}}\begingroup }
+% \xshowcmd{\@caption}
+% \makeatother
+
+\newcommand{\pchapbib}{%
+\clearpage%
+\begingroup%
+\setstretch{1.0}%
+\printbibliography[segment=\therefsegment,heading=subbibintoc]{}%
+\endgroup}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BEGIN DOCUMENT                      %
@@ -194,14 +212,14 @@
 \begin{refsection}
 \chapter{Introduction: Why Model Biology?}
 \subimport{intro/}{intro}
-\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\pchapbib
 \end{refsection}
 
 \newpage
 \begin{refsection}
 \chapter{Exascale Computing: A New Dawn for Computational Biology}\label{chap:exascale}
 \subimport{2018-exascale/}{2018-exascale}
-\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\pchapbib
 \end{refsection}
 
 \newpage
@@ -209,8 +227,7 @@
 \chapter{Simulation-Based Approaches for Determining Membrane Permeability of Small Compounds}\label{chap:permeability}
 \subimport{2015-permeability/}{perm2015}
 \subimport{2015-permeability/}{perm2015supp}
-\clearpage
-\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\pchapbib
 \end{refsection}
 
 \newpage
@@ -218,8 +235,7 @@
 \chapter{Milestoning Permeability}\label{chap:mileperm}
 \subimport{2016-milestone_perm/}{mileperm}
 \subimport{2016-milestone_perm/}{mileperm2016supp}
-\clearpage
-\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\pchapbib
 \end{refsection}
 
 \newpage
@@ -227,16 +243,14 @@
 \chapter{Quantitative Ranking of Ligand Binding Kinetics with a Multiscale Milestoning Simulation Approach}\label{chap:bcd}
 \subimport{2018-BCD/}{2018-BCD}
 \subimport{2018-BCD/}{2018-BCD_SI}
-\clearpage
-\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\pchapbib
 \end{refsection}
 
 \newpage
 \begin{refsection}
 \chapter{Emerging Computational Methods for the Rational Discovery of Allosteric Drugs}\label{chap:allostery}
 \subimport{2015-allostery/}{allostery.tex}
-\clearpage
-\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\pchapbib
 \end{refsection}
 
 \newpage
@@ -244,16 +258,14 @@
 \chapter{Structural Basis for Ligand Modulation of the CCR2 Conformational Landscape}\label{chap:ccr2}
 \subimport{2018-ccr2/}{CCR2-MSM-Main_pnas}
 \subimport{2018-ccr2/}{CCR2-MSM-SI_pnas}
-\clearpage
-\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\pchapbib
 \end{refsection}
 
 \newpage
 \begin{refsection}
 \chapter{The Implementation of the Colored Abstract Simplicial Complex and its Application to Mesh Generation}\label{chap:asc}
 \subimport{2018-simplicialcomplex/}{ASC2018}
-\clearpage
-\printbibliography[segment=\therefsegment,heading=subbibintoc]{}
+\pchapbib
 \end{refsection}
 
 \newpage
