@@ -1,12 +1,12 @@
 %!TEX root=../ctl-phd-thesis.tex
 
 \section{Abstract}
-	We introduce \asc: a new, modern, and header-only C++ library which provides a data structure to represent arbitrary dimension abstract simplicial complexes (ASC) with user-defined classes stored directly on the simplices at each dimension.
-  This is accomplished by using the latest C++ language features including variadic template parameters introduced in C++11 and automatic function return type deduction from C++14.
-  Effectively \asc decouples the representation of the topology from the interactions of user data.
-  We present the innovations and design principles of the data structure and related algorithms.
-  This includes a meta-data aware decimation algorithm which is general for collapsing simplices of any dimension.
-  We also present an example application of this library to represent an orientable surface mesh.
+We introduce \asc: a new, modern, and header-only C++ library which provides a data structure to represent arbitrary dimension abstract simplicial complexes (ASC) with user-defined classes stored directly on the simplices at each dimension.
+This is accomplished by using the latest C++ language features including variadic template parameters introduced in C++11 and automatic function return type deduction from C++14.
+Effectively \asc decouples the representation of the topology from the interactions of user data.
+We present the innovations and design principles of the data structure and related algorithms.
+This includes a meta-data aware decimation algorithm which is general for collapsing simplices of any dimension.
+We also present an example application of this library to represent an orientable surface mesh.
 
 \section{Introduction}\label{sec:intro}
 
@@ -266,7 +266,7 @@ $rootSimplex$: The simplex to insert relative to (most commonly $root$)}
 	}
 }
 
-\caption{Insertion of a new simplex}
+\caption{Pseudocode description of the simplex insertion algorithm in \asc.}
 \label{alg:insertion}
 \end{algorithm}
 		\begin{figure}[ht!]
@@ -346,7 +346,7 @@ $keys$[$n$]: the relative name of the desired simplex $s$}
 % 	}
 % }
 
-\caption{Searching for a new simplex}
+\caption{Pseudocode for searching for a new simplex in \asc.}
 \label{alg:search}
 \end{algorithm}
 	\subsection{Traversals}
@@ -409,7 +409,7 @@ for(auto nid : mesh.get_level_id<1>()){
 	\Return neighbors
 }
 
-\caption{Get the neighbors of a simplex, $s$, by inspecting the faces of $s$}
+\caption{Pseudocode to get the neighbors of a simplex, $s$, by inspecting the faces of $s$ in \asc.}
 \label{alg:neighbor}
 \end{algorithm}
 	\subsubsection{By adjacency}
@@ -609,7 +609,7 @@ SimplexSet doomed = N\;
 \tcc*[l]{Iterate over data and append mapped simplices and data}
 \pI{F, data}
 
-\caption{Decimate a simplex by collapsing it into a vertex.}
+\caption{Pseudocode to decimate a simplex by collapsing it into a vertex in \asc.}
 \label{alg:decimationalgo}
 \end{algorithm}
 
@@ -722,7 +722,7 @@ int orient = 1\;
 }
 \Return orient;
 
-\caption{Define the orientation of a topological relation.}
+\caption{Pseudocode to define the orientation of a topological relation in \asc.}
 \label{alg:orient}
 \end{algorithm}
 \par We can define a boundary morphism which applies on an ordered \simplex{k},
@@ -955,7 +955,7 @@ $\mc{F}$: simplicial complex}
 		child.up[value] = newNode \tcc*[h]{Connect coboundary relation}\;
 	}
 }
-\caption{Templated pseudocode implementation of Algorithm~\ref{alg:insertion}.}
+\caption{Templated pseudocode implementation of Algorithm~\ref{alg:insertion} in \asc.}
 \label{alg:templatedinsertion}
 \end{algorithm}
 \begin{figure}[hp]

@@ -1,3 +1,233 @@
+@article{Malmstrom2015a,
+abstract = {Ligand-induced protein allostery plays a central role in modulating cellular signalling pathways. Here using the conserved cyclic nucleotide-binding domain of protein kinase A's (PKA) regulatory subunit as a prototype signalling unit, we combine long-timescale, all-atom molecular dynamics simulations with Markov state models to elucidate the conformational ensembles of PKA's cyclic nucleotide-binding domain A for the cAMP-free (apo) and cAMP-bound states. We find that both systems exhibit shallow free-energy landscapes that link functional states through multiple transition pathways. This observation suggests conformational selection as the general mechanism of allostery in this canonical signalling domain. Further, we expose the propagation of the allosteric signal through key structural motifs in the cyclic nucleotide-binding domain and explore the role of kinetics in its function. Our approach integrates disparate lines of experimental data into one cohesive framework to understand structure, dynamics and function in complex biological systems.},
+author = {Malmstrom, Robert D and Kornev, Alexandr P and Taylor, Susan S and Amaro, Rommie E},
+doi = {10.1038/ncomms8588},
+issn = {2041-1723},
+journal = {Nat. Commun.},
+language = {en},
+mendeley-groups = {AmaroLabPubs},
+month = {jan},
+pages = {7588},
+pmid = {26145448},
+publisher = {Nature Publishing Group},
+title = {{Allostery through the computational microscope: cAMP activation of a canonical signalling domain.}},
+url = {http://www.nature.com/ncomms/2015/150706/ncomms8588/full/ncomms8588.html},
+volume = {6},
+year = {2015}
+}
+
+@article{Votapka2017c,
+author = {Votapka, Lane W. and Jagger, Benjamin R. and Heyneman, Alexandra L. and Amaro, Rommie E.},
+doi = {10.1021/acs.jpcb.6b09388},
+issn = {1520-6106},
+journal = {J. Phys. Chem. B},
+mendeley-groups = {ExascaleComputingRefs},
+month = {apr},
+number = {15},
+pages = {3597--3606},
+title = {{SEEKR: Simulation Enabled Estimation of Kinetic Rates, A Computational Tool to Estimate Molecular Kinetics and Its Application to Trypsin–Benzamidine Binding}},
+url = {http://pubs.acs.org/doi/10.1021/acs.jpcb.6b09388},
+volume = {121},
+year = {2017}
+}
+
+@article{Majek2010,
+abstract = {Milestoning is a method for calculating kinetics and thermodynamics of long time processes typically not accessible for straightforward Molecular Dynamics (MD) simulation. In the Milestoning approach, the system of interest is partitioned into cells by dividing hypersurfaces (Milestones) and transitions are computed between nearby hypersurfaces. Kinetics and thermodynamics are derived from the statistics of these transitions. The original Milestoning work concentrated on systems in which a one-dimensional reaction coordinate or an order parameter could be identified. In many biomolecular processes the reaction proceeds via multiple channels or following more than a single order parameter. A description based on a one-dimensional reaction coordinate may be insufficient. In the present paper we introduce a variation that overcomes this limitation.Following the ideas of Vanden-Eijnden and Venturoli on Voronoi cells that avoid the use of an order parameter (J. Chem. Phys. 2009, 130, 194101), we describe another way to "Milestone" systems without a reaction coordinate. We examine the assumptions of the Milestoning calculations of mean first passage times (MFPT) and describe strategies to weaken these assumptions. The method described in this paper, Directional Milestoning, arranges hypersurfaces in higher dimensions that "tag" trajectories such that efficient calculations can be done and at the same time the assumptions required for exact calculations of MFPTs are satisfied approximately.In the original Milestoning papers trajectories are initiated from an equilibrium set of conformations. Here a more accurate distribution, that mimics the first hitting point distribution, is used. We demonstrate the usage of Directional Milestoning in conformational transitions of alanine dipeptide (in vacuum and in aqueous solution) and compare the correctness, efficiency, and statistical stability of the method with exact MD and with a related method.},
+author = {M{\'{a}}jek, Peter and Elber, Ron},
+doi = {10.1021/ct100114j},
+issn = {1549-9618},
+journal = {J. Chem. Theory Comput.},
+month = {jan},
+number = {6},
+pages = {1805--1817},
+pmid = {20596240},
+publisher = {American Chemical Society},
+title = {{Milestoning without a Reaction Coordinate.}},
+url = {http://dx.doi.org/10.1021/ct100114j},
+volume = {6},
+year = {2010}
+}
+@article{Faradjian2004,
+abstract = {An algorithm is presented to compute time scales of complex processes following predetermined milestones along a reaction coordinate. A non-Markovian hopping mechanism is assumed and constructed from underlying microscopic dynamics. General analytical analysis, a pedagogical example, and numerical solutions of the non-Markovian model are presented. No assumption is made in the theoretical derivation on the type of microscopic dynamics along the reaction coordinate. However, the detailed calculations are for Brownian dynamics in which the velocities are uncorrelated in time (but spatial memory remains).},
+author = {Faradjian, Anton K and Elber, Ron},
+doi = {10.1063/1.1738640},
+issn = {0021-9606},
+journal = {J. Chem. Phys.},
+keywords = {Computer Simulation,Kinetics,Markov Chains,Models, Chemical,Models, Molecular,Models, Statistical,Time Factors},
+mendeley-groups = {SamplingMethods/Milestoning},
+month = {jun},
+number = {23},
+pages = {10880--9},
+pmid = {15268118},
+publisher = {AIP Publishing},
+title = {{Computing time scales from reaction coordinates by milestoning.}},
+url = {http://scitation.aip.org/content/aip/journal/jcp/120/23/10.1063/1.1738640},
+volume = {120},
+year = {2004}
+}
+@article{Vanden-Eijnden2008,
+abstract = {Milestoning is a procedure to compute the time evolution of complicated processes such as barrier crossing events or long diffusive transitions between predefined states. Milestoning reduces the dynamics to transition events between intermediates (the milestones) and computes the local kinetic information to describe these transitions via short molecular dynamics (MD) runs between the milestones. The procedure relies on the ability to reinitialize MD trajectories on the milestones to get the right kinetic information about the transitions. It also rests on the assumptions that the transition events between successive milestones and the time lags between these transitions are statistically independent. In this paper, we analyze the validity of these assumptions. We show that sets of optimal milestones exist, i.e., sets such that successive transitions are indeed statistically independent. The proof of this claim relies on the results of transition path theory and uses the isocommittor surfaces of the reaction as milestones. For systems in the overdamped limit, we also obtain the probability distribution to reinitialize the MD trajectories on the milestones, and we discuss why this distribution is not available in closed form for systems with inertia. We explain why the time lags between transitions are not statistically independent even for optimal milestones, but we show that working with such milestones allows one to compute mean first passage times between milestones exactly. Finally, we discuss some practical implications of our results and we compare milestoning with Markov state models in view of our findings.},
+author = {Vanden-Eijnden, Eric and Venturoli, Maddalena and Ciccotti, Giovanni and Elber, Ron},
+doi = {10.1063/1.2996509},
+issn = {1089-7690},
+journal = {J. Chem. Phys.},
+keywords = {Chemical,Kinetics,Models,Reproducibility of Results,Surface Properties,Time Factors},
+mendeley-groups = {SamplingMethods/Markov State Model},
+month = {nov},
+number = {17},
+pages = {174102},
+pmid = {19045328},
+title = {{On the assumptions underlying milestoning.}},
+url = {http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2646510{\&}tool=pmcentrez{\&}rendertype=abstract},
+volume = {129},
+year = {2008}
+}
+
+
+@article{Votapka2015,
+abstract = {The kinetic rate constants of binding were estimated for four biochemically relevant molecular systems by a method that uses milestoning theory to combine Brownian dynamics simulations with more detailed molecular dynamics simulations. The rate constants found using this method agreed well with experimentally and theoretically obtained values. We predicted the association rate of a small charged molecule toward both a charged and an uncharged spherical receptor and verified the estimated value with Smoluchowski theory. We also calculated the kon rate constant for superoxide dismutase with its natural substrate, O2-, in a validation of a previous experiment using similar methods but with a number of important improvements. We also calculated the kon for a new system: the N-terminal domain of Troponin C with its natural substrate Ca2+. The kon calculated for the latter two systems closely resemble experimentally obtained values. This novel multiscale approach is computationally cheaper and more parallelizable when compared to other methods of similar accuracy. We anticipate that this methodology will be useful for predicting kinetic rate constants and for understanding the process of binding between a small molecule and a protein receptor.},
+author = {Votapka, Lane W and Amaro, Rommie E},
+doi = {10.1371/journal.pcbi.1004381},
+issn = {1553-7358},
+journal = {PLoS Comput. Biol.},
+mendeley-groups = {ExascaleComputingRefs},
+month = {oct},
+number = {10},
+pages = {e1004381},
+pmid = {26505480},
+publisher = {Public Library of Science},
+title = {{Multiscale Estimation of Binding Kinetics Using Brownian Dynamics, Molecular Dynamics and Milestoning.}},
+url = {http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004381},
+volume = {11},
+year = {2015}
+}
+
+@article{Kirmizialtin2011,
+abstract = {The method of Directional Milestoning is revisited. We start from an exact and more general expression and state the conditions and validity of the memory-loss approximation. An algorithm to compute a reaction coordinate from Directional Milestoning data is presented. The reaction coordinate is calculated as a set of discrete jumps between Milestones that maximizes the flux between two stable states. As an application we consider a conformational transition in solvated adenosine. We compare a long molecular dynamic trajectory with Directional Milestoning and discuss the differences between the maximum flux path and minimum energy coordinates.},
+author = {Kirmizialtin, Serdal and Elber, Ron},
+doi = {10.1021/jp111093c},
+issn = {1089-5639},
+journal = {J. Phys. Chem. A},
+keywords = {Algorithms,Molecular Dynamics Simulation},
+mendeley-groups = {SamplingMethods/Milestoning},
+month = {jun},
+number = {23},
+pages = {6137--6148},
+pmid = {21500798},
+publisher = {American Chemical Society},
+title = {{Revisiting and Computing Reaction Coordinates with Directional Milestoning}},
+url = {http://dx.doi.org/10.1021/jp111093c http://pubs.acs.org/doi/abs/10.1021/jp111093c},
+volume = {115},
+year = {2011}
+}
+
+@article{Bello-Rivas2015,
+abstract = {A new theory and an exact computer algorithm for calculating kinetics and thermodynamic properties of a particle system are described. The algorithm avoids trapping in metastable states, which are typical challenges for Molecular Dynamics (MD) simulations on rough energy landscapes. It is based on the division of the full space into Voronoi cells. Prior knowledge or coarse sampling of space points provides the centers of the Voronoi cells. Short time trajectories are computed between the boundaries of the cells that we call milestones and are used to determine fluxes at the milestones. The flux function, an essential component of the new theory, provides a complete description of the statistical mechanics of the system at the resolution of the milestones. We illustrate the accuracy and efficiency of the exact Milestoning approach by comparing numerical results obtained on a model system using exact Milestoning with the results of long trajectories and with a solution of the corresponding Fokker-Planck equation. The theory uses an equation that resembles the approximate Milestoning method that was introduced in 2004 [A. K. Faradjian and R. Elber, J. Chem. Phys. 120(23), 10880-10889 (2004)]. However, the current formulation is exact and is still significantly more efficient than straightforward MD simulations on the system studied.},
+author = {Bello-Rivas, Juan M. and Elber, Ron},
+doi = {10.1063/1.4913399},
+issn = {0021-9606},
+journal = {J. Chem. Phys.},
+month = {mar},
+number = {9},
+pages = {094102},
+publisher = {AIP Publishing},
+title = {{Exact milestoning}},
+url = {http://scitation.aip.org/content/aip/journal/jcp/142/9/10.1063/1.4913399},
+volume = {142},
+year = {2015}
+}
+
+
+@book{Chipot2007,
+address = {Berlin, Heidelberg},
+doi = {10.1007/978-3-540-38448-9},
+editor = {Chipot, Christophe and Pohorille, Andrew},
+isbn = {978-3-540-38447-2},
+mendeley-groups = {ReferenceReview},
+publisher = {Springer Berlin Heidelberg},
+series = {Springer Series in CHEMICAL PHYSICS},
+title = {{Free Energy Calculations}},
+url = {http://link.springer.com/10.1007/978-3-540-38448-9},
+volume = {86},
+year = {2007}
+}
+
+@book{Tuckerman2010,
+abstract = {Complex systems that bridge the traditional disciplines of physics, chemistry, biology, and materials science can be studied at an unprecedented level of detail using increasingly sophisticated theoretical methodology and high-speed computers. The aim of this book is to prepare burgeoning users and developers to become active participants in this exciting and rapidly advancing research area by uniting for the first time, in one monograph, the basic concepts of equilibrium and time-dependent statistical mechanics with the modern techniques used to solve the complex problems that arise in real-world applications. The book contains a detailed review of classical and quantum mechanics, in-depth discussions of the most commonly used ensembles simultaneously with modern computational techniques such as molecular dynamics and Monte Carlo, and important topics including free-energy calculations, linear-response theory, harmonic baths and the generalized Langevin equation, critical phenomena, and advanced conformational sampling methods. Burgeoning users and developers are thus provided firm grounding to become active participants in this exciting and rapidly advancing research area, while experienced practitioners will find the book to be a useful reference tool for the field.},
+author = {Tuckerman, Mark},
+isbn = {0191523461},
+mendeley-groups = {ReferenceReview},
+pages = {720},
+publisher = {OUP Oxford},
+title = {{Statistical Mechanics: Theory and Molecular Simulation}},
+url = {https://books.google.com/books?id=Lo3Jqc0pgrcC{\&}pgis=1},
+year = {2010}
+}
+
+@article{Durrant2011a,
+abstract = {This review discusses the many roles atomistic computer simulations of macromolecular (for example, protein) receptors and their associated small-molecule ligands can play in drug discovery, including the identification of cryptic or allosteric binding sites, the enhancement of traditional virtual-screening methodologies, and the direct prediction of small-molecule binding energies. The limitations of current simulation methodologies, including the high computational costs and approximations of molecular forces required, are also discussed. With constant improvements in both computer power and algorithm design, the future of computer-aided drug design is promising; molecular dynamics simulations are likely to play an increasingly important role.},
+author = {Durrant, Jacob D and McCammon, J Andrew},
+doi = {10.1186/1741-7007-9-71},
+issn = {1741-7007},
+journal = {BMC Biol.},
+keywords = {Allosteric Site,Drug Discovery,Humans,Molecular Dynamics Simulation,Small Molecule Libraries,Small Molecule Libraries: analysis,Thermodynamics},
+mendeley-groups = {ExascaleComputingRefs},
+month = {jan},
+number = {1},
+pages = {71},
+pmid = {22035460},
+title = {{Molecular dynamics simulations and drug discovery.}},
+url = {http://www.biomedcentral.com/1741-7007/9/71},
+volume = {9},
+year = {2011}
+}
+
+
+@article{Leach2001,
+abstract = {This important new edition is for graduate students studying Molecular Modelling, Computational Chemistry within Chemistry, Medicinal Chemistry and Biochemistry. Postgraduates and researchers in academia and in the chemical and pharmaceutical industries. This new edition introduces background theory and techniques of molecular modelling, also illustrates applications in studying physical, chemical and biological phenomena. It includes simple numerical examples and numerous explanatory figures and a colour plate section.},
+author = {Leach, Andrew R},
+doi = {10.1016/S0097-8485(96)00029-0},
+isbn = {0582382106},
+issn = {00978485},
+journal = {Pearson Educ. EMA},
+pmid = {20958230},
+title = {{Molecular modelling : principles and applications Second Edition}},
+year = {2001}
+}
+
+
+@article{Roberts2014,
+abstract = {Whole-cell modeling has the potential to play a major role in revolutionizing our understanding of cellular biology over the next few decades. A computational model of the entire cell would allow cellular biologists to integrate data from many disparate sources in a single consistent framework. Such a comprehensive model would be useful both for hypothesis testing and in the discovery of new behaviors that emerge from complex biological networks. Cellular and molecular structure can and should be a key organizing principle in a whole-cell model, connecting models across time and length scales in a multiscale approach. Here I present a summary of recent research centered around using molecular and cellular structure to model the behavior of cells.},
+author = {Roberts, Elijah},
+doi = {10.1016/j.sbi.2014.01.005},
+file = {:Volumes/GoogleDrive/My Drive/gdrive{\_}ucsd/MendeleyFiles//Cellular and molecular structure as a unifying framework for whole-cell modeling.pdf:pdf},
+issn = {0959440X},
+journal = {Curr. Opin. Struct. Biol.},
+keywords = {Biological,Cells,Cells: metabolism,Cytoskeleton,Cytoskeleton: metabolism,Diffusion,Models,Molecular},
+month = {apr},
+pages = {86--91},
+pmid = {24509245},
+title = {{Cellular and molecular structure as a unifying framework for whole-cell modeling}},
+url = {http://www.sciencedirect.com/science/article/pii/S0959440X14000062 http://linkinghub.elsevier.com/retrieve/pii/S0959440X14000062},
+volume = {25},
+year = {2014}
+}
+
+@article{Earnest2017,
+abstract = {Cryo-electron tomography (cryo-ET) has rapidly emerged as a powerful tool to investigate the internal, three-dimensional spatial organization of the cell. In parallel, the GPU-based technology to perform spatially resolved stochastic simulations of whole cells has arisen, allowing the simulation of complex biochemical networks over cell cycle time scales using data taken from -omics, single molecule experiments, and in vitro kinetics. By using real cell geometry derived from cryo-ET data, we have the opportunity to imbue these highly detailed structural data—frozen in time—with realistic biochemical dynamics and investigate how cell structure affects the behavior of the embedded chemical reaction network. Here we present two examples to illustrate the challenges and techniques involved in integrating structural data into stochastic simulations. First, a tomographic reconstruction of Saccharomyces cerevisiae is used to construct the geometry of an entire cell through which a simple stochastic model of an i...},
+author = {Earnest, Tyler M. and Watanabe, Reika and Stone, John E. and Mahamid, Julia and Baumeister, Wolfgang and Villa, Elizabeth and Luthey-Schulten, Zaida},
+doi = {10.1021/acs.jpcb.7b00672},
+issn = {1520-6106},
+journal = {J. Phys. Chem. B},
+month = {mar},
+pages = {acs.jpcb.7b00672},
+publisher = {American Chemical Society},
+title = {{Challenges of Integrating Stochastic Dynamics and Cryo-Electron Tomograms in Whole-Cell Simulations}},
+url = {http://pubs.acs.org/doi/abs/10.1021/acs.jpcb.7b00672},
+year = {2017}
+}
+
+
 @article{CheckHayden2010,
 author = {{Check Hayden}, Erika},
 doi = {10.1038/464664a},
