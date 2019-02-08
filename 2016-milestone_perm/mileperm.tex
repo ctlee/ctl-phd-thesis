@@ -199,7 +199,7 @@
 
 
 \section{Methods}
-    \paragraph{Langevin Dynamics Model} To demonstrate the validity of the above relations we have developed a 1-D Langevin dynamics model to generate sample trajectories over a user specified PMF and viscosity profile. All code used has been made available through GitHub at \url{https://github.com/ctlee/langevin-milestoning}. The profiles are represented using interpolated cubic Hermite polynomials shown in Fig~\ref{fig:profiles}. Four different systems are considered, flat, small-barrier, urea-like barrier and codeine-like. The flat system emulated diffusion in bulk with viscosity chosen to match water. For the small-barrier system, an arbitrary barrier height was chosen such that brute force computation could yield successful crossings. Meanwhile the urea- and codeine-like systems are interpolated from profiles from Ref.~\citenum{Lee2016}. To facilitate convergence of calculations, the viscosity of the membrane environment is set to $0.005$~$kg m^{-1}s^{-1}$. Each of the membrane simulations employ the same viscosity profiles. The hydrodynamic radius and mass of the particle were arbitarily chosen for the flat and small-barrier cases while the urea and codeine cases use molecular weight and a radius as predicted by software \texttt{HydroPro}\cite{Ortega2011}. The parameters used in each case are shown in Table~\ref{table:SimulationParameters}. The diffusivity along the profile, $D$, can be calculated from the Stokes-Einstein relation
+    \paragraph{Langevin Dynamics Model:} To demonstrate the validity of the above relations we have developed a 1-D Langevin dynamics model to generate sample trajectories over a user specified PMF and viscosity profile. All code used has been made available through GitHub at \url{https://github.com/ctlee/langevin-milestoning}. The profiles are represented using interpolated cubic Hermite polynomials shown in Fig~\ref{fig:profiles}. Four different systems are considered, flat, small-barrier, urea-like barrier and codeine-like. The flat system emulated diffusion in bulk with viscosity chosen to match water. For the small-barrier system, an arbitrary barrier height was chosen such that brute force computation could yield successful crossings. Meanwhile the urea- and codeine-like systems are interpolated from profiles from Ref.~\citenum{Lee2016}. To facilitate convergence of calculations, the viscosity of the membrane environment is set to $0.005$~$kg m^{-1}s^{-1}$. Each of the membrane simulations employ the same viscosity profiles. The hydrodynamic radius and mass of the particle were arbitarily chosen for the flat and small-barrier cases while the urea and codeine cases use molecular weight and a radius as predicted by software \texttt{HydroPro}\cite{Ortega2011}. The parameters used in each case are shown in Table~\ref{table:SimulationParameters}. The diffusivity along the profile, $D$, can be calculated from the Stokes-Einstein relation
     \begin{equation}
         D = \frac{k_BT}{6\pi\eta R_{hyd}} = \frac{k_BT}{c},
         \label{eq:stokes-einstein}
@@ -353,11 +353,10 @@
     \par Below we report the computed permeability coefficients and MFPTs according to the six methods: 1) the ISD, 2) ISD from MFPT, 3) ISD with brute forced MFPT, 4) milestoning estimated \mfpt in ISD, 5) brute force with no assumptions, and 6) milestoning with no assumptions in Table~\ref{table:milepermresults}. Note again that the brute forced MFPT is performed with a reflecting boundary condition at the starting position while no such condition is applied for the brute force crossing probabilities. This explains the reported brute force MFPT without any crossings observed for the urea system.
 
 
-\begin{table}[!htbp]
+\begin{sidewaystable}[!htbp]
 \small
 \centering
 \caption[Estimated MFPT and permeability coefficients using milestoning and brute-force]{The computed MFPT and permeability coefficients according to each method. Reported error bars for the MFPT corresponds to the RMSE while the error for the crossing probability is from bootstrapping. Error in the brute force log permeability is estimated by the mean log($P$) difference of the high and low confidence intervals. $^{\dagger}$ We observed no brute force crossing transitions for the urea system. The values in parentheses represent the number of forward-phase trajectories sampled in each case.}
-\begin{sideways}
 \begin{tabular}{@{}lcccc@{}}
     \toprule
      & \textbf{Flat} & \textbf{Small Barrier} & \textbf{Urea} & \textbf{Codeine}\\\midrule
@@ -385,9 +384,9 @@
     6) Milestoning PBCP     & 1.37 $\pm$ 0.03 & 1.13 $\pm$ 0.02  & -4.13 $\pm$ 0.06 & 1.54 $\pm$ 0.04\\
     \bottomrule
     \end{tabular}
-\end{sideways}
 \label{table:milepermresults}
-\end{table}
+\end{sidewaystable}
+% \end{table}
 
     \par The distribution of the mean first passage times is shown in Fig.~\ref{fig:mfpts}. Due to the highly tailed nature of the MFPT, it is difficult to estimate it from brute force simulations. Milestoning greatly aids in the computation of the first passage times by reducing the total distance between points of interest. Using clever statistics, milestoning theory is capable of reconstructing the MFPT from many short simulations. For all cases, we obtain MFPTs in good agreement with the theoretical results. Deviations in both the brute force and milestoning cases are likely caused by insufficient sampling. Sampling convergence for the milestoning can be visualized by deviations in the milestoning-derived PMF from the actual PMF.
 

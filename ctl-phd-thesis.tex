@@ -17,7 +17,8 @@
 %                              1 Title of Chapter
 \documentclass[11pt, oneside, chapterheads, final]{ucsd}
 
-% \setlength{\emergencystretch}{3em} % Help for bad boxes!
+\setlength{\emergencystretch}{3em} % Help for bad boxes!
+\usepackage{showframe}
 
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}      % amsmath++
@@ -31,7 +32,7 @@
 \usepackage{xspace}         % Space detection
 \usepackage{fancyvrb}       % Fancy verbatim environment
 \usepackage[version=4]{mhchem}  % Chemistry related macros
-% \usepackage[shortcuts]{extdash} % Allow breaking of hyphenated words
+\usepackage[shortcuts]{extdash} % Allow breaking of hyphenated words
 \usepackage{siunitx}
 
 %% CAPTION
@@ -180,15 +181,11 @@
 \newcommand{\bcd}{$\beta$-cyclodextrin\xspace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bibliography{minimal,tmp}
+\bibliography{minimal}
 
 % \usepackage{xpatch}
-
-% \makeatletter
-% % \xapptocmd{\caption}{}{}{}
-% \xpatchcmd{\@caption}{\begingroup }{\addtocontents{\csname ext@#1\endcsname}{\protect\addvspace{10\p@}}\begingroup }
-% \xshowcmd{\@caption}
-% \makeatother
+% \xshowcmd{\paragraph}
+% \xshowcmd{\subsubsection}
 
 \newcommand{\pchapbib}{%
 \clearpage%

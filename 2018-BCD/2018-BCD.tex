@@ -85,23 +85,23 @@ sensitivity of SEEKR calculations to establish ``best practices'' for its future
 use.
 
 \begin{figure}
-  \centering
+  \begin{center}
   \includegraphics{images/bcdmilestones_comb_resize2.png}
-
 	\caption[Milestoning setup and structures of ligands to compute kinetics of \bcd binding and unbinding]{a) $\beta$-cyclodextrin with milestones spaced at 1.5~\AA increments and b) the seven ligands used in this study. The top four ligands are known to bind more weakly while the bottom three are known to bind more tightly.}
 	\label{fig:BCD_ligands}
+\end{center}
 \end{figure}
 
 \par SEEKR calculations and the long timescale MD simulations struggle to
 reproduce both the values and rank ordering of the experimentally determined \kon's (Fig.~\ref{fig:on_scatter}).
 
 \begin{figure}
-  \centering
-	\begin{subfigure}{\linewidth}
+\begin{center}
+    \begin{subfigure}[c]{\linewidth}
 	\includegraphics{images/on_scatter_resize.png}
 	\end{subfigure}
 	\bigskip
-	\begin{subfigure}{\linewidth}%<-- changed width
+	\begin{subfigure}[c]{\linewidth}%<-- changed width
         %\renewcommand\tabularxcolumn[1]{m{#1}}% <-- added
         %\renewcommand\arraystretch{1.3}
         %\setlength\tabcolsep{2pt}% <-- added
@@ -122,7 +122,8 @@ l  S[table-format = 2.3(3), separate-uncertainty]
 	\end{subfigure}
 	\caption[Experimental and predicted on rates of ligand binding to \bcd]{a) Experimental and calculated on rates for SEEKR GAFF and Q4MD forcefields as well as long timescale MD with both forcefields. b) Calculated rank correlation coefficients. Errors are determined with a bootstrapping analysis. }
   \label{fig:on_scatter}
-  \end{figure}
+\end{center}
+\end{figure}
 
 However, similar qualitative results are seen with the SEEKR calculations and
 long timescale MD calculations using the same forcefield.
@@ -147,15 +148,12 @@ GAFF forcefield are consistently faster than experiment by approximately one
 order of magnitude.
 
 \begin{figure}
-  \centering
-	\begin{subfigure}{\linewidth}
+  \begin{center}
+	\begin{subfigure}[c]{\linewidth}
 	\includegraphics{images/off_scatter_resize.png}
 	\end{subfigure}
-
 	\bigskip
-
-
-	\begin{subfigure}{\linewidth}%<-- changed width
+	\begin{subfigure}[c]{\linewidth}%<-- changed width
         %\renewcommand\tabularxcolumn[1]{m{#1}}% <-- added
         %\renewcommand\arraystretch{1.3}
         %\setlength\tabcolsep{2pt}% <-- added
@@ -175,6 +173,7 @@ l  S[table-format = 2.3(3), separate-uncertainty]
 	\end{subfigure}
 	\caption[Experimental and predicted off rates of ligand unbinding from \bcd]{a) Experimental and calculated off rates for SEEKR GAFF and Q4MD forcefields as well as long timescale MD with both forcefields. b) Calculated rank correlation coefficients. Errors are determined with a bootstrapping analysis. }
 	\label{fig: off_scatter}
+\end{center}
 \end{figure}
 
 This trend is seen in both the long timescale MD and SEEKR,
@@ -199,12 +198,12 @@ through ranking by \koff.
 free energies can also be obtained from the same simulations (Fig.~\ref{fig:dg_scatter}).
 
 \begin{figure}
-  \centering
-	\begin{subfigure}{\linewidth}
+  \begin{center}
+	\begin{subfigure}[c]{\linewidth}
 	\includegraphics{images/dg_scatter_resize.png}
 	\end{subfigure}
 	\bigskip
-	\begin{subfigure}{\linewidth}%<-- changed width
+	\begin{subfigure}[c]{\linewidth}%<-- changed width
         %\renewcommand\tabularxcolumn[1]{m{#1}}% <-- added
         %\renewcommand\arraystretch{1.3}
         %\setlength\tabcolsep{2pt}% <-- added
@@ -226,6 +225,7 @@ free energies can also be obtained from the same simulations (Fig.~\ref{fig:dg_s
 	\caption[Experimental and predicted binding free energies of ligand binding to \bcd]{a) Experimental and calculated binding free energies for SEEKR GAFF and Q4MD forcefields as well as long timescale MD with both forcefields. b) Calculated rank correlation coefficients. Errors are determined with a bootstrapping analysis. }
 
 	\label{fig:dg_scatter}
+\end{center}
 \end{figure}
 
 Binding free energies calculated using the rate constants
@@ -280,11 +280,12 @@ that this change in \koff was due to poor initial sampling of
 the -1.5 \AA milestone, which once sampled decreased the overall \koff.
 
 \begin{figure}
-  \centering
+  \begin{center}
 	\includegraphics{images/aspirin_conv_comb.png}
 
 	\caption[Convergence analysis of SEEKR estimated properties for aspirin binding to \bcd]{Convergence analysis for a representative ligand,  aspirin, and \bcd with the Q4MD forcefield. Convergence of a) \kon, b) \koff, c) transition counts, and d) incubation times for each milestone are plotted as a function of the number of reversals launched.  Reversal number is directly related to the length of equilibrium sampling, as reversals were launched at 2 ns intervals from the equilibrium trajectory.}
 	\label{fig:aspirin_conv_fig}
+\end{center}
 \end{figure}
 
 This was only observed for the aspirin ligand, one of the bulkiest ligands, where it was extremely unlikely to observe transitions outward from the primary face due to steric effects.

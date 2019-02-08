@@ -574,7 +574,6 @@ on microfilm and electronically: }}\\
   & \rule{0pt}{\@approvalspace} \\
   \hline
 \fi
-
 \ifx\UCSD@cochair\@isnotdefined% No cochair
   &\rule{0pt}{\@approvalspace} \\
   \hline
@@ -585,13 +584,13 @@ on microfilm and electronically: }}\\
   \newlength{\@tempapprovalspace}
   \settoheight{\@tempapprovalspace}{\UCSD@text@cochair}
   \setlength{\@tempapprovalspace}{-\@tempapprovalspace}
-  \addtolength{\@tempapprovalspace}{-2pt}
+  \addtolength{\@tempapprovalspace}{-12pt}
   \raisebox{\@approvalspace}[\@approvalspace][0pt]%
   {\raisebox{\@tempapprovalspace}{\UCSD@text@cochair}}\\
   \hline
 \fi
-
-& \UCSD@text@chair
+&
+\UCSD@text@chair
 \end{tabular*}\\[\@approvalspace]
 {\fmfont University of California {\@campus}} \\
 \vspace{-.25in}
@@ -1234,6 +1233,7 @@ on microfilm and electronically: }}\\
 % Magic value, but consistent with the standard table length.
 \addtolength{\@tablelength}{2.8em}
 \def\l@table{\normalfont\@dottedtocline{1}{0em}{\@tablelength}}
+
 
 
 %    ****************************************

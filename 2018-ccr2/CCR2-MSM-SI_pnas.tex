@@ -76,7 +76,7 @@ Set of 22 Features:
 
 % system set up table
 \begin{table}[htbp]
-\centering
+\begin{center}
 \caption{Description and setup of simulated CCR2 systems.}
 \begin{tabular}{ | p{4cm} | p{.9cm} | p{.9cm} | p{.9cm} | p{.9cm} | p{.9cm} | p{.9cm} |}
 \hline
@@ -90,54 +90,60 @@ Water Model & \multicolumn{6}{ |c| }{TIP3P} \\ \hline
 Force Field & \multicolumn{6}{ |c| }{CHARMM36 FF} \\ \hline
 Box Dimensions & \multicolumn{6}{ |c| }{72 \si{\angstrom}, 72 \si{\angstrom},103 \si{\angstrom}} \\ \hline
 \end{tabular}
-
 \label{table:systeminfo}
+\end{center}
 \end{table}
 
 %RMSD 1
 \begin{figure}[htbp]
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/rmsd.png}
 \caption[RMSD of CCR2 trajectories over time]{RMSD plot of all trajectories over simulation time.}
 \label{fig:rmsd}
+\end{center}
 \end{figure}
 
 % figure alloligand 2
 \begin{figure}[htbp]
-  \centering
+  \begin{center}
   \includegraphics[width=\textwidth]{./figures/alloligand.png}
  \caption[Analysis of CCR2 allosteric ligand dynamics]{The RMSF of the allosteric ligand is larger in macrostates with more open G-protein binding sites. A) Distribution of distances in macrostates K, L and G between residues Gly 224 and Asp 78 in the intracellular regions of helices VI and II. B) RMSF of the allosteric ligand in holo macrostates K, L, and G.}
   \label{fig:alloligand}
+\end{center}
 \end{figure}
 
 %trp 256 3
 \begin{figure}[htbp]
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/trp256.png}
 \caption[Analysis of CCR2 \bwn{Trp 256}{6.48} conformations]{Trp 256\textsuperscript{6.48} compared to the apo and holo macrostates and the crystal structures of CCR2 (PDB ID: 5T1A; grey, black) CCR5 (PDB ID: 4MBS; blue) and CXCR4 (PDB ID: 4RWS; mauve). A) Each apo macrostate shows Trp 256\textsuperscript{6.48} in a single conformation pointing toward helix III. In the holo macrostates, Trp 256\textsuperscript{6.48} access three distinct conformations: one resembling the crystal structure but with the helix shifted slightly outward from the helical core, another that laterally twists toward helix V, and one conformation that points down into the helical core toward the G-protein binding site.}
 \label{fig:trp256}
+\end{center}
 \end{figure}
 
 % Water, sodium 4
 \begin{figure}[htbp]
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/water_na_plots.png}
 \caption[Ligand disruption of internal water and sodium ion pathways in CCR2]{Ligands disrupt a continuous internal water and sodium ion pathway. A) Water occupancy per residue in all apo (teal) and holo (red) simulations. B) Sodium ion occupancy per residue in all apo and holo simulations.}
 \label{fig:water_na_plots}
+\end{center}
 \end{figure}
 
 % table S2
 \begin{table}[htbp]
-\centering
+\begin{center}
+\caption[Relaxation timescales for apo and holo CCR2 MSMs]{Relaxation timescales for the apo and holo MSMs. Units are in microseconds.}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
-\textbf{Apo} & 321.6 $\mu$s & 57.7 $\mu$s & 11.1 $\mu$s & 9.0 $\mu$s & 4.2 $\mu$s & 2.8 $\mu$s & 2.4 $\mu$s & 1.7 $\mu$s & 1.3 $\mu$s & 1.3 $\mu$s\\ \hline
+\textbf{Apo} & 321.6  & 57.7  & 11.1  & 9.0  & 4.2  & 2.8  & 2.4  & 1.7  & 1.3  & 1.3 \\ \hline
 %\textbf{Apo} & 321.6 & 57.7 & 11.1 & 9.0 & 4.2 & 2.8 & 2.4 & 1.7 & 1.3 & 1.3 \\ \hline
-\textbf{Holo} & 2246.9 $\mu$s & 286.8 $\mu$s & 84.9 $\mu$s & 59.1 $\mu$s & 44.3 $\mu$s & 21.6 $\mu$s & 8.2 $\mu$s & 7.7 $\mu$s & 4.4 $\mu$s & 3.9 $\mu$s \\ \hline
+\textbf{Holo} & 2246.9  & 286.8  & 84.9  & 59.1  & 44.3  & 21.6  & 8.2  & 7.7  & 4.4  & 3.9  \\ \hline
 %Holo & 2246.9 & 286.8 & 84.9 & 59.1 & 44.3 & 21.6 & 8.2 & 7.7 & 4.4 & 3.9 \\ \hline
 \end{tabular}
-\caption[Relaxation timescales for apo and holo CCR2 MSMs]{Relaxation timescales for the apo and holo MSMs. Units are in microseconds.}
+
 \label{table:relaxation_timescales}
+\end{center}
 \end{table}
 
 % tics 5
@@ -151,114 +157,128 @@ Box Dimensions & \multicolumn{6}{ |c| }{72 \si{\angstrom}, 72 \si{\angstrom},103
 
 % apo F 6
 \begin{figure}[htbp]
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/apoF_ccr2_orthopocketSI.png}
 \caption[Shapes of CCR2 chemokine binding site]{A) The shape of the chemokine binding site of apo state F in comparison to the crystal structure. Without the ligand, the binding site expands and rotates toward helices IV,  V,  and VI, and extends between helices I and VII. B) The conformations of Trp98\textsuperscript{2.60} in apo state F and the crystal structure. Trp98\textsuperscript{2.60} protrudes into the pocket in the absence of ligands.}
 \label{fig:apoF_ccr2_orthopocketSI}
+\end{center}
 \end{figure}
 
 % tic 1 7
 \begin{figure}
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/tic1_trp98_apo_holo.pdf}
 \caption[Analysis of \bwn{Trp 98}{2.60} in relation to ligand binding]{A) In apo CCR2, TIC 1 represents Trp 98\textsuperscript{2.60} in three distinct positions. In gray is the crystal structure; in green is the active crystal structure of US28; in blue and yellow are transitions, and in magenta is the most dramatic conformation. Each conformation is plotted on the free energy in TICA space in B). C) In holo CCR2, the positioning of the orthosteric ligand and the conformation of Trp 98\textsuperscript{2.60} is closely linked. Shown in light silver cartoon is CCR2 5T1A; Trp 98\textsuperscript{2.60} is displayed as purple in state K, white in state L, gray in state J, cyan in state H, yellow in state I, black in state G, and red in state M. D) Holo CCR2. White circles are clusters of frames before any ligand dissociation. Grey circles are clusters of frames during the event. Black circles are clusters of frames after the event.}
 \label{fig:tic1}
+\end{center}
 \end{figure}
 
 % trp 98 centroids 8
 \begin{figure}[htbp]
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/trp98_allcentroidsSI.png}
 \caption[Trp 98\textsuperscript{2.60} extends farther into the chemokine binding site in apo CCR2 than in the holo crystal structure and holo macrostates]{Trp 98\textsuperscript{2.60} extends farther into the chemokine binding site in apo CCR2 than in the holo crystal structure and holo macrostates. A side view of the CCR2 crystal structure (grey) and Trp 98\textsuperscript{2.60} (bright white) compared to A) the apo (cyan) and holo (red) macrostate conformations of Trp 98\textsuperscript{2.60}  B) the holo conformations, and C) the apo conformations. The extracellular-to-intracellular view of A)-C).}
 \label{fig:trp98_allcentroidsSI}
+\end{center}
 \end{figure}
 
 
 % trp 98 compared to ccr9  9
 \begin{figure}[htbp]
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/trp98_ccr9.png}
 \caption[Comparison of \bwn{Trp 98}{2.60} across GPCRs]{A) Trp 98\textsuperscript{2.60} in holo states H and J (cyan and grey) compared to CCR9 (dark blue) and the CCR2 crystal structure (white). Inset depicts the extracellular-to-intracellular view of A).}
 \label{fig:trp98_ccr9}
+\end{center}
 \end{figure}
 
 
 % 98-120 10
 \begin{figure}[htbp]
-  \centering
+  \begin{center}
   \includegraphics[width=\textwidth]{./figures/state35_98-120_larger.png}
  \caption[Distance between residues \bwn{Trp 98}{2.60} and \bwn{Tyr 120}{3.32}]{A) Distance between residues Trp 98\textsuperscript{2.60} and Tyr 120\textsuperscript{3.32} over simulation time. Dissociation event noted by blue line. B) Conformation of CCR2 before (teal) and after (purple) ligand dissociation.}
   \label{fig:state35_98-120}
+\end{center}
 \end{figure}
 
 % glu 291 11
 \begin{figure}[htbp]
-  \centering
+  \begin{center}
   \includegraphics[width=\textwidth]{./figures/state35_glu291_larger.png}
  \caption[Dihedral angles of Glu 291 over time]{A) Chi angle of Glu 291 over simulation time. Dissociation event noted by blue line. B) Conformation of CCR2 before (teal) and after (purple) ligand dissociation.}
   \label{fig:state35_glu291}
+\end{center}
 \end{figure}
 
 % 49-292 12
 \begin{figure}[htbp]
-  \centering
+  \begin{center}
   \includegraphics[width=\textwidth]{./figures/state35_49-292_50-259_larger.png}
  \caption[Orthosteric ligand dissociation breaks the hydrogen bond between key ligand binding residues]{Orthosteric ligand dissociation breaks the hydrogen bond between key ligand binding residues. A) Distance between residues TYR 49\textsuperscript{1.39} - Thr 292 over simulation time. Dissociation event noted by blue line. B) Conformation of CCR2 before (teal) and after (purple) ligand dissociation. C) The distance between Ser 50\textsuperscript{1.40} and Tyr 259\textsuperscript{6.51} over simulation time. This distance is also a contributor to holo TIC 1, and shows the same outward movement of helix I. There is a slight decrease in distance between the residue pair, followed by the same lag time of 3 $\mu$s, and finally an increase in distance as the extracellular end of helix I bends away from the helical bundle. D) Conformation of CCR2 before (teal) and after (purple) ligand dissociation.}
   \label{fig:state35_49-292_50-259}
+\end{center}
 \end{figure}
 
 % RMSF / SASA 13
 \begin{figure}[htbp]
-  \centering
+  \begin{center}
   \includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{./figures/rmsf_sasa.png}
  \caption[RMSF and SASA analysis of CCR2]{A) RMSF of each residue for individual simulations of apo and holo CCR2. B) SASA for each metastable macrostate of apo and holo, compared to the CCR2 crystal structure.}
   \label{fig:rmsf_sasa}
+\end{center}
 \end{figure}
 
 % ITS 14
 \begin{figure}[htbp]
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/its.png}
 \caption[Implied timescale plots of apo and holo CCR2 MSMs]{Implied timescale plots for A) apo and B) holo CCR2.}
 \label{fig:its}
+\end{center}
 \end{figure}
 
 % CK apo 15
 \begin{figure}[htbp]
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/apo_cktest_largefont.png}
 \caption{Chapman-Kolmogorov test for apo CCR2 MSM.}
 \label{fig:apo_its_ck}
+\end{center}
 \end{figure}
 
 % CK holo 16
 \begin{figure}[htbp]
-  \centering
+  \begin{center}
   \includegraphics[width=\textwidth]{./figures/holo_cktest_largefont.png}
  \caption{Chapman-Kolmogorov test for holo CCR2 MSM.}
   \label{fig:holo_its_ck}
+\end{center}
 \end{figure}
 
 %Centroid Figures 17
 \begin{figure}[htbp]
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/centroid-micromacrostates.png}
 \caption[Quantifying the representativeness of microstate and macrostate centroid definitions]{The centroid of apo macrostate A, in orange, is compared to A) the 214 other microstate centroids in white (average RMSD of alpha helices from representative structure: 2.01 {\AA}, standard deviation 0.50 {\AA}), and B) the 1,024 frames from its microstate in white (average RMSD of alpha helices from centroid: 0.872 {\AA}, standard deviation 0.139 {\AA}). C) Helix VII of the same microstate (average RMSD from centroid: 1.035 {\AA}, standard deviation 0.259 {\AA}.)}
 \label{fig:centroid-helixVII}
+\end{center}
 \end{figure}
 
 %Centroid Figures 18
 \begin{figure}[htbp]
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/apo-centroids.png}
 \caption{Visualization of apo macrostate structures.}
 \label{fig:apo-centroids}
+\end{center}
 \end{figure}
 
 %Centroid Figures 19
 \begin{figure}[htbp]
-\centering
+\begin{center}
 \includegraphics[width=\textwidth]{./figures/holo-centroids.png}
 \caption{Visualization of holo macrostate structures.}
 \label{fig:holo-centroids}
+\end{center}
 \end{figure}

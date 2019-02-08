@@ -662,7 +662,7 @@ SimplexSet doomed = N\;
 		\par To reiterate, \verb|GrabVisitor| grabs the set of simplices which will be mapped to a common simplex.
 		We show here that the order in which simplices are grabbed by Algorithm~\ref{alg:decimationalgo} will preserve that all simplices $f = w\cup q$ where $q\subseteq s$ will map to $\varphi(f) = w\cup p$.
 
-		\par When visiting any simplex $f\supsetneq q$ where $q\subseteq s$ and $q$ corresponds to simplices visited by \verb|MainVisitor|.
+		\par When visiting any simplex $f\supsetneq q$ where $q\subseteq s$ and $q$ corresponds to simplices visited by \texttt{MainVisitor}.
 		We can write $f$ as $f = w\cup q$ where the sets $w$ and $q$ are disjoint.
 		Looking down from $f$ all simplices fall into two cases: $g = v\cup q$ where $\varnothing \subseteq v\subsetneq w$ or $h = w\cup t$ where $t\subsetneq q$.
 		All simplices of form $g$, at worst case, will been grabbed while \verb|InnerVisitor| proceeded BFS up from $q$.

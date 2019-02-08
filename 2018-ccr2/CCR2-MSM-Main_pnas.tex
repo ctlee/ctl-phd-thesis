@@ -20,11 +20,12 @@ Despite much effort that has been devoted to clinical and pre-clinical trials, a
 Prior to a full-length crystal structure of CCR2, several studies used homology modeling and docking to gain insights into the structure and dynamics of the protein and its associated ligands or small molecule drugs\cite{Shahlaei2013,Chavan2012,Kothandan2012}.
 However, recently CCR2 was crystallized for the first time\cite{Zheng2016}, opening up new opportunities for rational drug design.
 
-\begin{figure}[ht]
-\centering
+\begin{figure}[!htbp]
+\begin{center}
 \includegraphics[width=\linewidth]{figures/figure1.eps}
 \caption[CCR2 system and Markov state models]{MD simulations of CCR2 in a lipid bilayer were performed apo and holo CCR2. A) Sets of residue pairs surrounding the two ligand binding pockets were used with TICA (SI Appendix). The protein is shown in white cartoon. Lipids are teal, red, and blue. The orthosteric and allosteric ligands are shown in blue and orange, respectively, with inter-residue pair distances denoted by similarly colored lines. The free energy and Maximum-Likelihood HMMs of B) apo and C) holo CCR2, projected onto the first two TICA components. Coarse-grained states are labeled and colored. Transition rates between macrostates are represented by arrows reported in units of ms$^{-1}$.}
 \label{fig:apo_holo_hmm}
+\end{center}
 \end{figure}
 
 As with most GPCRs, chemokine receptors transmit signals across cell membranes by means of extracellular ligand and intracellular G-protein binding.
@@ -71,10 +72,12 @@ Signatures of an active GPCR state include:
 and 4) the rearrangements of conserved microswitches \cite{Katritch2013}.
 According to these metrics, the starting crystal structure of CCR2 is in an inactive conformation\cite{Zheng2016}, the crystal structure of A\textsubscript{2A}AR is an an intermediately-active conformation, and the crystal structure of US28 is in the active conformation.
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
+\begin{center}
 \includegraphics[width=\textwidth]{figures/figure2.eps}
 \caption[Comparison of apo and holo macrostates to other active and inactive GPCR structures]{Apo and holo macrostates are compared to the active crystal structure of US28 (green, PDB ID 4XT3) or the active crystal structure of A\textsubscript{2A}AR (yellow, PDB ID 2YDO) and the inactive crystal structure of CCR2 (grey, PDB ID 5T1A). A) Helix VII of apo macrostates resemble the active conformation of US28; holo macrostates resemble the CCR2 crystal structure. B) The conformation of helix III in apo macrostates subtly resemble active A\textsubscript{2A}AR; holo macrostates are tilted away from the center of the helical bundle. C,D) Helix V and VI of apo macrostates straighten or tilt in toward the center of the protein, similar to the active conformation of US28 and the inactive CCR2 crystal structure; helix V and VI of several holo macrostates tilt away from the binding sites, accessing more active-like conformations than the apo macrostates or even the active state of US28. E) Helix II in the apo macrostates shifts inward; in the holo macrostates it shifts outward. F) In licorice are conserved motifs TYR 305\textsuperscript{7.53} and TYR 222\textsuperscript{5.58}. All six apo metastable state assume a new conformation for TYR 305\textsuperscript{7.53}, pointing intracellulary and in a similar conformation to active A\textsubscript{2A}AR. Six out of the seven holo metastable states have TYR 305\textsuperscript{7.53} in the same conformation as the equilibrated crystal structure. Post-ligand-dissociation holo state L assumes a new position of TYR 305\textsuperscript{7.53}, more similar to the dominant apo conformation. Apo metastable states sample a narrower range of conformations for TYR 222\textsuperscript{5.58} than holo.}
 \label{fig:global_tm}
+\end{center}
 \end{figure}
 
 \subsubsection{1) Apo macrostates show an active-like inward shift of the intracellular part of helix VII toward the helical bundle}
@@ -119,11 +122,12 @@ Work in other GPCRs has additionally shown that activation can allow water and s
 Furthermore, it has been shown that the activation of GPCRs is voltage sensitive\cite{Rinne2013}.
 Our simulations enable the direct visualization of water and sodium ion density in both CCR2 ensembles.
 
-\begin{figure}[htbp]
-\centering
+\begin{figure}[!htbp]
+\begin{center}
 \includegraphics[width=\textwidth]{figures/figure3.eps}
 \caption[Ligands disrupt a continuous internal water and sodium ion pathway in CCR2]{Ligands disrupt a continuous internal water and sodium ion pathway. Average water density over a 50 microsecond simulation of A) apo (teal) and B) holo (red). The orthosteric ligand is shown in blue and the allosteric ligand is shown in orange. Total average sodium ion density in C) apo and D) holo. Highest occupancy residues are depicted in cyan licorice and plotted in \cref{fig:water_na_plots}.}
 \label{fig:water_na}
+\end{center}
 \end{figure}
 
 A continuous internal water pathway forms in apo CCR2 (Fig. \ref{fig:water_na}A).
@@ -188,11 +192,12 @@ Further evidence for this is the observed correlated motion of the downward flip
 Overall, holo macrostates show more helical tilting and binding site expansion, which increases the solvent-accessible surface area (SASA) when compared to the crystal structure and the apo macrostates.
 However, the apo simulations overall have greater residue fluctuation, suggesting that the antagonist ligands dampen CCR2 dynamics (Fig.~\ref{fig:rmsf_sasa}).
 
-\begin{figure}[ht]
-\centering
+\begin{figure}[!htbp]
+\begin{center}
 \includegraphics[width=\textwidth]{figures/figure4.eps}
 \caption[Putative allosteric CCR2 drug binding pocket]{A putative allosteric drug binding pocket is revealed by three holo macrostates. A) A comparison of the CCR2 crystal structure (white cartoon) with helices V, VI, and VII (red new cartoon) of one holo macrostate. The pocket is shown in red surface. B) A closer view of the pocket from the other side of the protein, between helices III and V. C) Small organic probes used for computational fragment mapping are multicolored.}
 \label{fig:allo_pkt}
+\end{center}
 \end{figure}
 
 \subsection{\textbf{Opening of a cryptic druggable pocket}}
