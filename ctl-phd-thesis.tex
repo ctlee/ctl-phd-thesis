@@ -90,13 +90,40 @@
 \newtheorem{lemma}[theorem]{Lemma}
 
 % ALGORITHMS
-\usepackage[ruled]{algorithm2e} % For algorithms
+\usepackage[ruled,algochapter]{algorithm2e} % For algorithms
 \renewcommand{\algorithmcfname}{ALGORITHM}
 \SetAlFnt{\small}
 \SetAlCapFnt{\small}
 \SetAlCapNameFnt{\small}
 \SetAlCapHSkip{0pt}
 \IncMargin{-\parindent}
+
+\makeatletter
+\def\algoname{Algorithm}
+\def\listalgoname{List of Algorithms}
+\renewcommand{\listofalgocfs}{%
+  \@restonecolfalse%
+  \if@twocolumn\@restonecoltrue\onecolumn\fi%
+  \newpage%
+  \centerline{\expandafter\uppercase\expandafter{\listalgoname}}%
+  \bigskip%
+  \phantomsection%
+  \addcontentsline{toc}{frontmatter}{\protect\numberline{}\listalgoname }%
+  %This group overloads \numberline to output ``Figure 1.3'' instead of ``1.3''
+  \begingroup%
+    \let\ORIG@numberline\numberline%
+    \renewcommand*{\numberline}[1]{%
+      \ORIG@numberline{\algoname~##1:}}%
+    {\ssp\setlength{\parskip}{\baselineskip}\@starttoc{loa}}%
+    \if@restonecol\twocolumn\fi%
+  \endgroup%
+}%
+\newlength{\@algolength}
+\settowidth{\@algolength}{\algoname }
+\addtolength{\@algolength}{2.8em}
+\renewcommand{\l@algocf}{\normalfont\@dottedtocline{1}{0em}{\@algolength}}
+\makeatother
+
 
 \usepackage[style=chem-acs,backend=biber,defernumbers=true,sorting=none,citecounter,labelnumber,maxbibnames=99]{biblatex}
 
@@ -183,7 +210,8 @@
 
 \bibliography{minimal}
 
-% \usepackage{xpatch}
+\usepackage{xpatch}
+\xshowcmd{\listofalgorithms}
 % \xshowcmd{\paragraph}
 % \xshowcmd{\subsubsection}
 
