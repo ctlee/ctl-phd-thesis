@@ -13,14 +13,14 @@ Mathematical models in biology are increasing in popularity, and come in a wide 
 For example, there are information and data driven models as well as models based on the fundamentals of physical principles.
 In this dissertation, I will focus on the development of methods in support of the latter.
 By codifying our knowledge of the physical world into a model, we can gain many benefits.
-First, physical models can serve as a glue to reconcile the results of individual experiments at isolated conditions.
+First, physical models can serve as a glue to reconcile the results of individual experiments under isolated conditions.
 Cleverly designed mathematical models are also amenable to computed solutions using numerical methods.
-Combining knowledge and computation, inexpensive parameter sweeps to eliminate physical impossibilities and guide experimental efforts can serve to reduce the experimental cost of biology.
+Combining knowledge and computation, inexpensive parameter sweeps that eliminate physical impossibilities and guide experimental efforts can serve to reduce the experimental cost of biology.
 
 \par Physical models can also produce other benefits for science.
 During the design and validation phase of model construction, when a physical model fails to reproduce experimental results, this is a litmus test for the limitations of our current understanding.
 By studying the assumptions of the model and querying the differences between prediction and experiment, scientists can pinpoint possible knowledge gaps.
-Once a physical model is sufficiently validated, due to the fundamental basis on transferable physical properties, the models can also be used to generate prospective predictions.
+Once a physical model is sufficiently validated, due to the fundamental basis of transferable physical properties, the models can also be used to generate prospective predictions.
 For example, in an inspiring study, Hodgkin and Huxley created a famous model describing the propagation of an action potential along a giant squid axon\cite{HUXLEY1952}.
 Although the model was based on empirical fitting of electrophysiology data, many speculated upon the physical implications of the mathematics.
 One term in particular, predicting the presence of four voltage-sensitive gates in the sodium ion channel, was later experimentally confirmed by crystallographic structure which resolved the tetrameric channel structure\cite{Sigg2014a}.
@@ -28,7 +28,7 @@ One term in particular, predicting the presence of four voltage-sensitive gates 
 \par We live in an exciting time, where there is a convergence of emerging structural data, legacy experimental parameters, and computational power.
 In order to understand life, we must embrace the complexity of biology.
 The work described in this dissertation seeks to address several challenges which hinder the routine application of large systems biology models.
-This includes the computational prediction of various biological rates such as diffusion, permeability, and binding/unbinding, also strategies to develop models of individual protein dynamics, as well as the capacity to generate multiscale geometric models suitable for biological modeling.
+This includes the computational prediction of various biological rates such as diffusion, permeability, and binding/unbinding, strategies to develop models of individual protein dynamics, and the capacity to generate multiscale geometric models suitable for biological modeling.
 
 \section{Overview of Chapter Contents}
 
@@ -39,10 +39,10 @@ In this chapter, I also address and frame some of the aforementioned challenges 
 
 \par Owing to the complexity of biology, a complete systems model will require the definition of many rates.
 Due to the basic nature of many of these measurements, the experimental work to measure these values may not be publishable and is therefore difficult to source.
-Although robotics which automate assay development and screening are amenable to some tasks, the complexity of experimental setups for measuring kinetic properties can often hinder the accurate and high-throughput measurement.
-To augment the existing data, and measurements, molecular simulations such as Molecular Dynamics (MD) can be employed to generate estimates\cite{Leach2001,Durrant2011a}.
+Although robotics which automate assay development and screening are amenable to some tasks, the complexity of experimental setups for measuring kinetic properties can often hinder accurate and high-throughput measurement.
+To augment the existing data and measurements, molecular simulations such as Molecular Dynamics (MD) can be employed to generate estimates\cite{Leach2001,Durrant2011a}.
 MD effectively integrates the classical equations of motion for an atomistic system.
-Given that the typical timescales of simulation are typically much shorter than the timescales of the process of interest, brute force MD simulations can rarely captures the dynamics of interest with sufficient statistics.
+Given that the typical timescales of simulation are typically much shorter than the timescales of the process of interest, brute force MD simulations can rarely capture the dynamics of interest with sufficient statistics.
 Instead, using strategies derived from statistical mechanics, many enhanced sampling strategies have been developed to facilitate the estimation of classically intractable properties\cite{Chipot2007,Tuckerman2010}.
 In \cref{chap:permeability}, I compare the efficiency of four enhanced sampling strategies to compute drug passive membrane permeability.
 We find that there are many orthogonal degrees of freedom which can hinder the convergence of these calculations and recommend some best practices for future work.
@@ -52,18 +52,18 @@ During our overlap in the group, Lane was working on the development of a softwa
 Milestoning is another enhanced sampling strategy where, instead of observing the full transition from start to finish of a process, we collect statistics of transitions along many small segments of the full pathway and stitch them together in postprocessing\cite{Faradjian2004,Majek2010,Vanden-Eijnden2008,Kirmizialtin2011,Votapka2015,Bello-Rivas2015,Votapka2017c}.
 The application of milestoning theory to permeability calculations was not straightforward since the natural currency of milestoning is transition probabilities, while the expressions to compute permeability required potentials of mean force.
 To solve this, Lane derived a new relation to compute permeability values using transition probabilities from milestoning which we validated using a toy model inspired by my prior work on permeability.
-This is research is described in \cref{chap:mileperm}.
+This research is described in \cref{chap:mileperm}.
 
 \par After learning about the virtues of the milestoning method, I started thinking about possible applications of milestoning to compute other rates of interest.
-By chance, my colleague Ben Jagger and I bumped into Chia-en Chang at a local conference where she was presenting preliminary results describing brute-force MD calculations of host-guest binding kinetics and thermodynamics\cite{Tang2017}.
+By chance, my colleague Ben Jagger and I met Chia-en Chang at a local conference where she was presenting preliminary results describing brute-force MD calculations of host-guest binding kinetics and thermodynamics\cite{Tang2017}.
 This dataset which contained several ligands, experimentally determined kinetics, and brute-force MD was the ideal system to benchmark the use of SEEKR\cite{Votapka2017c}.
 Chia-en kindly shared the dataset with us and working with Ben, we predicted the binding kinetics of the system using milestoning.
 The results of this work are described in \cref{chap:bcd} along with some best practices to monitor the convergence of computed rate estimates which we developed along the way.
 
 \par Also of interest for biological simulations is the dynamics of protein movement.
 Not only are the dynamics of proteins critical to their biological function, but protein dynamics also influence phenomena such as drug binding.
-In \cref{chap:allostery}, I present a review many different strategies to use computers to inform the rational design of allosteric drugs.
-Previously I had worked with Robert Malmstrom on a paper describing the applications of Markov state models to model protein kinase A dynamics with an without cyclic AMP\cite{Malmstrom2015a}.
+In \cref{chap:allostery}, I present a review of many different strategies to use computers to inform the rational design of allosteric drugs.
+Previously I had worked with Robert Malmstrom on a paper describing the applications of Markov state models to model protein kinase A dynamics with and without cyclic AMP\cite{Malmstrom2015a}.
 During this project, we started thinking about the use of MSMs to model perturbations to the conformational ensembles of protein targets by drugs and using the information to support drug discovery efforts.
 Later working with Bryn Taylor, we investigated the impact of drug binding to GPCR CCR2.
 The generation and description of our CCR2 MSMs is presented in \cref{chap:ccr2}.
