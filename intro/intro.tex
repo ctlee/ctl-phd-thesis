@@ -34,8 +34,8 @@ This includes the computational prediction of various biological rates such as d
 
 \par To reiterate and highlight the opportune convergence of computing and biological data, \cref{chap:exascale} discusses the potential applications and gains afforded by future exascale supercomputers to biology.
 This chapter provides some perspective on the role that computers can play to solve various biological problems.
-I speculate upon not only the contributions of computation to basic science, but also upon the impact of computation and technology on translational fields such as personalized medicine.
-In this chapter, I also address and frame some of the aforementioned challenges to future modeling efforts with solutions described in the subsequent chapters.
+We speculate upon not only the contributions of computation to basic science, but also upon the impact of computation and technology on translational fields such as personalized medicine.
+In this chapter, we also address and frame some of the aforementioned challenges to future modeling efforts with solutions described in the subsequent chapters.
 
 \par Owing to the complexity of biology, a complete systems model will require the definition of many rates.
 Due to the basic nature of many of these measurements, the experimental work to measure these values may not be publishable and is therefore difficult to source.
@@ -44,7 +44,7 @@ To augment the existing data and measurements, molecular simulations such as Mol
 MD effectively integrates the classical equations of motion for an atomistic system.
 Given that the typical timescales of simulation are typically much shorter than the timescales of the process of interest, brute force MD simulations can rarely capture the dynamics of interest with sufficient statistics.
 Instead, using strategies derived from statistical mechanics, many enhanced sampling strategies have been developed to facilitate the estimation of classically intractable properties\cite{Chipot2007,Tuckerman2010}.
-In \cref{chap:permeability}, I compare the efficiency of four enhanced sampling strategies to compute drug passive membrane permeability.
+In \cref{chap:permeability}, we compare the efficiency of four enhanced sampling strategies to compute drug passive membrane permeability.
 We find that there are many orthogonal degrees of freedom which can hinder the convergence of these calculations and recommend some best practices for future work.
 
 \par While studying membrane permeability, I had many stimulating discussions with my colleague Lane Votapka on the topic.
@@ -54,15 +54,15 @@ The application of milestoning theory to permeability calculations was not strai
 To solve this, Lane derived a new relation to compute permeability values using transition probabilities from milestoning which we validated using a toy model inspired by my prior work on permeability.
 This research is described in \cref{chap:mileperm}.
 
-\par After learning about the virtues of the milestoning method, I started thinking about possible applications of milestoning to compute other rates of interest.
-By chance, my colleague Ben Jagger and I met Chia-en Chang at a local conference where she was presenting preliminary results describing brute-force MD calculations of host-guest binding kinetics and thermodynamics\cite{Tang2017}.
+\par After learning about the virtues of the milestoning method, the group started thinking about possible applications of milestoning to compute other rates of interest.
+By chance, my colleague Ben Jagger and I met Professor Chia-en Chang at a local conference where she was presenting preliminary results describing brute-force MD calculations of host-guest binding kinetics and thermodynamics\cite{Tang2017}.
 This dataset which contained several ligands, experimentally determined kinetics, and brute-force MD was the ideal system to benchmark the use of SEEKR\cite{Votapka2017c}.
 Chia-en kindly shared the dataset with us and working with Ben, we predicted the binding kinetics of the system using milestoning.
 The results of this work are described in \cref{chap:bcd} along with some best practices to monitor the convergence of computed rate estimates which we developed along the way.
 
 \par Also of interest for biological simulations is the dynamics of protein movement.
 Not only are the dynamics of proteins critical to their biological function, but protein dynamics also influence phenomena such as drug binding.
-In \cref{chap:allostery}, I present a review of many different strategies to use computers to inform the rational design of allosteric drugs.
+In \cref{chap:allostery}, we present a review of many different strategies to use computers to inform the rational design of allosteric drugs.
 Previously I had worked with Robert Malmstrom on a paper describing the applications of Markov state models to model protein kinase A dynamics with and without cyclic AMP\cite{Malmstrom2015a}.
 During this project, we started thinking about the use of MSMs to model perturbations to the conformational ensembles of protein targets by drugs and using the information to support drug discovery efforts.
 Later working with Bryn Taylor, we investigated the impact of drug binding to GPCR CCR2.
@@ -72,7 +72,7 @@ The generation and description of our CCR2 MSMs is presented in \cref{chap:ccr2}
 Meshes are commonly used in engineering fields as a general geometric representation.
 The use of meshes is desirable since they are often also compatible with simulation methods such as finite elements.
 However, the numerical behavior of algorithms is often limited by mesh conditioning.
-To support the development of robust mesh generation codes for biological geometries, working with John Moody, I developed the Colored Abstract Simplicial Complex library which is described in \cref{chap:asc}.
+To support the development of robust mesh generation codes for biological geometries, working with John Moody, we developed the Colored Abstract Simplicial Complex library which is described in \cref{chap:asc}.
 
 \par In summary, the work in this dissertation explores the use of various modeling strategies to predict values of interest or to generate geometric meshes in support of future multiscale modeling efforts.
 
