@@ -242,4 +242,5 @@ TSWLatexianTemp*
 *.spl
 
 *.DS_Store
+*/*.DS_Store
 ctl-phd-thesis.pdf
