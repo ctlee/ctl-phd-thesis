@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{xcolor}
+\newcommand{\Red}[1]{{\color{red}{#1}}}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+\setlength{\parindent}{0.5\parindent}
+
+\usepackage{titlesec}
+\titleformat{\section}[runin]
+  {\normalfont\normalsize\bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}[runin]
+  {\normalfont\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}[runin]
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+% \titleformat{\subparagraph}[runin]
+  % {\normalfont\normalsize}{\underline{\thesubparagraph.\enspace}}{0.5em}{\underline}
+\setcounter{secnumdepth}{6}
+
+\titlespacing{\section}{0pt}{0.15em}{\parindent}
+\titlespacing{\subsection}{0pt}{0.15em}{\parindent}
+\titlespacing{\subsubsection}{0pt}{0.1em}{\wordsep}
+\titlespacing{\paragraph}{0pt}{0em}{\wordsep}
+\titlespacing{\subparagraph}{0pt}{0em}{\wordsep}
+
+
+\begin{document}
+% Times New Roman, 12 point font, 1 inch margins all around, 2 pages max
+% Briefly summarize the intended research training, past training experiences, and career goals
+\section{Summary}
+In his thesis entitled ``Forging Pathways to Enable Multiscale Modeling of Cellular Scale Phenomena'', Dr. Christopher Lee presents an impressive body of work not just in quantity, but also quality and breadth.
+His dissertation work spans topics ranging from the molecular modeling of drug permeability to mesh generation.
+The quality and impact of his work is evident in the many local and national fellowships and awards he has received over the years.
+A summary of his dissertation research, categorized into three major directions, and its impact is highlighted below.
+
+\section{Computation of values useful to drug discovery}
+The development of new drugs and therapeutics is an expensive endeavor.
+Candidate compounds can fail at various stages in the drug discovery pipeline.
+One popular strategy to reduce drug attrition and development cost is to employ \textit{in silico} methods to predict values of interest.
+By coupling methods in statistics, physical chemistry, and computation, Chris has worked on the prediction of two fundamental rates important to drug discovery: passive membrane permeability, and drug binding kinetics.
+Both of these values can be related to a candidate drug's dose-response and efficacy.
+Briefly, a drug which cannot reach the area of effect due to poor permeability will fail.
+Similarly, modern pharmacology suggests that drugs which are more consistently bound will have greater efficacy.
+In ``Lee, C. T. et al. J. Chem. Inf. Model. 2016'', we assess the efficiency and accuracy of several methods for computing permeability using atomistic simulations.
+Later in ``Votapka, L. W.*; Lee, C. T.*; Amaro, R. E. J. Phys. Chem. B 2016'', we describe and validate a new strategy to compute membrane permeability values using an enhanced sampling technique called milestoning.
+Finally, we use the theory of milestoning in ``Jagger, B. R.; Lee, C. T.; Amaro, R. E. J. Phys. Chem. Lett. 2018'' to compute and rank order the binding kinetics of a host-guest system.
+
+\subsection{Impact}
+The cumulative impacts of these works are summarized as follows.
+The prediction of permeability using atomistic simulations and enhanced sampling methods can suffer from the relaxation of orthogonal degrees of freedom, confounding predictions.
+To address this, we suggest several strategies ranging from improved monitoring of lipid relaxation to an interpolative method to reduce the computational burden of future calculations.
+We also present a new mathematical scheme to compute permeability using an unbiased enhanced sampling method called milestoning.
+Since milestoning employs fewer assumptions, this work has the promise of improving the accuracy of future permeability calculations.
+The applications of milestoning to compute drug binding kinetics is the first application of our methods to rank order compounds based on kinetics.
+We are currently exploring a collaboration with a large pharmaceutical company to integrate the milestoning technology into their drug discovery pipeline.
+
+\section{MSM Modeling and Allostery}
+Traditional structure based rational drug design considers the binding of ligands to static protein structures as revealed by NMR or X-ray crystallography.
+However, in vivo, proteins are constantly undergoing dynamic conformational changes.
+New efforts in computer aided drug discovery seek to capitalize upon the dynamics of target proteins to identify so-called cryptic pockets (i.e., pockets not present in a static structure which open due to protein movement), and can uncover allosteric sites (i.e., binding regions located away from but dynamically coupled to the endogenous ligand pocket).
+Discovered cryptic and allosteric pockets can reveal new opportunities for druggable sites.
+We review the state-of-the-art for rationally designing allosteric drugs in ``Wagner, J. R.*; Lee, C. T.*; et al. Chem. Rev. 2016''.
+In addition to the methods highlighted in this review, there is a pressing need for frameworks to quantitatively describe the dynamics of proteins.
+In ``Malmstrom, R. D.; Lee, C.T.; et al. J. Chem. Theory Comput. 2014'', we discuss the practical application of Markov state models (MSM) to study biomolecular dynamics.
+Drawing upon this background, we applied MSMs to study the dynamics of CCR2 in ``Taylor, B. C.; Lee, C. T.; Amaro, R. E. PNAS 2019''.
+CCR2 is a class 2 GPCR which is correlated with a number of inflammatory diseases ranging from diabetes to cancer.
+Historical efforts to develop CCR2 antagonists have failed in clinical trials.
+In this study, we use MSMs to quantitatively decompose the drug bound and unbound dynamics to gain insights into how the drugs work and why they are failing.
+
+\subsection{Impact}
+Methods to discover and quantify new druggable pockets create new opportunities for pharmaceutical development.
+Our review surveys many of the primary computational methods for studying allostery in protein systems.
+It also discusses the benefits of potential allosteric drugs as a call to the general community.
+The application of MSMs to create human interpretable representations from high dimensioned protein dynamics data has provided a quantitative framework for studying both protein kinase A and CCR2.
+Of particular note, the work on CCR2 has revealed a new `druggable' cryptic pocket which opens to and extends beyond the known allosteric binding site.
+This research has also yielded hints as to why previous antagonists have failed.
+Moreover, with some additional mathematical study, we anticipate that the CCR2 simulations will serve as an ideal dataset for developing a comparative MSM framework which is capable of semiautomated and quantitative characterization of the effect of drug binding on protein dynamics.
+We believe that such a framework, if successful, would enable the automation of molecular dynamics simulations and analysis for drug discovery.
+
+\section{Mesh generation to enable image-based cellular models}
+Recent advances in volume electron microscopy (EM) have, for the first time, enabled imaging of single cells in 3D at the nanometer length scale resolution.
+Although these emerging datasets enable image correlation based structure comparison, an uncharted frontier is the ability to simulate cellular processes to query the impact of subcellular structure on signaling dynamics.
+To achieve this goal, we will require a system for going from EM images to 3D volume meshes which can be used in finite element simulations.
+In ``Lee, C. T.*; Laughlin, J. G.*, et al. bioRxiv 2019'', we describe the development of an end-to-end pipeline for this task by adapting and extending computer graphics mesh processing and smoothing algorithms.
+This pipeline is applied to a series of electron micrographs of dendrite morphology explored at several length scales and we demonstrate that the meshes are suitable for finite element simulations.
+This workflow makes use of our recently rewritten mesh processing software GAMer 2 which is built upon the CASC data structure developed and described in ``Lee, C. T.*; Moody, J. B.*; et al. ACM Trans. Math. Soft. In Press''.
+Both the code for GAMer and CASC data structure are open source and available for download on GitHub.
+
+\subsection{Impact:}
+We posit that a new frontier at the intersection of computational technologies and single cell biology is now open.
+Our innovations in algorithms to reconstruct and simulate cellular length scale phenomena based on emerging structural data will enable realistic physical models and advance discovery.
+This work is a natural extension and improvement upon prior work in the field which has largely neglected geometry or employed idealized and unrealistic shapes.
+We anticipate that physical modeling in realistic geometries will enable the query of subcellular structure-function relationships in the short term.
+As these physical models mature, they will enable the prediction of emergent properties which may be useful for drug discovery along with basic science.
+\end{document}
